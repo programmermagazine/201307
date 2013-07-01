@@ -47,4 +47,4 @@
 [A4.pdf]: ../book/A4.pdf
 [code.zip]: ../code.zip
 [pmag.html]: ../book/pmag.html
-[201307.zip]: ../../201307.zip
+[201307.zip]: https://github.com/programmermagazine/201307/archive/master.zip
