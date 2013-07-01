@@ -47,5 +47,5 @@
 [A4.pdf]: ../book/A4.pdf
 [code.zip]: ../code.zip
 [pmag.html]: ../book/pmag.html
-[all.zip]: ../archive/master.zip
+[all.zip]: ../archive/gh-pages.zip
 
