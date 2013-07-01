@@ -5,7 +5,7 @@
 
 出刊年月       epub           ipad:PDF      A4:PDF     單頁 HTM     原始碼      全部下載
 ------------   ----------     -----------   --------   -----------  ----------  -------------
-2013年7月      [epub]         [ipad.pdf]    [A4.pdf]   [pmag.html]  [code.zip]  [201307.zip]
+2013年7月      [epub]         [ipad.pdf]    [A4.pdf]   [pmag.html]  [code.zip]  [all.zip]
 
 ### 本期內容
 * 前言
@@ -47,4 +47,5 @@
 [A4.pdf]: ../book/A4.pdf
 [code.zip]: ../code.zip
 [pmag.html]: ../book/pmag.html
-[201307.zip]: https://github.com/programmermagazine/201307/archive/master.zip
+[all.zip]: ../archive/master.zip
+
