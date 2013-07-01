@@ -47,5 +47,5 @@
 [A4.pdf]: ../book/A4.pdf
 [code.zip]: ../code.zip
 [pmag.html]: ../book/pmag.html
-[all.zip]: ../archive/gh-pages.zip
+[all.zip]: https://github.com/programmermagazine/201307/archive/gh-pages.zip
 
