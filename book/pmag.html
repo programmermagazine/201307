@@ -1,0 +1,2603 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="../css/pmag.css" type="text/css" />
+</head>
+<body>
+<div id="header_wrap">
+   <h1><a href="https://www.facebook.com/groups/programmerMagazine">程式人雜誌</a> <sub> --  <a href="https://dl.dropbox.com/u/101584453/pmag/201307/htm/home.html">2013 年 7 月號</a> (開放公益出版品)</sub></h1>
+</div>
+<div id="content">
+<div id="TOC">
+<ul>
+<li><a href="#前言">前言</a><ul>
+<li><a href="#編輯小語">編輯小語</a></li>
+<li><a href="#授權聲明">授權聲明</a></li>
+</ul></li>
+<li><a href="#程式人短訊">程式人短訊</a><ul>
+<li><a href="#程式短訊prolog-語言與開發工具">程式短訊：PROLOG 語言與開發工具</a></li>
+</ul></li>
+<li><a href="#程式人介紹">程式人介紹</a><ul>
+<li><a href="#lisp-的發明人-john-mccarthy">LISP 的發明人 – John McCarthy</a></li>
+</ul></li>
+<li><a href="#程式人頻道">程式人頻道</a><ul>
+<li><a href="#raffaello-dandrea-四軸飛行器驚人的運動能力">Raffaello D'Andrea: 四軸飛行器驚人的運動能力</a></li>
+</ul></li>
+<li><a href="#程式人討論區">程式人討論區</a><ul>
+<li><a href="#程式語言討論-除了-c-以外的快速物件導向語言">程式語言討論 – 除了 C++ 以外的快速物件導向語言</a></li>
+</ul></li>
+<li><a href="#程式與科學">程式與科學</a><ul>
+<li><a href="#以程式人的想法為油價公式除錯">以程式人的想法為「油價公式」除錯</a></li>
+</ul></li>
+<li><a href="#程式人文集">程式人文集</a><ul>
+<li><a href="#arduino入門教學7-使用七段顯示器製作倒數功能-作者cooper-maa">Arduino入門教學(7) – 使用七段顯示器製作倒數功能 (作者：Cooper Maa)</a></li>
+<li><a href="#javascript-7-字串處理與正規表達式-作者陳鍾誠">JavaScript (7) – 字串處理與正規表達式 (作者：陳鍾誠)</a></li>
+<li><a href="#r-統計軟體5-再探檢定-作者陳鍾誠">R 統計軟體(5) – 再探檢定 (作者：陳鍾誠)</a></li>
+<li><a href="#verilog-2-硬體語言的基礎-作者陳鍾誠">Verilog (2) – 硬體語言的基礎 (作者：陳鍾誠)</a></li>
+<li><a href="#開放電腦計畫-2-as0-組譯器使用-javascriptnode.js-實作-作者陳鍾誠">開放電腦計畫 (2) – AS0 組譯器：使用 JavaScript+Node.js 實作 (作者：陳鍾誠)</a></li>
+<li><a href="#r-統計軟體-講題分享-獨立成份分析-作者taiwan-r-user-group">R 統計軟體: 講題分享-獨立成份分析-(作者：Taiwan R User Group)</a></li>
+</ul></li>
+<li><a href="#雜誌訊息">雜誌訊息</a><ul>
+<li><a href="#讀者訂閱">讀者訂閱</a></li>
+<li><a href="#投稿須知">投稿須知</a></li>
+<li><a href="#參與編輯">參與編輯</a></li>
+<li><a href="#公益資訊">公益資訊</a></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="前言"><a href="#前言">前言</a></h1>
+<h2 id="編輯小語"><a href="#編輯小語">編輯小語</a></h2>
+<p>從本期開始，「程式人雜誌」將會新增一個「程式與科學」的主題，採用科普 (科學普及化) 的角度介紹程式與科學之間的關係，以下是本期「程式與科學」的主題內容。</p>
+<ul>
+<li><a href="https://dl.dropboxusercontent.com/u/101584453/pmag/201307/htm/science1.html">以程式人的想法為「油價公式」除錯</a></li>
+</ul>
+<p>增加「程式與科學」這個主題是因為編輯將在網路上認識了「<a href="http://pansci.tw/">泛科學</a>」的創辦人「鄭國威」，國威兄邀請我來為「泛科學」寫個專欄，於是我們討論的結果想說能夠寫些文章可以 在「程式人雜誌」與「泛科學」兩邊同時刊載，這樣就能讓更多人看到這些文章了。</p>
+<p>也歡迎「程式人雜誌」的朋友們，投稿「程式與科學」這個專欄，以便讓更多非程式領域的朋友 也能瞭解程式領域的的科學主題，讓更多網友能夠加入「程式人」的行列。</p>
+<p>---- （程式人雜誌編輯 - 陳鍾誠）</p>
+<h2 id="授權聲明"><a href="#授權聲明">授權聲明</a></h2>
+<p>本雜誌採用 創作共用：<a href="http://creativecommons.org/licenses/by-sa/3.0/tw/">姓名標示、相同方式分享</a> 授權，若您想要修改本書產生衍生著作時，至少應該遵守下列授權條件：</p>
+<ol style="list-style-type: decimal">
+<li>標示原作者姓名</li>
+<li>採用 創作共用：<a href="http://creativecommons.org/licenses/by-sa/3.0/tw/">姓名標示、相同方式分享</a> 的方式公開衍生著作。</li>
+</ol>
+<p>另外、當本雜誌中有文章或素材並非採用 <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/">姓名標示、相同方式分享</a> 時，將會在該文章或素材後面標示其授權，此時該文章將以該標示的方式授權釋出，請修改者注意這些授權標示，以避免產生侵權糾紛。</p>
+<p>例如有些文章可能不希望被作為「商業性使用」，此時就可能會採用創作共用：<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/tw/">姓名標示、非商業性、相同方式分享</a> 的授權，此時您就不應當將該文章用於商業用途上。</p>
+<p>最後、懇請勿移除公益捐贈的相關描述，以便讓愛心得以持續散播！</p>
+<h1 id="程式人短訊"><a href="#程式人短訊">程式人短訊</a></h1>
+<h2 id="程式短訊prolog-語言與開發工具"><a href="#程式短訊prolog-語言與開發工具">程式短訊：PROLOG 語言與開發工具</a></h2>
+<p>說到了 LISP 就不能不談談 PROLOG，這兩個語言在人工智慧領域一直都具有非常重要的地位。 LISP 是以 λ 演算為基礎的函數式語言，而 PROLOG 則是以邏輯的 Horn Clause 推論為理論 根據的邏輯式語言。</p>
+<p>PROLOG 最初被運用於自然語言等研究領域。現在它已廣泛的應用在人工智慧的研究中， 它經常被用來建造專家系統、自然語言理解、智慧知識庫等方面的程式。</p>
+<p>Prolog 語言最早由 Aix-Marseille 大學的 Alain Colmerauer 與 Phillipe Roussel 等人於 60 年代末開始研究開發，並於 1972 年正式誕生。</p>
+<p>Prolog一直在北美和歐洲被廣泛使用。日本政府曾經為了建造智慧電腦而用 Prolog 來開發 ICOT 第五代電腦系統。在早期的機器智慧研究領域，Prolog曾經是主要的開發工具。</p>
+<p>80年代 Borland 開發的Turbo Prolog，進一步普及了 Prolog 的使用，1995年確定了ISO Prolog標準。</p>
+<p>現在若您想使用 Prolog 的話，有很多種開發環境可供選擇，像是 BProlog，GNU Prolog, Quintus, SICStus, Strawberry、SWI-Prolog、YAP-Prolog 等等。</p>
+<p>以 SWI-Prolog 為例，您可以從以下網站中下載此一開發環境：</p>
+<ul>
+<li><a href="http://www.swi-prolog.org/">http://www.swi-prolog.org/</a></li>
+</ul>
+<p>以下是筆者下載並安裝 SWI-Prolog 的過程，有興趣的讀者可以參考看看：</p>
+<ul>
+<li>SWI Prolog 的下載與安裝過程 -- <a href="http://youtu.be/beIL207y7rI">http://youtu.be/beIL207y7rI</a></li>
+</ul>
+<p>以下是一個 prolog 的簡易程式，用來判斷某些人之間是否有「親-子」關係或「兄弟」關係的。</p>
+<p>檔案：parent.pl</p>
+<pre class="sourceCode prolog"><code class="sourceCode prolog">mother<span class="er">_</span><span class="dt">child</span>(trude<span class="kw">,</span> sally)<span class="kw">.</span>
+ 
+father<span class="er">_</span><span class="dt">child</span>(tom<span class="kw">,</span> sally)<span class="kw">.</span>
+father<span class="er">_</span><span class="dt">child</span>(tom<span class="kw">,</span> erica)<span class="kw">.</span>
+father<span class="er">_</span><span class="dt">child</span>(mike<span class="kw">,</span> tom)<span class="kw">.</span>
+ 
+sibling(<span class="dt">X</span><span class="kw">,</span> <span class="dt">Y</span>)      <span class="kw">:-</span> parent<span class="er">_</span><span class="dt">child</span>(<span class="dt">Z</span><span class="kw">,</span> <span class="dt">X</span>)<span class="kw">,</span> parent<span class="er">_</span><span class="dt">child</span>(<span class="dt">Z</span><span class="kw">,</span> <span class="dt">Y</span>)<span class="kw">.</span>
+ 
+parent<span class="er">_</span><span class="dt">child</span>(<span class="dt">X</span><span class="kw">,</span> <span class="dt">Y</span>) <span class="kw">:-</span> father<span class="er">_</span><span class="dt">child</span>(<span class="dt">X</span><span class="kw">,</span> <span class="dt">Y</span>)<span class="kw">.</span>
+parent<span class="er">_</span><span class="dt">child</span>(<span class="dt">X</span><span class="kw">,</span> <span class="dt">Y</span>) <span class="kw">:-</span> mother<span class="er">_</span><span class="dt">child</span>(<span class="dt">X</span><span class="kw">,</span> <span class="dt">Y</span>)<span class="kw">.</span></code></pre>
+<p>當您寫完上述程式之後，就可以存檔並執行，然後開始詢問某些邏輯問句，Prolog 系統將會回答您，例如：</p>
+<pre class="sourceCode prolog"><code class="sourceCode prolog"><span class="fu">?-</span> sibling(sally<span class="kw">,</span> erica)<span class="kw">.</span>
+<span class="dt">Yes</span></code></pre>
+<p>如果您想要執行上述的 parent.pl 程式，然後開始詢問問題的話，可以先用任何編輯器，編好 parent.pl 的 內容並存檔，此時 parent.pl 這個檔案的圖示會是一隻貓頭鷹，您點選兩下後就會呼叫 SWI-Prolog 來執行它。 接著您就可以輸入問句了，以下是筆者的執行過程錄影。</p>
+<ul>
+<li>在 SWI Prolog 中載入並執行程式 -- <a href="http://youtu.be/xzz2L30T03g">http://youtu.be/xzz2L30T03g</a></li>
+</ul>
+<p>在筆者學習程式的漫長歷史當中，一直認為 PROLOG 是個相當奇特的語言，因為很少程式語言是從「邏輯推論」 這個角度切入的，這讓 PROLOG 成為用來撰寫知識型專家系統的首選語言，因為 PROLOG 天生就是邏輯推論高手阿！</p>
+<p>最近在 <a href="https://www.facebook.com/groups/programmerMagazine/">程式人雜誌社團</a> 中，網友「KuoE0」貼了一篇 <a href="http://kuoe0.ch/2288/prolog-tutorial/">prolog 入門</a> 的文章，有機會我們將在後續的雜誌中 刊登這一系列的文章，請讀者拭目以待！</p>
+<h3 id="參考文獻"><a href="#參考文獻">參考文獻</a></h3>
+<ul>
+<li>維基百科:Prolog -- <a href="https://zh.wikipedia.org/zh-tw/Prolog">https://zh.wikipedia.org/zh-tw/Prolog</a></li>
+<li>Wikipedia:Prolog -- <a href="https://en.wikipedia.org/wiki/Prolog">https://en.wikipedia.org/wiki/Prolog</a></li>
+<li><a href="http://kuoe0.ch/2288/prolog-tutorial/">prolog 入門</a>-- <a href="http://kuoe0.ch/2288/prolog-tutorial/">http://kuoe0.ch/2288/prolog-tutorial/</a></li>
+</ul>
+<p>【本文由陳鍾誠取材並修改自維基百科】</p>
+<h1 id="程式人介紹"><a href="#程式人介紹">程式人介紹</a></h1>
+<h2 id="lisp-的發明人-john-mccarthy"><a href="#lisp-的發明人-john-mccarthy">LISP 的發明人 – John McCarthy</a></h2>
+<p>John McCarthy (約翰·麥卡錫)（1927年9月4日－2011年10月24日），生於美國麻薩諸塞州波士頓，計算機科學家。 他因在人工智慧領域的貢獻而在 1971 年獲得圖靈獎。實際上，正是他在 1955 年的達特矛斯會議上 提出了「人工智慧」這個概念。</p>
+<p>John McCarthy 在 1960 年創造出了 LISP（全名LISt Processor，即列表處理語言）這個程式語言， 是一種有強烈數學基礎 (基於 λ演算) 的函數式語言。</p>
+<p>LISP有很多種方言，各個實作中的語言不完全一樣。1980年代 Guy L. Steele 編寫了Common Lisp 試圖 進行標準化，這個標準被大多數直譯器和編譯器所接受。在Unix/Linux系統中，還有一種和 Emacs 一起的 Emacs Lisp（而Emacs正是用Lisp作為擴充功能語言進行功能擴充功能的）非常流行，並建立了自己的標準。</p>
+<p>LISP語言的主要現代版本包括 Common Lisp 和 Scheme。</p>
+<p>雖然 LISP 是個通用型的語言，但是最常被使用在人工智慧領域，以下是一個用 LISP 計算 n! (n 階層) 函數的程式範例：</p>
+<pre class="LISP"><code> (defun factorial (n)
+   (if (&lt;= n 1)
+       1
+       (* n (factorial (- n 1)))))</code></pre>
+<p>即便現在 LISP 的使用者並不像 Java, Python, Ruby 等語言那麼多，但仍然有許多人在使用，像是 <a href="http://lisp.tw/">http://lisp.tw/</a> 這個網站中就介紹了很多 LISP 相關的程式與資訊，</p>
+<p>如果您現在想使用 LISP 的話，像是 <a href="http://www.franz.com/downloads/clp/survey">Allegro Common Lisp</a>、<a href="http://www.lispworks.com/products/lispworks.html#personal">LispWorks</a>、<a href="http://www.gnu.org/software/gcl/">GNU Common Lisp</a> 等，您可以自行選用 適合的開發環境，以便學習或使用 LISP 語言。</p>
+<h3 id="參考文獻-1"><a href="#參考文獻-1">參考文獻</a></h3>
+<ul>
+<li>維基百科:<a href="https://zh.wikipedia.org/wiki/%E7%BA%A6%E7%BF%B0%C2%B7%E9%BA%A6%E5%8D%A1%E9%94%A1">約翰·麥卡錫</a></li>
+<li>Wikipedia:<a href="https://en.wikipedia.org/wiki/Lisp_%28programming_language%29">Lisp</a></li>
+<li><a href="http://www.gnu.org/software/gcl/">GCL - an implementation of Common Lisp</a></li>
+<li><a href="http://lisp.tw/">http://lisp.tw/</a></li>
+<li>維基教科書:<a href="http://zh.wikibooks.org/zh-tw/Lisp_%E5%85%A5%E9%96%80">Lisp 入門</a></li>
+<li><a href="http://acl.readthedocs.org/en/latest/">ANSI Common Lisp 中文翻譯版</a></li>
+</ul>
+<p>【本文由陳鍾誠取材並修改自維基百科】</p>
+<h1 id="程式人頻道"><a href="#程式人頻道">程式人頻道</a></h1>
+<h2 id="raffaello-dandrea-四軸飛行器驚人的運動能力"><a href="#raffaello-dandrea-四軸飛行器驚人的運動能力">Raffaello D'Andrea: 四軸飛行器驚人的運動能力</a></h2>
+<p>第一次看到網路上有人分享這個四軸直升機影片的時候，總覺得應該沒什麼好看的，因為這類的直升機有很多 現成在賣的，用 Arduino 也有人做出來，但是當第二次在度看到有人分享時，就覺得應該看一看了。</p>
+<p>結果、一看進去就不得了，這個傢伙根本就是個神人，他們的直升機表演簡直就是 -- 魔術般的神級作品， 能夠將直升機控制到這種程度，背後必然有極具價值的數學演算法阿！</p>
+<ul>
+<li>Raffaello D'Andrea: 四軸飛行器驚人的運動能力
+<ul>
+<li><a href="http://www.ted.com/talks/raffaello_d_andrea_the_astounding_athletic_power_of_quadcopters.html">http://www.ted.com/talks/raffaello_d_andrea_the_astounding_athletic_power_of_quadcopters.html</a></li>
+<li><a href="http://youtu.be/w2itwFJCgFQ">http://youtu.be/w2itwFJCgFQ</a></li>
+</ul></li>
+</ul>
+<p>在影片中，您可以看到它們的直升機非常的穩定，而且、非常的聽話，甚至可以將一根長桿放在直升機上，它會 自動平衡而不會倒下來。</p>
+<p>更神的是，當他拿起剪刀，將四個直升機翅膀剪壞兩個之後，竟然直升機還可以用旋轉的方式進行平衡，......</p>
+<p>我很好奇這樣的直升機控制，到底是用甚麼演算法呢？所以我上網找到了 Raffaello D'Andrea 的網站，發現他 是瑞士理工學院 (Swiss Federal Institute of Technology) 的教授，主要教授動態系統與控制 (Dynamic Systems and Control) 方面的課程，而且是 Kiva Systems 這個公司的共同創辦人。以下是他的個人網站：</p>
+<ul>
+<li><a href="http://raffaello.name/">http://raffaello.name/</a></li>
+</ul>
+<p>最近 Kiva System 還被亞馬遜給併購了 (recently acquired by Amazon)。疑、亞馬遜不好好賣書， 併購一家做控制系統的公司做甚麼呢？難道、亞馬遜想切入軍事工業，還是他的老闆貝佐斯想當鋼鐵人 ....</p>
+<p>然後又找到了下列的影片，是他接受專訪時的對談：</p>
+<ul>
+<li>Raffaello D'Andrea ZURICH.MINDS INTERVIEW -- <a href="http://youtu.be/p_Wl-C-ORso">http://youtu.be/p_Wl-C-ORso</a></li>
+</ul>
+<p>他們的作品不只是直升機而已，還包含打球機、自動平衡方塊、倉庫用的搬運機器人、 垮掉後會自我組裝回來的機器椅子、辦公室或家用的機器人等等，您可以從以下網址看到這些作品與影片：</p>
+<ul>
+<li><a href="http://raffaello.name/dynamic-works">http://raffaello.name/dynamic-works</a></li>
+</ul>
+<p>可惜的是，我找不到他發表的論文，所以也就不知道哪個直升機的控制程式奧秘了，或許是因為他們不想寫論文， 因為知道這個東西有很高的價值，所以直接當作 Kiva System 公司的內部機密吧！</p>
+<p>看完之後我只覺得，瑞士人果然不簡單阿！</p>
+<h3 id="參考文獻-2"><a href="#參考文獻-2">參考文獻</a></h3>
+<ul>
+<li>Raffaello D'Andrea | Dynamic Works -- <a href="http://raffaello.name/">http://raffaello.name/</a></li>
+<li><a href="http://www.ted.com/talks/raffaello_d_andrea_the_astounding_athletic_power_of_quadcopters.html">http://www.ted.com/talks/raffaello_d_andrea_the_astounding_athletic_power_of_quadcopters.html</a></li>
+</ul>
+<p>【本文由陳鍾誠撰寫】</p>
+<h1 id="程式人討論區"><a href="#程式人討論區">程式人討論區</a></h1>
+<h2 id="程式語言討論-除了-c-以外的快速物件導向語言"><a href="#程式語言討論-除了-c-以外的快速物件導向語言">程式語言討論 – 除了 C++ 以外的快速物件導向語言</a></h2>
+<p>2013 年 6 月 15 日，網友於 <a href="https://www.facebook.com/groups/programmerMagazine/">程式人雜誌社團</a> 分享的一篇文章引發了討論</p>
+<ul>
+<li>facebook 分享連結： <a href="https://www.facebook.com/groups/programmerMagazine/permalink/658912237458829/">https://www.facebook.com/groups/programmerMagazine/permalink/658912237458829/</a></li>
+</ul>
+<blockquote>
+<p>陳○○：：不知道有沒有人跟我一樣，很不喜歡 C++，但是又需要速度與 OO 當然 Java 跟 Python 都是我的愛， C 也很棒，但是缺了好的 OO (我曾試過用 C OO 化，但相對的，看起來變複雜了）</p>
+<p>因此我最近也在搜尋，有沒有編譯出來比較快的語言，阿我的平台都是在 linux 所以我看到了 Vala 感覺上還不錯， 當然也在看 Go 跟 Obtivec-C 不知道有沒有人想分享一下這些語言的特色呀？當然我還是希望 linux 支援度優先的語言 ^^ (我是不太喜歡 Go 宣告的 type 是擺在後面啦）<a href="https://live.gnome.org/Vala/">https://live.gnome.org/Vala/</a></p>
+</blockquote>
+<p>雖然這個問題感覺有點困難，社團的朋友們還是提出了很多的可能，如下回應所示：</p>
+<ul>
+<li>徐○○： Linux 支援度？那Objective-C你還是跳過好了</li>
+<li>鄭○○： Java 不適合你用嗎?</li>
+<li>陳○○： 喔 Java 呀，很適合呀，但有時候又想要一個編譯成機器碼的語言</li>
+<li>陳○○： 感覺 Vala 還蠻適合我的理想，因為我實在恨透了 C++ 中，一個 class 分成指標要 new 然後非指標不用 new 一下子是 A-&gt;a 這樣抓東西出來 一下子 A.a ，這真的是為了相容 C ，而變形的東西</li>
+<li>T○○： 可是其實c++的programming style中這不太會混用的</li>
+<li>鄭○○： 不太覺得這個例子裡，C++ 有什麼不好耶......</li>
+<li>S○○： 可以試試看gcj</li>
+<li>鄭○○： 應該說，需要手動記憶體管理的都會有這種 syntax......</li>
+<li>鄭○○： 還是用 (*pA).x 就會和 A.x 一致呢?</li>
+<li>陳○○： 可能是我有被 python 的哲學小小影響，同樣的事情，只有一種方法作到</li>
+<li>J○○： C++你可能需要去看一下一些人的程式碼，學習他們怎麼管理跟編程習慣，有些命名原則跟習慣可以讓你減少很多麻煩，還有事前的規劃也很重要，只要知道物件之間的相依關係如何，就連繼承也不太會搞混，甚至於整個專案的效能都會提高很多。不過我C++幾乎忘光光了，以前是有研究過std的vector動態陣列的類神經網路程式碼，那時候套用了一些別人的設計模式，效能比我原先寫的還要高3倍。</li>
+<li>鄭○○： Python 這種不需要自己管記憶體的語言，吃那麼好，語法當然不用分啊。</li>
+<li>陳○○： 這個嘛～我當然知道要去看人家的 coding standard 啦，喔！還有記憶體管理問題，語法跟記憶體管理應該可以分兩邊來看的說，要作到記憶體管理，語法也是可以設計的。</li>
+<li>陳○○： 還有一件事 像是 constructor，變數初始化可以放在 xxx() : a(0), b(0) {} 但是也有人喜歡 xxx() {a = 0; b = 0;} 總覺得這是同樣的事情，如果真的說這樣效能有差，也可以統一只用一個語法，然後實現的時候用效能最好的那個</li>
+<li>陳○○： S○○： gcj 似乎出到 1.5 就沒動靜了</li>
+<li>T○○： list並不等價於寫在constructor中喔</li>
+<li>鄭○○： 這完全不一樣啊。前者是用 a, b 的 constructors，後者是讓 a, b create 出來之後再 assign 值。用法不同。</li>
+<li>陳○○： 所以這就是我說的，如果效率上有差，或是動作有差，但既然都叫做 constructor 了，應該可以分辨出語法，抓出 constructor 來做同樣的事情</li>
+<li>鄭○○： 不對，後者不是 constructor，只是單純的給值而己。</li>
+<li>T○○： 問題是這種不確定的行為在許多狀態是無法接受的 特別是記憶體受限的時候，暫存的物件多生一個少生一個都差很多</li>
+<li>鄭○○： C++ 不幫你做太多事情。事實上已經很多人抱怨它做很多事情了。</li>
+<li>鄭○○： C++ 讓你對物件生成，記憶體配置有很高的控制權。你可以很清楚知道物件是用什麼方法配置與初始的。其代價就是寫錯要自己負責。</li>
+<li>T○○： 為了把記憶體管理的複雜hide起來,java和C#(.net),python都作了很多很辛苦的事情的...</li>
+<li>T○○： 而GC是非常昂貴的成本 在許多狀況下無法忍受</li>
+<li>陳○○： 我知道那是 assign 啦，這不是批鬥我 c++ 用不深或怎麼樣的，我是在探討優美的程度，java 之所以出現，不也是抓出他們認為 C++ 令人詬病的地方，然後縮減嗎？如果要什麼都管的話，我會用 C， 但我現在希望探討的是語法的美感，而不是實際受限的問題，畢竟 C++ 多了一個 OO，但這很需要美感呀</li>
+<li>鄭○○： 在這邊舉的例子，說實在都不是 C++ 語言的缺點。</li>
+<li>T○○： c++設計上就是為了讓施工的人可以作自己的鑽頭啊...</li>
+<li>鄭○○： C++ 的美感是靠 programmer 用 coding style, convention 來維護的。</li>
+<li>T○○： 我想你不會想用C實現COM之類的東西的.....</li>
+<li>鄭○○： 要說美感問題，我覺得 C++ 的 enum hacking 才是比較不美的例子。</li>
+<li>陳○○： OK！不過這都不是我想探討的方向啦，不然 Go 也不會出現</li>
+<li>陳○○： 像 python 就根本不太需要 conding standard 就能讓人很舒服, 所以我在找，有沒有方向是跟 C++ 差不多，讀起來舒服的語言。</li>
+<li>鄭○○： Go 有 GC 啊......</li>
+<li>陳○○： 好吧，我的錯，先不要糾結在 GC 上, 我相信不 GC 也能有美感的, 像我現在找的 Vala 他也有 destructor</li>
+<li>鄭○○： 好吧，我以前有用過一陣子 pascal</li>
+<li>T○○： 使用者就要負責把最髒的東西處理好啊...可以參考webkit底層自己實現的跨平台的smartpointer</li>
+<li>陳○○： 我也蠻喜歡 pascal 的，, 不過 begin, end 到時候多起來可真的就不好看了, 不然真的很美</li>
+<li>T○○： delphi的object pascal?</li>
+<li>陳○○： 我是用 fpc</li>
+<li>鄭○○： 然後我不知道 Obj-C 在 Linux 上表現怎麼樣。</li>
+<li>鄭○○： Free Pascal http://www.freepascal.org/</li>
+<li>陳○○： 因為單純看 Vala 真的很像 C++ 的語法（他出現的目的就是不想用 C++，然後最後會轉成 C 然後套上 GObjC，但是重點是他的語法) 所以想提出來探討看看，https://live.gnome.org/Vala/Tutorial 。 鄭○○： Objective-C on Linux http://stackoverflow.com/questions/7133728/objective-c-in-linux</li>
+<li>陳○○： 然後目前我在看，都還沒看到我剛剛講的，我不喜歡的那些, 看來他們是真的也不喜歡我講的那幾段語法</li>
+<li>T○○： 老實說這繞來繞去最後都一個樣耶XD 這不是C#嗎,</li>
+<li>陳○○： 我其實更希望的是更像 java ，我偏向砍功能, 只是 gcj 還在 1.5, 還有希望不是靠 vm 跑.</li>
+<li>T○○： java正在往c#靠啊...</li>
+<li>陳○○： 有同感，我希望能夠有個語言擁有 java 的初衷</li>
+<li>鄭○○： :Although Vala manages the memory for you, you might need to add your own destructor if you choose to do manual memory management with pointers (more on that later) or if you have to release other resources. &quot;</li>
+<li>鄭○○： 因為有 gc 才不用管 mem 嘛。</li>
+<li>T○○： 我不覺的那有甚麼不好啊...我個人非常喜歡C#</li>
+<li>T○○： 雖然只是reference counting, 應該是smartpointer</li>
+<li>T○○： 喔 他是用gnu oc runtime當sandbox啦</li>
+<li>林○○： 把 jvm 當 lib 看待就好</li>
+<li>T○○： jvm不是lib 是sandbox</li>
+<li>鄭○○： 我是說，你不喜歡的語法，正是因為沒有 GC 才不得不存在的。你拿有 GC 的語言出來，當然不需要這些語法。</li>
+<li>陳○○： 好吧 ，又跳回原點了，看來 pascal 似乎才符合可能是我想要的</li>
+<li>鄭○○： Pascal library 很少喔......</li>
+<li>陳○○： 我也沒打算用他啦，只是想問有沒有用過較多語言的大大, 有沒有不用 vm 又有 oo 語法優美，有 GC 可的語言 意者私訊 ㄏㄏ～</li>
+<li>T○○： 我說...就算pascal還是有.還有^.的差別啊</li>
+<li>T○○： 除非你 pass object 通通不用 pointer</li>
+<li>陳○○： 嗯，我就是因為 ^ 一下子在前一下子在後, 還有 begin, end 海，所以才沒打算</li>
+<li>T○○： 有gc就是下面有sandbox啊...不然誰幫你gc呢</li>
+<li>T○○： 只是那個sandbox怎麼存在就是了</li>
+<li>鄭○○： LiveScript + node.js ?</li>
+<li>陳○○： OK 我這幾天去看看</li>
+<li>鄭○○： C# ? http://www.mono-project.com/Main_Page</li>
+<li>陳○○： mono 有在用</li>
+<li>T○○： 說真的已&quot;需要compile成bytecode&quot; C#吧</li>
+<li>鄭○○： Ruby ?</li>
+<li>鄭○○： Scala ?</li>
+<li>T○○： python....</li>
+<li>陳○○： 我想找的不是到 VM 那麼大顆，或者是 interpreter</li>
+<li>陳○○： 這樣的話 ，我本來就很愛 python, java了, vala 剛剛看了，他並沒有說用到整顆 VM, 應該頂多是 GC 在背景跑</li>
+<li>鄭○○： Lua ?</li>
+<li>T○○： lua本身甚麼都沒有啊...XD</li>
+<li>陳○○： 這些應該都還算是 interpreter 去跑的 script</li>
+<li>T○○： 那只有C#了</li>
+<li>陳○○： 好吧 感謝各位，有點晚了，驚擾到各位了，謝謝大家陪我尋找</li>
+<li>鄭○○： 把這些語言想一遍還蠻有意思的。</li>
+<li>盧○○： GCJ 根本要作古了吧.....http://gcc.gnu.org/ml/java/2013-01/msg00001.html</li>
+<li>盧○○： 上面提的幾個Scripting Lang備後幾乎都有interpreter在跑吧 = =&quot;, 用C#背後也是.net Framework架在CLI上跑，free lunch is over~</li>
+<li>陳○○： 所以我才說沒有要採用 VM 但可以接受 GC, 所以目前都沒看到其他合適的語言，目前還是 Vala 和 Go</li>
+<li>Unri Gooper 之前曾經想過有沒有能編譯成native machine code、同時又有優美的OOP語法、大量好用的standard lib的程式語言（或許這是原PO原文的重點）, 不過把這個問題拿去問大學教授，得到的答案是： 只有聽過三種能編譯出native code的語言，C、C++、（更正）Fortran</li>
+<li>不知道在這些老牌語言發展這麼多年之後，有沒有能編譯成native code的「新生」語言</li>
+<li>陳○○： 沒錯，我就有跟大大一樣的想法, 所以這些語言才生出來，只是前面幾位大大認為 GC 這點似乎就無法像 C++ 一樣了, 但小弟我認為這是可以接受的東西，我只是要個 native 的語言, 然後消除不好看的語法</li>
+<li>E○○： 繼續使用C語言中......XD</li>
+<li>鮑○○： http://www.mono-project.com/Mono_LLVM</li>
+<li>傅○○： 用Vala來寫GLib-based的程式很方便，內建GObject，D-Bus，Async method 等，同時又引入一些額外的feature，如Closure。然後，澄清一下，Vala並沒有GC的機制，它是用GObject裡的reference counter來管理物件﹙也可以不用，自己管理﹚，章節4.3。在Vala/Tutorial裡有章節﹙9, 10﹚在介紹Weak reference和Ownership的觀念，還有一篇文章特別來介紹Vala/ReferenceHandling。我個人也是覺得C++做太多事了，所以，比較喜歡C，一切掌握在自己手裡。但，想一想其實C也有一樣的問題，只是比C++少。Python是一個生產力很高的PL，但，不代表不需要coding standard。不管什麼PL都要，不然，多人合作開發會有很痛苦的經驗。用了幾個programming language﹙以下簡稱PL﹚後，認為美感來源不是PL，PL只是讓工程師用不同的思維來思考問題的方法。美感的來源是日後檢視原始碼時的公眾評價，以及工程師主觀的認定。最後，不管是C/C++，Java，Scala，Python，Ruby，Google Go，Java Script，PL好不好用，取決於用它的人，能不能接受PL背後的哲學，以及善用它built-in features。</li>
+<li>Y○○： 我個人也不喜歡C++...都只用C或是Java</li>
+<li>黃○○： 如果是你自己創造新語言，難保你不會步入c++的後塵。</li>
+<li>T○○： 其實昨天就說了 那些&quot;不好看&quot;的語法能不見就是因為有人幫忙把骯髒事情作掉了, 如果你需要控制這些東西 那就沒有好不好看的問題</li>
+<li>T○○： 我有看到 所以我才說vala用的是smart pointer</li>
+<li>T○○： 更嚴格來說 那其實就是java/c#等等使用的機制, 只是沒有一個bytecode層次的東西幫你再抽像化一次記憶體管理</li>
+<li>吳○○： Scheme.......XD</li>
+<li>S○○： 其實你一開始談到的需求是&quot;速度&quot;與&quot;OO&quot;，談到速度其實就是你在意程式的效能不是嗎？既然牽扯效能那麼你應該看的不只是語言本身，當然C/C++甚至是組合語言是目前執行速度最快的，但是你的執行硬體等級、作業系統調較、若有VM那麼VM本身的調較、系統程式的寫法(有沒用多執行緒寫法來加速)與架構，這四個面向是否有全面的兼顧到呢？千萬別只是單方面認為程式語言本身就是效能的保證，因為程式員本身的能力還是效能的最大因素，畢竟程式是人寫出來的。以上是個人小小的看法！</li>
+<li>林○○： bytecode層次的記憶體管理不曉得要管理到什麼層次, 如果要像 C 的變數存放, 呼叫DLL用的JNA其實就能做到(當然效能是代價), 但如果要管到function handle, c#有delegate, 而 JAVA 則必須要用 interface 包起來變成物件</li>
+<li>陳○○： 我的速度，大概就是指，可以用 native 的速度來執行，用 VM 去跑，速度下滑很多。我不是要求到兩種 native 在比速度，native 跟 native 比，應該是不會有 native 跟 vm 差得多</li>
+<li>陳○○： 還有我不希望又跳到硬體層面去思考，或許各位用太久的 C++，語法層次已經被 C++, 限制了，要作到同樣的事情，理應也能有很棒的語法。</li>
+<li>鄧○○： 就是習慣而已，C派跟J派已經吵很久了。C++卡在一個很尷尬的位置上。C++已經不能單從C++去看了，要連同STD，Boost，以及他的下游函式庫一起比較。這樣與其他後起之秀比起來才客觀。單看C++就只能看到二十到三十年前訂下來的規範。當然會覺得他落伍，只是我們是從二十到三十年後的角度去看。C 1972出世, C++ 1983出世, Java是1995出世.</li>
+<li>T○○： c++11早就普及了吧</li>
+<li>鄭○○： C++11 還沒&quot;那麼&quot;普及。</li>
+<li>陳○○： 至少 g++ 還沒預設</li>
+<li>鄭○○： 其實我最喜歡 Perl</li>
+<li>陳○○： 說到 Perl ，問一下 Perl 6 會上去主線嗎？還是打算一直當作不同的分支下去？？</li>
+<li>鄧○○： 去仔細看C++11多出來的那些語法.事實上沒那麼多人知道,會用,真的實用.</li>
+<li>鄭○○： Perl 6 和 Perl 5 相當不同，但 Perl 5 已經從 Perl 6 得到不少東西。我相它們會一直不同下去。</li>
+<li>鄭○○： 我知道最完整的 Perl 6 impl 是這個。 http://rakudo.org/</li>
+<li>陳○○： 原來還是會不同下去呀，聽說 perl6 的語法跟 ruby 很像，雖然我是還沒研究過啦，害我有點興趣了，不過這根本篇主旨無關</li>
+<li>盧○○： C11也多了很多「未普及」的語法(__generic這個例子最特別) 至於compiler flag,真要說的話，〝 The default, if no C language dialect options are given, is -std=gnu90 〞 FYI:gcc.gnu.org/onlinedocs/gcc/Standards.html 你沒告訴它足夠的資訊，它怎知要開哪個std？</li>
+<li>吳○○： Larry 還是唐鳳曾經說過「Ruby 就是 OO 版的 Perl5」Perl6 會引入一些 FPL 的特性，所以使用上，只是語法像 Perl5，概念上則會不同</li>
+<li>W○○： 如果要有 C++ 的 performance (no VM)，又能夠有好很多的語言設計，我想到的是 OCaml。這是 ML-family 的語言，也影響到 F# 的設計。</li>
+<li>至於 GHC 版的 Haskell 應該也是可以變得很 performant，但是我以前玩的經驗是 compiler 好像很慢 (對 lazy language 的 optimization 應該不易)。</li>
+<li>W○○： 我倒是比較喜歡type放後面, 那是另一種思考方式, 如果能推論型別的話, 不寫type更好.</li>
+<li>W○○： 如果會寫.net語言的話, c++11應該也很好入門, 很多特性都是一樣的.</li>
+<li>盧○○： Wei-Ting Cho: 詳細希望</li>
+<li>W○○： 自己看 cheat sheet 啊！網路上不是有很多了.... http://isocpp.org/blog/2012/12/c11-a-cheat-sheet-alex-sinyakov 每次想到c++有async&amp;get, 就覺得c++突然追上c#上, 還遠遠超過java...</li>
+<li>W○○： 其實就是這樣啊 XDD 我真的沒想要花時間說明什麼, 我也覺得想要知道什麼自己查就行了. 如果熟.net的人, 應該一看完cheat sheet後就能了解我說的, 當然我不是單指C++/CLI, 如果以C#來看也一樣. 像是std裡的新東西不就跟.net裡的一模一樣? 其他很多特性也都差不多.</li>
+<li>陳鍾誠 推 Node.js</li>
+<li>廖○○： 如果你3D引擎有興趣的話，可以把RenderWare拿來研究看看，他的程式碼就是C Base，沒有Class的包裝，但因為使用者大都為C++ Base，所以他就用C來模擬出C++物件導向的程式碼。</li>
+<li>P○○：推 LISP. 可以 compile 成 native code, 也有 OO. 6月16日 15:25來自手機 · 讚</li>
+<li>N○○： 的 D 語言，就是想要 C++ 的 native 優勢、又討厭 C++ 某些語言特性的人設計出來的。據我所知 Andrei Alexandrescu 也花了一些時間在上面。它也有自己的新問題，投入的人好像也很有限，我個人大概還是傾向於 C++11 吧。</li>
+<li>陳○○： 其實剛剛看了一下 Novus Chou 兄說的 D 語言，之前就有聽聞，原來真的就是想改造 C++ ，只是 wiki 上面關於他的問題似乎真的蠻多的，說真的，這個 D 語言似乎真的聽到我的問題了。</li>
+</ul>
+<p>我自己也常常覺得某些語言用得不夠順手，這幾乎是程式人都會碰到的一個問題，因此我從 Pascal, C, C++, Java, C#, R, JavaScript, Verilog 一路學過來， 發現其實各個語言都有其特色與好處。</p>
+<p>即便在這個網路發達的時代，要找一個完全符合自己要求的語言仍然是不容易的，或許我們只能適應「程式環境」的現況，從現有語言當中挑一個順手的語言，然後在 必需要講求速度時，再用像 C/C++ 等語言來加速了！</p>
+<p>【本文由陳鍾誠編採自 <a href="https://www.facebook.com/groups/programmerMagazine/">程式人雜誌社團</a> 的討論訊息】</p>
+<h1 id="程式與科學"><a href="#程式與科學">程式與科學</a></h1>
+<h2 id="以程式人的想法為油價公式除錯"><a href="#以程式人的想法為油價公式除錯">以程式人的想法為「油價公式」除錯</a></h2>
+<h3 id="引言"><a href="#引言">引言</a></h3>
+<p>近來、每當中油油價要調漲時，很多新聞都會報導或批評，例如我們常常會聽到以下說法：</p>
+<blockquote>
+<p>「甚麼都漲、就是薪水不漲」</p>
+</blockquote>
+<p>等等的抱怨。</p>
+<p>但是、您瞭解中油油價調漲的基準與方式是甚麼嗎？其中是否藏有某些您不知道的秘密呢？</p>
+<p>在本文中，我們將透過「程式人的專業角度」，為您解讀油價公式內所隱藏的秘密！</p>
+<p>但是在此之前，先讓我們介紹一下這個祕密背後所需要的「數學背景」。</p>
+<h3 id="遞歸關係"><a href="#遞歸關係">遞歸關係</a></h3>
+<p>在「資訊類科系」(Computer Science) 的課程當中，「離散數學」(Discrete Mathematics) 是一們重要的數學課， 其中有個「遞歸關係式」 (Recurrence Equation) 的數學函數，可以用來計算程式 (或演算法) 的執行效能， 但是在本文中，我們將改用「遞歸關係」來為「中油的油價公式」進行除錯，證明「中油的油價公式會造成幾何暴漲」。</p>
+<p>首先讓我們來看看甚麼是「遞歸關係」，先從一個比較簡單的例子開始：</p>
+<p>問題 1. 假如有隻母雞，從成年開始他每天下一個蛋，那麼在成年後第 n 天他總共下了幾個蛋呢？</p>
+<p>解答：關於這個問題，答案非常簡單，很多人一看就知道是 n 個蛋了。</p>
+<p>但是讓我們姑且用遞歸關係來寫出這個問題的數學式：</p>
+<pre><code>T(n) = T(n-1) + 1   
+T(1) = 1</code></pre>
+<p>為了求解這樣的算式，我們可以將 n 代入 1, 2, 3, ....，然後列表如下：</p>
+<pre><code>T(1) = 1
+T(2) = T(1) + 1
+T(3) = T(2) + 1
+T(4) = T(3) + 1
+.....
+T(n) = T(n-1) + 1</code></pre>
+<p>於是、您可以透過由上而下的計算方式，算出這個「遞歸關係」的解答，如下所示：</p>
+<pre><code>T(2) = T(1) + 1 = 1 + 1 = 2
+T(3) = T(2) + 1 = 2 + 1 = 3
+T(4) = T(3) + 1 = 3 + 1 = 4
+....</code></pre>
+<p>很直覺的，您應該會猜測 T(n) 的解答就是 n，這個猜測是沒錯的！</p>
+<p>上述遞歸關係的解答 T(n) 是個線性函數，也就是國中課程當中所說的「算術級數」。</p>
+<p>接著、讓我們再來看看一種會造成「幾何級數」的遞歸關係，同樣的，讓我們先看看下列問題：</p>
+<p>問題 2. 假如培養皿中有隻細菌、該細菌每分鐘分裂一次，請問在第 n 分鐘的時候，共有幾隻細菌？</p>
+<p>解答：我們可以將這個問題寫成以下的遞歸關係：</p>
+<pre><code>T(n) = 2 * T(n-1)  
+T(0) = 1</code></pre>
+<p>於是我們可以列出前幾項的結果如下：</p>
+<pre><code>T(0) = 1
+T(1) = 2*T(0) = 2 * 1 = 2
+T(2) = 2*T(1) = 2 * 2 = 4
+T(3) = 2*T(2) = 2 * 4 = 8
+....
+</code></pre>
+<p>如果您觀察一下上述列表，可能會猜測 <img src="../timg/T_n_2_n_5e436c34174ee0eecc91774ca33cb68f.jpg" /> ，這個猜測也是對的，這類的函數稱為幾何級數。</p>
+<p>著名的社會學家「馬爾薩斯」就在其名著「人口論」當中，提出了一個「廣為人知」的論點，其推論如下：</p>
+<blockquote>
+<p>糧食的增長函數是算術級數，而人口的增長函數是幾何幾數，幾何級數後期的增長會遠超過算術級數， 因此糧食最後必然會不足，於是「饑荒、戰爭與大規模的疾病」將會是不可避免的結果。</p>
+</blockquote>
+<p>另外、電腦在表示數字的時候，由於採用固定位元數的方式，因此都會有一些誤差，特別是像 <img src="../timg/_pi_4f08e3dba63dc6d40b22952c7a9dac6d.jpg" /> 這類的 無理數，更是無法用電腦精確表示，這些誤差如果經過某些遞歸關係放大之後，很可能會造成「差之毫釐、 失之千里」的結果。這類誤差放大的研究，甚至導致了學術上「混沌理論」的重要進展！</p>
+<h3 id="中油的油價調漲公式"><a href="#中油的油價調漲公式">中油的油價調漲公式</a></h3>
+<p>那麼、這些結果與中油的油價公式有何關係呢？讓我們來看看中油的油價，是如何調整的，在中油的 <a href="http://www.cpc.com.tw/big5/files/11_%E6%B5%AE%E5%8B%95%E6%B2%B9%E5%83%B9%E8%AA%BF%E6%95%B4%E6%A9%9F%E5%88%B6%E4%BD%9C%E6%A5%AD%E5%8E%9F%E5%89%87%E6%9B%B4%E6%96%B0990106.pdf">國內汽、柴油浮動油價調整機制作業原則</a> 這份 PDF 文件當中，有一段令人難以解讀的中文如下：</p>
+<ul>
+<li>一、 調價指標：Platts報導之 Dubai 及 Brent均價，分別以70 %及30%權重計算(70 % Dubai +30% Brent)，取小數二位，採四捨五入。</li>
+<li>二、 調價幅度：每週(週一至週五)調價幅度取「調價指標當週均價乘以當週匯率均價與調價指標前週均價乘以前週匯率均價比較」之80%變動幅度計算，取小數二位，採四捨五入。</li>
+<li>三、 調價金額：(一)依「92 無鉛汽油及高級柴油還原依機制計算應調整價格之稅前批售價格」乘以「調價幅度」，分別計算 92無鉛汽油及高級柴油稅前批售價格，再加上稅費換算 零售價(取小數一位，採四捨五入)，據以計算調價金額。</li>
+</ul>
+<p>由於這段話實在令人難懂，所以讓我們稍為進行一下數學定義，以數學的方式解讀這段「自然語言」，解讀前首先讓我們定義幾個變數：</p>
+<ul>
+<li>P = 本期價格 = P(t)</li>
+<li>P' = 上期價格 = P(t-1)</li>
+<li>C = 本期國際均價 = C(t)</li>
+<li>C' = 上期國際均價 = C(t-1)</li>
+</ul>
+<p>以上的的國際均價 C 即為第一項所稱之調價指標。根據上述定義，則調價幅度的數學式解讀如下：</p>
+<blockquote>
+<p>(P-P')/P' = (C -C')/C' * 0.8</p>
+</blockquote>
+<p>也就是</p>
+<blockquote>
+<p>調價幅度 = (本期價格 P - 上期價格 P')/上期價格 P' = (當期調價指標 C - 前期調價指標 C')/前期調價指標 C' * 80%</p>
+</blockquote>
+<p>將上述數學式移項調整一下，可得下列數學式：</p>
+<blockquote>
+<p>P = P' + P' * (C-C')/C' * 0.8</p>
+</blockquote>
+<p>假如那段「令人難以解讀的中文」之數學式真的如以上所解讀的，那麼我們就可以透過電腦計算油價，並且可以進行模擬。</p>
+<h3 id="以程式模擬漲跌過程"><a href="#以程式模擬漲跌過程">以程式模擬漲跌過程</a></h3>
+<p>於是我寫了一個簡單的 C 語言程式以變模擬整個油價的調整過程，在程式中我們讓油價以正弦函數 2 + sin(i) 的方式震盪， 這個正弦函數是一個必然介於 1 到 3 之間的函數。但是、模擬的結果肯定會讓人嚇一大跳：</p>
+<pre class="sourceCode CPP"><code class="sourceCode cpp"><span class="ot">#include &lt;stdio.h&gt;</span>
+<span class="ot">#include &lt;math.h&gt;</span>
+
+<span class="dt">double</span> gen(<span class="dt">int</span> n) {
+    <span class="dt">double</span> p=<span class="fl">1.0</span>, p1=<span class="fl">1.0</span>, c=<span class="fl">1.0</span>, c1=<span class="fl">1.0</span>;
+    <span class="dt">int</span> t;
+    <span class="kw">for</span> (t=<span class="dv">1</span>; t&lt;=n; t++) {
+        c = <span class="fl">2.0</span>+sin(t);
+        p = ((c-c1)/c1)*<span class="fl">0.8</span>*p1 + p1;
+        printf(<span class="st">&quot;t=%d : c=%6.2f p=%6.2f</span><span class="ch">\n</span><span class="st">&quot;</span>, t, c, p);
+        c1 = c;
+        p1 = p;
+    }
+}
+
+<span class="dt">int</span> main() {
+    gen(<span class="dv">1000</span>);
+}</code></pre>
+<p>雖然在模擬過程當中，國際油價始終在 1 元到 3 元之間震盪，但是經過了很多期之後，整個國內油價還是暴漲， 從最初 2.47 元 (比國際油價 2.84 元還低)，到 500 期時上漲到 397.04 元 (此時國際油價為 1.53 元)，然後 到了 1000 期時更暴漲到 174551.80 元 (十七萬四千多元，此時國際油價為 2.83 元)。</p>
+<p>執行方法與指令</p>
+<pre><code>D:\Dropbox\Public\pmag\201307\code&gt;gcc oil.c -o oil
+
+D:\Dropbox\Public\pmag\201307\code&gt;oil &gt; oil.lst</code></pre>
+<p>執行結果摘錄</p>
+<pre><code>t=1 : c=  2.84 p=  2.47
+t=2 : c=  2.91 p=  2.52
+t=3 : c=  2.14 p=  1.99
+t=4 : c=  1.24 p=  1.32
+t=5 : c=  1.04 p=  1.15
+t=6 : c=  1.72 p=  1.75
+t=7 : c=  2.66 p=  2.51
+t=8 : c=  2.99 p=  2.76
+t=9 : c=  2.41 p=  2.34
+t=10 : c=  1.46 p=  1.59
+...
+t=500 : c=  1.53 p=397.04
+t=501 : c=  1.00 p=287.44
+t=502 : c=  1.39 p=376.22
+t=503 : c=  2.34 p=581.21
+t=504 : c=  2.97 p=707.73
+t=505 : c=  2.71 p=658.28
+t=506 : c=  1.80 p=480.40
+t=507 : c=  1.07 p=324.10
+t=508 : c=  1.19 p=354.96
+t=509 : c=  2.06 p=561.54
+t=510 : c=  2.87 p=738.31
+...
+t=990 : c=  1.61 p=98834.43
+t=991 : c=  1.01 p=69539.87
+t=992 : c=  1.32 p=86448.98
+t=993 : c=  2.25 p=135085.66
+t=994 : c=  2.95 p=168513.04
+t=995 : c=  2.77 p=160415.99
+t=996 : c=  1.89 p=119299.47
+t=997 : c=  1.10 p=79653.27
+t=998 : c=  1.14 p=82110.42
+t=999 : c=  1.97 p=129690.29
+t=1000 : c=  2.83 p=174551.80</code></pre>
+<h3 id="油價公式的問題"><a href="#油價公式的問題">油價公式的問題</a></h3>
+<p>這個模擬過程告訴我們，中油的油價調整公式的設計，會有某種誤差放大效果，而且這種放大效果 並非上下一致的，而是向上放大的情況較嚴重，這與達爾文進化論中的「適者生存、而且會產生更多後代」 有點類似，都是一種隨機性的幾何上漲的過程，因此才會造成後期的暴漲。</p>
+<p>這個現象並非我所發現的，而是我在 MR. OTTER 在「<a href="http://mrottersays.wordpress.com/">歐特先生本性難移</a>」網誌的 <a href="http://mrottersays.wordpress.com/2013/01/10/%E4%B8%AD%E6%B2%B9%E6%B2%B9%E5%83%B9%E5%85%AC%E5%BC%8F%EF%BC%8C%E5%89%B5%E9%80%A0%E6%B0%B8%E9%81%A0%E8%B7%8C%E4%B8%8D%E5%9B%9E%E5%8E%BB%E7%9A%84%E6%B2%B9%E5%83%B9/">中油油價公式，創造永遠跌不回去的油價</a> 一文中所看到的， 我只是將該文用程式人的方式重新解讀一遍而已！</p>
+<p>透過這個油價的範例，相信您應該可以看到「遞歸運算式」千變萬化的一面，在設計制度時也會更小心一些， 以免不小心落入幾何暴漲的陷阱，造成毀滅性的災難啊！</p>
+<h3 id="疑問與解決辦法"><a href="#疑問與解決辦法">疑問與解決辦法</a></h3>
+<p>在上述的油價調整公式之設計中，調價幅度以 80% 計算，似乎是為了讓油價不要太快上漲或下跌，以免衝擊太大，但事實上這個方式反而是 造成油價暴漲的元凶，如果將調價幅度改以 100% 計算，反而不容易有暴漲的問題。</p>
+<p>為甚麼呢？讓我們舉一個簡單的例子，假設有某次波動，漲跌各一次，先漲了 100% 再跌了 50%，這時價格應該是 200% * 50% = 2 * 0.5 = 1， 也就是價格會回到原點，但是如果我們將調價幅度以 80% 計算，那麼就會變成 1.8 * 0.6 = 1.08，並沒有回到原價，而是漲了 8%，所以 這個看來是好意的 80% 調價幅度，其實隱藏了爆漲的種子，一但經過很多輪的漲跌之後，就可能造成國際價格不變，但國內價格卻漲翻天的情況。</p>
+<p>不過如果國際油價是一路慢慢上漲或下跌，而沒有震盪情況的話，那麼中油油價只會一路慢慢跟隨，而不會有漲翻天的情況！</p>
+<p>但是、這個公式每週都至少用一次，那從開始實施浮動油價之後，應該也有幾百次的調整了，那麼為何一直沒有發現暴漲現象呢？ 這個問題根據我的猜測，很可能是因為 <a href="http://www.cpc.com.tw/big5/files/11_%E6%B5%AE%E5%8B%95%E6%B2%B9%E5%83%B9%E8%AA%BF%E6%95%B4%E6%A9%9F%E5%88%B6%E4%BD%9C%E6%A5%AD%E5%8E%9F%E5%89%87%E6%9B%B4%E6%96%B0990106.pdf">國內汽、柴油浮動油價調整機制作業原則</a> 這份 PDF 文件的後半部，還有一條重要的規定如下：</p>
+<ul>
+<li>七、各週調整後 92無鉛汽油、高級柴油零售價換算稅前批售價格，以亞鄰競爭國(日本、韓國、香港、新加坡)當週稅前價之最低價做為浮動油價調整的上限。</li>
+</ul>
+<p>由於被這個第七條壓住了，所以油價並沒有暴漲，但是這樣的做法顯然很沒道理，先設計一個有問題會暴漲的公式，然後再 用一個額外的規定壓住它，這真的是非常奇怪不合理的想法！</p>
+<p>事實上，採用「遞歸數學式」有時很難控制得很好，如果真的要只是要緩和上漲與下跌的幅度，那不如採用「移動平均線」的方式，例如根據 前 5 期國際油價平均值，加上一定比例的利潤率 (例如 5%) 做為油價，就不會有這種幾何暴漲的現象了。</p>
+<p>如果用數學表示這種鎖定國際油價移動平均線的方法，可以用下列「沒有遞歸」的數學式表示：</p>
+<blockquote>
+<p>P(t) = 1.05 * [C(t-1)+C(t-2)+C(t-3)+C(t-4)+C(t-5)] / 5</p>
+</blockquote>
+<p>由於上述算式的右端沒有 P(t-1) 之類的函數存在，而且 C(t-i) 的計算也與國內油價 P(t) 無關，如此就不會因為「回饋效應」而造成幾何暴漲了！</p>
+<p>當然，假如我們對上述 <a href="http://www.cpc.com.tw/big5/files/11_%E6%B5%AE%E5%8B%95%E6%B2%B9%E5%83%B9%E8%AA%BF%E6%95%B4%E6%A9%9F%E5%88%B6%E4%BD%9C%E6%A5%AD%E5%8E%9F%E5%89%87%E6%9B%B4%E6%96%B0990106.pdf">國內汽、柴油浮動油價調整機制作業原則</a> 的「中文」理解錯誤的話，那本文的推論就可能是錯誤的。因此我們希望中油 與相關單位能夠澄清一下，最好能將該文的「遞歸數學式」寫出來，讓大家都能看得更清楚明白啊！</p>
+<h3 id="參考文獻-3"><a href="#參考文獻-3">參考文獻</a></h3>
+<ul>
+<li><a href="http://mrottersays.wordpress.com/2013/01/10/%E4%B8%AD%E6%B2%B9%E6%B2%B9%E5%83%B9%E5%85%AC%E5%BC%8F%EF%BC%8C%E5%89%B5%E9%80%A0%E6%B0%B8%E9%81%A0%E8%B7%8C%E4%B8%8D%E5%9B%9E%E5%8E%BB%E7%9A%84%E6%B2%B9%E5%83%B9/">中油油價公式，創造永遠跌不回去的油價</a>, 2013 年 01 月 10 日 BY MR. OTTER</li>
+<li><a href="http://mrottersays.wordpress.com/">歐特先生本性難移</a> 網誌</li>
+<li><a href="http://www.cpc.com.tw/big5/files/11_%E6%B5%AE%E5%8B%95%E6%B2%B9%E5%83%B9%E8%AA%BF%E6%95%B4%E6%A9%9F%E5%88%B6%E4%BD%9C%E6%A5%AD%E5%8E%9F%E5%89%87%E6%9B%B4%E6%96%B0990106.pdf">國內汽、柴油浮動油價調整機制作業原則</a>, (PDF) 99.01.06 修正實施</li>
+<li><a href="http://www.cpc.com.tw/big5_BD/tmtd/floatPrice/showfloatprice5_990101C.asp?pno=113#t">中油網站：首頁 / 油品價目 / 浮動油價調整機制</a></li>
+<li><a href="http://udn.com/NEWS/LIFE/LIF1/7841233.shtml">消基會質疑 浮動油價公式有瑕疵</a> , 【聯合報╱記者許俊偉／台北報導】</li>
+</ul>
+<h1 id="程式人文集"><a href="#程式人文集">程式人文集</a></h1>
+<h2 id="arduino入門教學7-使用七段顯示器製作倒數功能-作者cooper-maa"><a href="#arduino入門教學7-使用七段顯示器製作倒數功能-作者cooper-maa">Arduino入門教學(7) – 使用七段顯示器製作倒數功能 (作者：Cooper Maa)</a></h2>
+<h3 id="實驗目的"><a href="#實驗目的">實驗目的</a></h3>
+<p>控制一顆七段顯示器，在七段顯示器上依序顯示從 9 到 0 的數字，製作數字倒數的效果。</p>
+<h3 id="七段顯示器簡介"><a href="#七段顯示器簡介">七段顯示器簡介</a></h3>
+<p>七段顯示器是用來顯示數字的常用電子元件，在很多地方都可以看到它的身影，例如電子時鐘、溫度顯示器和各種儀表。它外型如下圖，背面一共有10 支接腳：</p>
+<div class="figure">
+<img src="../img/7seg1.png" alt="七段顯示器元件" /><p class="caption">七段顯示器元件</p>
+</div>
+<ul>
+<li>圖片來源: 露天拍賣 -- <a href="http://goods.ruten.com.tw/item/show?21011217374852">http://goods.ruten.com.tw/item/show?21011217374852</a></li>
+</ul>
+<p>七段顯示器分成共陽極和共陰極兩種，不管是哪一種，內部構造都是由 8 個 LED 發光二極體所組成，其中七個是筆劃，另外一個是小數點，如下圖所示，依順時針方向分別為 a, b, c, d, e, f, g 以及小數點 dp (decimal point):</p>
+<div class="figure">
+<img src="../img/7segBar.png" />
+</div>
+<p>要產生數字，方法是點亮指定的 LED。例如要產生數字 0，便點亮 a, b, c, d, e, f 等節段；要產生數字 1，便點亮 b, c 等節段；要產生數字 2，便點亮 a, b, d, e, g 等節段，依此類推。以共陰極而言，0 到 9 這十個阿拉伯數字與各節段的對應表如下：</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">顯示數字</th>
+<th align="left">dp</th>
+<th align="left">a</th>
+<th align="left">b</th>
+<th align="left">c</th>
+<th align="left">d</th>
+<th align="left">e</th>
+<th align="left">f</th>
+<th align="left">g</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+<tr class="odd">
+<td align="left">2</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">4</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">5</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">6</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">7</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+<tr class="odd">
+<td align="left">8</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">9</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<p>如果使用的是共陽極的七段顯示器，上面表格中所有的 1 都要換成 0， 所有的 0 都要換成 1。8 個 LED 連接到背面的接腳，我們為背面 10 接腳作個編號比較好記憶，a, b, c, d, e, f, g, dp 與 10 支接腳的關係圖如下:</p>
+<div class="figure">
+<img src="../img/7segBar2.png" alt="圖片來源：.NET Micro Framework – More blinking LEDs" /><p class="caption">圖片來源：.NET Micro Framework – More blinking LEDs</p>
+</div>
+<p>上圖是共陰極型的七段顯示器，3, 8 接腳要接到 GND，如果是共陽極則 3, 8 接腳要接到 +5V。</p>
+<h3 id="材料"><a href="#材料">材料</a></h3>
+<ul>
+<li>麵包板 x 1</li>
+<li>Arduino 主板 x 1</li>
+<li>七段顯示器(共陽極或共陰極皆可) x 1</li>
+<li>220 ohm 電阻 x 8</li>
+<li>單心線 x N</li>
+<li>接線</li>
+</ul>
+<p>將七段顯示器 3, 8 腳接到 GND (本例使用共陰極，若為共陽極請將 3, 8 腳接到 +5V) 查表將 Arduino 2, 3, 4, 5, 6, 7, 8 接到七段顯示器對應的腳位，並在每支接腳上串接一顆 220 ohm 電阻</p>
+<div class="figure">
+<img src="../img/7segBoard.png" />
+</div>
+<p>下表為 Arduino 與七段顯示器的腳位對應表：</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Arduino 腳位</th>
+<th align="center">七段示顯器腳位 (筆劃)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2</td>
+<td align="center">7 (A)</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="center">6 (B)</td>
+</tr>
+<tr class="odd">
+<td align="left">4</td>
+<td align="center">4 (C)</td>
+</tr>
+<tr class="even">
+<td align="left">5</td>
+<td align="center">2 (D)</td>
+</tr>
+<tr class="odd">
+<td align="left">6</td>
+<td align="center">1 (E)</td>
+</tr>
+<tr class="even">
+<td align="left">7</td>
+<td align="center">9 (F)</td>
+</tr>
+<tr class="odd">
+<td align="left">8</td>
+<td align="center">10 (G)</td>
+</tr>
+<tr class="even">
+<td align="left">9</td>
+<td align="center">5 (DP)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="電路圖"><a href="#電路圖">電路圖</a></h3>
+<div class="figure">
+<img src="../img/7segCircuit.png" />
+</div>
+<h3 id="程式碼"><a href="#程式碼">程式碼</a></h3>
+<p>版本一: 程式比較長，但比較容易懂(_7Segment.pde)</p>
+<pre class="sourceCode CPP"><code class="sourceCode cpp">
+<span class="co">// 七段顯示器製作倒數功能 (v1)</span>
+
+<span class="dt">void</span> setup() {               
+  pinMode(<span class="dv">2</span>, OUTPUT);  
+  pinMode(<span class="dv">3</span>, OUTPUT);
+  pinMode(<span class="dv">4</span>, OUTPUT);
+  pinMode(<span class="dv">5</span>, OUTPUT);
+  pinMode(<span class="dv">6</span>, OUTPUT);
+  pinMode(<span class="dv">7</span>, OUTPUT);
+  pinMode(<span class="dv">8</span>, OUTPUT);
+  pinMode(<span class="dv">9</span>, OUTPUT);
+  digitalWrite(<span class="dv">9</span>, <span class="dv">0</span>);  <span class="co">// 關閉小數點</span>
+}
+
+<span class="dt">void</span> loop() {
+  <span class="co">// 顯示數字 &#39;9&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;8&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;7&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">0</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;6&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;5&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;4&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;3&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;2&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;1&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">0</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;0&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">0</span>);  
+  <span class="co">// 暫停 4 秒鐘</span>
+  delay(<span class="dv">4000</span>);
+}</code></pre>
+<p>版本二：簡化程式的寫法(_7SegmentV2.pde)</p>
+<pre class="sourceCode CPP"><code class="sourceCode cpp">
+<span class="co">// 七段顯示器製作倒數功能 (v2)</span>
+
+<span class="co">// define the LED digit patters, from 0 - 9</span>
+<span class="co">// 1 = LED on, 0 = LED off, in this order:</span>
+<span class="co">//                    Arduino pin: 2,3,4,5,6,7,8 (Mapping a,b,c,d,e,f,g of Seven-Segment LED)</span>
+byte seven_seg_digits[<span class="dv">10</span>][<span class="dv">7</span>] = { { <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span> },  <span class="co">// = 0</span>
+                                 { <span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span> },  <span class="co">// = 1</span>
+                                 { <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span> },  <span class="co">// = 2</span>
+                                 { <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span> },  <span class="co">// = 3</span>
+                                 { <span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span> },  <span class="co">// = 4</span>
+                                 { <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span> },  <span class="co">// = 5</span>
+                                 { <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span> },  <span class="co">// = 6</span>
+                                 { <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span> },  <span class="co">// = 7</span>
+                                 { <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span> },  <span class="co">// = 8</span>
+                                 { <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span> }   <span class="co">// = 9</span>
+                             };
+
+<span class="dt">void</span> setup() {               
+  pinMode(<span class="dv">2</span>, OUTPUT);  
+  pinMode(<span class="dv">3</span>, OUTPUT);
+  pinMode(<span class="dv">4</span>, OUTPUT);
+  pinMode(<span class="dv">5</span>, OUTPUT);
+  pinMode(<span class="dv">6</span>, OUTPUT);
+  pinMode(<span class="dv">7</span>, OUTPUT);
+  pinMode(<span class="dv">8</span>, OUTPUT);
+  pinMode(<span class="dv">9</span>, OUTPUT);
+  digitalWrite(<span class="dv">9</span>, <span class="dv">0</span>);  <span class="co">// 關閉小數點</span>
+}
+
+<span class="co">// 在七段顯示器上顯示指定的一個數字 </span>
+<span class="dt">void</span> sevenSegWrite(byte digit) {
+  byte pin = <span class="dv">2</span>;
+  <span class="kw">for</span> (byte seg = <span class="dv">0</span>; seg &lt; <span class="dv">7</span>; ++seg) {
+    digitalWrite(pin, seven_seg_digits[digit][seg]);
+    ++pin;
+  }
+}
+
+<span class="dt">void</span> loop() {
+  <span class="kw">for</span> (byte digit = <span class="dv">10</span>; digit &gt; <span class="dv">0</span>; --digit) {
+    delay(<span class="dv">1000</span>);
+    sevenSegWrite(digit - <span class="dv">1</span>); 
+  }
+  
+ <span class="co">// 暫停 4 秒鐘</span>
+ delay(<span class="dv">4000</span>);
+}</code></pre>
+<h3 id="範例照片影片"><a href="#範例照片影片">範例照片／影片</a></h3>
+<ul>
+<li>Arduino 筆記 - Lab7 使用七段顯示器製作倒數功能
+<ul>
+<li><a href="http://www.youtube.com/watch?v=cL9IjwIt9-g">http://www.youtube.com/watch?v=cL9IjwIt9-g</a></li>
+</ul></li>
+</ul>
+<h3 id="動動腦"><a href="#動動腦">動動腦</a></h3>
+<p>接上一顆可變電阻，利用可變電阻來控制七段顯示器上的數字。提醒：使用 analogRead() 讀進來的可變電阻數值介於 0 到 1023，可以利用 <a href="http://arduino.cc/en/Reference/Map">map()</a> 函式將 0 到 1023 的數值對應為 0 到 9 之間的數值，然後再將數字顯示在七段顯示器上。</p>
+<h3 id="延伸閱讀"><a href="#延伸閱讀">延伸閱讀</a></h3>
+<ul>
+<li><a href="http://www.theelectronicshobbyist.com/blog/2010/02/controlling-a-seven-segment-display-using-arduino-part-1-of-4/">Controlling a Seven-Segment Display Using Arduino</a></li>
+<li><a href="http://geekswithblogs.net/kobush/archive/2010/08/21/netmf_more_blinking_leds.aspx">.NET Micro Framework – More blinking LEDs</a></li>
+</ul>
+<h2 id="javascript-7-字串處理與正規表達式-作者陳鍾誠"><a href="#javascript-7-字串處理與正規表達式-作者陳鍾誠">JavaScript (7) – 字串處理與正規表達式 (作者：陳鍾誠)</a></h2>
+<p>由於 JavaScript 是瀏覽器的內建語言，因此常常需要處理網頁中的字串。在本文中，我們將介紹如何用 JavaScript 進行字串處理， 並說明字串處理的強大工具 -- 「正規表達式」 (Regular Expression) 的用法。</p>
+<h3 id="javascript-的字串物件"><a href="#javascript-的字串物件">JavaScript 的字串物件</a></h3>
+<p>JavaScript 的字串物件本身，就包含了許多常用的字串處理函數，像是大小寫轉換、比對、取代、切割字串等等，而這些函數當中， 有些甚至支援了「正規表達式」，像是 match (比對)、replace (取代)、search (搜尋)、split(分割) 等等。</p>
+<p>以下表格列出了 JavaScript 字串物件當中常用的成員與函數之用法。</p>
+<p>String 物件的成員與函數</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">屬性/函數</th>
+<th align="left">說明</th>
+<th align="left">範例</th>
+<th align="left">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">constructor</td>
+<td align="left">傳回建構函數</td>
+<td align="left">&quot;Hello&quot;.constructor</td>
+<td align="left">function String() { [native code] }</td>
+</tr>
+<tr class="even">
+<td align="left">length</td>
+<td align="left">傳回長度</td>
+<td align="left">&quot;Hello&quot;.length</td>
+<td align="left">function String() { [native code] }</td>
+</tr>
+<tr class="odd">
+<td align="left">prototype</td>
+<td align="left">傳回原型</td>
+<td align="left">&quot;Hello&quot;.prototype</td>
+<td align="left">undefined</td>
+</tr>
+<tr class="even">
+<td align="left">charAt()</td>
+<td align="left">傳回第 i 個字元</td>
+<td align="left">&quot;Hello&quot;.charAt(1)</td>
+<td align="left">e</td>
+</tr>
+<tr class="odd">
+<td align="left">charCodeAt()</td>
+<td align="left">傳回第 i 個字元的 Unicode</td>
+<td align="left">&quot;Hello&quot;.charCodeAt(1)</td>
+<td align="left">101</td>
+</tr>
+<tr class="even">
+<td align="left">concat()</td>
+<td align="left">連接兩個以上的字串</td>
+<td align="left">&quot;Hello&quot;.concat(&quot; World&quot;, &quot; !&quot;)</td>
+<td align="left">Hello World !</td>
+</tr>
+<tr class="odd">
+<td align="left">fromCharCode()</td>
+<td align="left">將 Unicode 代碼轉為字元</td>
+<td align="left">&quot;Hello&quot;.fromCharCode(101, 102)</td>
+<td align="left">ef</td>
+</tr>
+<tr class="even">
+<td align="left">indexOf()</td>
+<td align="left">傳回子字串的位置</td>
+<td align="left">&quot;Hello&quot;.indexOf(&quot;el&quot;)</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">lastIndexOf()</td>
+<td align="left">傳回子字串的位置 (倒著掃瞄)</td>
+<td align="left">&quot;Hello&quot;.lastIndexof(&quot;l&quot;)</td>
+<td align="left">3</td>
+</tr>
+<tr class="even">
+<td align="left">match()</td>
+<td align="left">搜尋正規表達式</td>
+<td align="left">&quot;Hello&quot;.match(&quot;[aeiou]&quot;)</td>
+<td align="left">2</td>
+</tr>
+<tr class="odd">
+<td align="left">replace()</td>
+<td align="left">取代正規表達式</td>
+<td align="left">&quot;Hello&quot;.replace(&quot;l&quot;, &quot;L&quot;)</td>
+<td align="left">HeLlo</td>
+</tr>
+<tr class="even">
+<td align="left">search()</td>
+<td align="left">搜尋正規表達式</td>
+<td align="left">&quot;Hello&quot;.search(&quot;[aeiou]&quot;)</td>
+<td align="left">e</td>
+</tr>
+<tr class="odd">
+<td align="left">split()</td>
+<td align="left">分割字串</td>
+<td align="left">&quot;Hello&quot;.split(&quot;e&quot;)</td>
+<td align="left">H,llo</td>
+</tr>
+<tr class="even">
+<td align="left">slice()</td>
+<td align="left">切出字串</td>
+<td align="left">&quot;Hello&quot;.slice(-3)</td>
+<td align="left">llo</td>
+</tr>
+<tr class="odd">
+<td align="left">substr()</td>
+<td align="left">取出 from 長 len 的子字串</td>
+<td align="left">&quot;Hello&quot;.substr(2,2)</td>
+<td align="left">ll</td>
+</tr>
+<tr class="even">
+<td align="left">substring()</td>
+<td align="left">取出 from 到 to 的子字串</td>
+<td align="left">&quot;Hello&quot;.substring(2,4)</td>
+<td align="left">llo</td>
+</tr>
+<tr class="odd">
+<td align="left">toLowerCase()</td>
+<td align="left">轉為小寫</td>
+<td align="left">&quot;Hello&quot;.toLowerCase()</td>
+<td align="left">hello</td>
+</tr>
+<tr class="even">
+<td align="left">toUpperCase()</td>
+<td align="left">轉為大寫</td>
+<td align="left">&quot;Hello&quot;.toUpperCase()</td>
+<td align="left">HELLO</td>
+</tr>
+<tr class="odd">
+<td align="left">valueOf()</td>
+<td align="left">傳回原型值</td>
+<td align="left">&quot;Hello&quot;.valueOf()</td>
+<td align="left">Hello</td>
+</tr>
+</tbody>
+</table>
+<p>程式範例：string.js</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> s = <span class="st">&quot;Hello&quot;</span>;
+log = <span class="ot">console</span>.<span class="fu">log</span>;
+<span class="fu">log</span>(<span class="st">&quot;s = &quot;</span>+s);
+<span class="fu">log</span>(<span class="st">&quot;s.constructor = &quot;</span>+<span class="ot">s</span>.<span class="fu">constructor</span>);
+<span class="fu">log</span>(<span class="st">&quot;s.length = &quot;</span>+<span class="ot">s</span>.<span class="fu">length</span>);
+<span class="fu">log</span>(<span class="st">&quot;s.prototype = &quot;</span>+<span class="ot">s</span>.<span class="fu">prototype</span>);
+<span class="fu">log</span>(<span class="st">&quot;s.charAt(1) = &quot;</span>+<span class="ot">s</span>.<span class="fu">charAt</span>(<span class="dv">1</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.charCodeAt(1) = &quot;</span>+<span class="ot">s</span>.<span class="fu">charCodeAt</span>(<span class="dv">1</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.concat(&#39; World&#39;, &#39; !&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">concat</span>(<span class="st">&#39; World&#39;</span>, <span class="st">&#39; !&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;String.fromCharCode(72,69,76,76,79) = &quot;</span>+<span class="ot">String</span>.<span class="fu">fromCharCode</span>(<span class="dv">72</span>,<span class="dv">69</span>,<span class="dv">76</span>,<span class="dv">76</span>,<span class="dv">79</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.indexOf(&#39;el&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">indexOf</span>(<span class="st">&#39;el&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.lastIndexOf(&#39;l&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">lastIndexOf</span>(<span class="st">&#39;l&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.match(&#39;[aeiou]&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">match</span>(<span class="st">&#39;[aeiou]&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.replace(&#39;l&#39;, &#39;L&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">replace</span>(<span class="st">&#39;l&#39;</span>, <span class="st">&#39;L&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.search(&#39;[aeiou]&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">search</span>(<span class="st">&#39;[aeiou]&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.slice(2,4) = &quot;</span>+<span class="ot">s</span>.<span class="fu">slice</span>(<span class="dv">2</span>,<span class="dv">4</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.slice(2) = &quot;</span>+<span class="ot">s</span>.<span class="fu">slice</span>(<span class="dv">2</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.slice(-3) = &quot;</span>+<span class="ot">s</span>.<span class="fu">slice</span>(-<span class="dv">3</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.split(&#39;e&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">split</span>(<span class="st">&#39;e&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.substr(2,2) = &quot;</span>+<span class="ot">s</span>.<span class="fu">substr</span>(<span class="dv">2</span>,<span class="dv">2</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.substring(2,4) = &quot;</span>+<span class="ot">s</span>.<span class="fu">substr</span>(<span class="dv">2</span>,<span class="dv">4</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.toLowerCase() = &quot;</span>+<span class="ot">s</span>.<span class="fu">toLowerCase</span>());
+<span class="fu">log</span>(<span class="st">&quot;s.toUpperCase() = &quot;</span>+<span class="ot">s</span>.<span class="fu">toUpperCase</span>());
+<span class="fu">log</span>(<span class="st">&quot;s.valueOf() = &quot;</span>+<span class="ot">s</span>.<span class="fu">valueOf</span>());</code></pre>
+<p>執行結果</p>
+<pre><code>D:\code\node&gt;node string.js
+s = Hello
+s.constructor = function String() { [native code] }
+s.length = 5
+s.prototype = undefined
+s.charAt(1) = e
+s.charCodeAt(1) = 101
+s.concat(&#39; World&#39;, &#39; !&#39;) = Hello World !
+String.fromCharCode(72,69,76,76,79) = HELLO
+s.indexOf(&#39;el&#39;) = 1
+s.lastIndexOf(&#39;l&#39;) = 3
+s.match(&#39;[aeiou]&#39;) = e
+s.replace(&#39;l&#39;, &#39;L&#39;) = HeLlo
+s.search(&#39;[aeiou]&#39;) = 1
+s.slice(2,4) = ll
+s.slice(2) = llo
+s.slice(-3) = llo
+s.split(&#39;e&#39;) = H,llo
+s.substr(2,2) = ll
+s.substring(2,4) = llo
+s.toLowerCase() = hello
+s.toUpperCase() = HELLO
+s.valueOf() = Hello
+</code></pre>
+<h3 id="正規表達式"><a href="#正規表達式">正規表達式</a></h3>
+<p>在以上的範例中，我們使用了簡易的正規表達式，像是 s.match('[aeiou]') 中的 [aeiou] ，代表比對 aeiou 中的何一個字。</p>
+<p>對於沒學過正規表達式的人來說，常常會覺得「正規表達式」就像本天書一樣，但事實上正規表達式並不會太難看懂！以下先讓我們 介紹一下正規表達式的語法，然後再用 Node.js + JavaScript 進行測試。</p>
+<p>Regular Expression 的「Regular」一般被譯為「正則」、「正規」、「常規」。此處的「Regular」即是「規則」、「規律」的意思， Regular Expression 即「描述某種規則的表達式」之意，有時也稱為 Regular Grammar。</p>
+<p>Perl 最早是引入正規表達式的語言，因此早期的 CGI 程式常使用 Perl 撰寫，後來很多語言都陸續引入了正規表達式，像是 Python, Ruby, JavaScript 等，這些語言讓正規表達式成為標準語法的一部分，因此使用起來非常方便。</p>
+<p>也有一些語言以函式庫的形式納入正規表達式，但是沒有內建在語法當中，像是 C#, Java, C 等等，在這類的語言當中，使用 正規表達式會稍微繁瑣一些。</p>
+<p>假如我們要用正規表達式描述整數數字，那麼，可以用 <code>[0123456789]+</code> 這個表達式，其中的中括號 <code>[ 與 ]</code> 會框住一群 字元，用來代表字元群，加號 + 所代表的是重複 1 次或以上，因此，該表達式就可以描述像 3702451 這樣的數字。 然而，在正則表達式中，為了更方便撰寫，於是允許用 [0-9]+ 這樣的式子表達同樣的概念，其中的 0-9 其實就 代表了 0123456789 等字元，這是一種簡便的縮寫法。甚至，可以再度縮短後以 \d+ 代表，其中的 \d 就代表 數字所成的字元集合。</p>
+<p>利用範例學習是理解正規表達式的有效方法，以下表格就顯示了一些具有代表性的正規表達式範例。</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">語法</th>
+<th align="left">正規表達式</th>
+<th align="left">範例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">整數</td>
+<td align="left">[0-9]+</td>
+<td align="left">3704</td>
+</tr>
+<tr class="even">
+<td align="left">有小數點的實數</td>
+<td align="left">[0-9]+.[0-9]+</td>
+<td align="left">7.93</td>
+</tr>
+<tr class="odd">
+<td align="left">英文詞彙</td>
+<td align="left">[A-Za-z]+</td>
+<td align="left">Code</td>
+</tr>
+<tr class="even">
+<td align="left">變數名稱</td>
+<td align="left">[A-Za-z_][A-Za-z0-9_]*</td>
+<td align="left">_counter</td>
+</tr>
+<tr class="odd">
+<td align="left">Email</td>
+<td align="left">[a-zA-Z0-9_]+@[a-zA-Z0-9._]+</td>
+<td align="left">ccc@kmit.edu.tw</td>
+</tr>
+<tr class="even">
+<td align="left">URL</td>
+<td align="left">http://[a-zA-Z0-9./_]+</td>
+<td align="left">http://ccc.kmit.edu.tw/mybook/</td>
+</tr>
+</tbody>
+</table>
+<p>為了協助讀者理解這些範例，我們有必要對範例中的一些正規表達式符號進行說明。</p>
+<p>在實數的範例中，使用 . 代表小數點符號 .，不熟悉正規表達式的讀者一定覺得奇怪，為何要加上斜線符號 \ 呢？ 這是因為在正則表達式當中，有許多符號具有特殊意義，例如點符號 . 是用來表示任意字元的，星號 * 是代表出現 0 次以上， 加號 + 代表一次或以上，在正則表達式當中，有許多這類的特殊字元，因此用斜線 \ 代表特殊符號辨識的跳脫字元 (就像 C 語言當中 printf 函數內的用途一樣)。因此、當我們看到 \ 符號時，必須繼續向後看，才能知道其所代表的意義。</p>
+<p>為了方便讀者查閱並更全面的瞭解正規表達式，我們在下列的表格中更詳細的列出了正規表達式的符號與其用法：</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">字元</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">^</td>
+<td align="left">比對字串開頭 (開始位置)。</td>
+</tr>
+<tr class="even">
+<td align="left">$</td>
+<td align="left">比對字串結尾 (結束位置)。</td>
+</tr>
+<tr class="odd">
+<td align="left">*</td>
+<td align="left">零次或以上</td>
+</tr>
+<tr class="even">
+<td align="left">+</td>
+<td align="left">一次或以上</td>
+</tr>
+<tr class="odd">
+<td align="left">?</td>
+<td align="left">零次或一次 (也可能指「非貪婪模式」，必須視上下文而定)</td>
+</tr>
+<tr class="even">
+<td align="left">{n}</td>
+<td align="left">n 次。</td>
+</tr>
+<tr class="odd">
+<td align="left">{n,}</td>
+<td align="left">n 次或以上</td>
+</tr>
+<tr class="even">
+<td align="left">{n,m}</td>
+<td align="left">n 到 m 次</td>
+</tr>
+<tr class="odd">
+<td align="left">.</td>
+<td align="left">比對除了 &quot;&quot; 以外字元</td>
+</tr>
+<tr class="even">
+<td align="left">(?:pattern)</td>
+<td align="left">比對 pattern 樣式</td>
+</tr>
+<tr class="odd">
+<td align="left">(?=pattern)</td>
+<td align="left">正向肯定預查，例如 &quot;Windows (?=95|98|NT|2000)&quot; 可比對到 &quot;Windows 2000&quot; 中的 &quot;Windows&quot;，但不能比對 Windows XP 中的 Windows。</td>
+</tr>
+<tr class="even">
+<td align="left">(?!pattern)</td>
+<td align="left">正向否定預查，例如 &quot;Windows(?!95|98|NT|2000)&quot; 能比對 &quot;Windows XP&quot;中的 &quot;Windows&quot;，但不能比對 &quot;Windows 2000&quot; 中 的&quot;Windows&quot;。</td>
+</tr>
+<tr class="odd">
+<td align="left">(?&lt;=pattern)</td>
+<td align="left">反向肯定預查，與正向肯定預查類似，只是方向相反。</td>
+</tr>
+<tr class="even">
+<td align="left">(?&lt;!pattern)</td>
+<td align="left">反向否定預查，與正向否定預查類似，只是方向相反。</td>
+</tr>
+<tr class="odd">
+<td align="left">x|y</td>
+<td align="left">比對 x 或 y。</td>
+</tr>
+<tr class="even">
+<td align="left">[xyz]</td>
+<td align="left">包含 xyz 等字元。</td>
+</tr>
+<tr class="odd">
+<td align="left">[^xyz]</td>
+<td align="left">不包含 xyz 等字元。</td>
+</tr>
+<tr class="even">
+<td align="left">[a-z]</td>
+<td align="left">字元範圍 a-z。</td>
+</tr>
+<tr class="odd">
+<td align="left">[^a-z]</td>
+<td align="left">不包含字元範圍 a-z。</td>
+</tr>
+<tr class="even">
+<td align="left">\b</td>
+<td align="left">比對「英文詞彙」的邊界。例如，&quot;John&quot;可以比對 John，但不能比對 Johnson。</td>
+</tr>
+<tr class="odd">
+<td align="left">\B</td>
+<td align="left">比對非「英文詞彙」的邊界。例如，&quot;John&quot;可以比對 Johnson，但不能比對 John。</td>
+</tr>
+<tr class="even">
+<td align="left">\cx</td>
+<td align="left">比對由 x 指明的控制字元。例如，可比對 Control-M。</td>
+</tr>
+<tr class="odd">
+<td align="left">\d</td>
+<td align="left">比對數字符號。等價於 [0-9]。</td>
+</tr>
+<tr class="even">
+<td align="left">\D</td>
+<td align="left">比對非數字符號。等價於 [^0-9]。</td>
+</tr>
+<tr class="odd">
+<td align="left">\f</td>
+<td align="left">比對換頁符號。等價於 <code>\x0c 和 \cL</code>。</td>
+</tr>
+<tr class="even">
+<td align="left">\n</td>
+<td align="left">比對換行符號。等價於 <code>\x0a 和 \cJ</code>。</td>
+</tr>
+<tr class="odd">
+<td align="left">\r</td>
+<td align="left">比對回車符號。等價於 <code>\x0d 和 \cM</code>。</td>
+</tr>
+<tr class="even">
+<td align="left">\s</td>
+<td align="left">比對任何空白字元，包括空格、定位字元、換頁符等等。等價於 <code>[\f\n\r\t\v]</code>。</td>
+</tr>
+<tr class="odd">
+<td align="left">\S</td>
+<td align="left">比對任何非空白字元。等價於 <code>[^\f\n\r\t\v]</code>。</td>
+</tr>
+<tr class="even">
+<td align="left">\t</td>
+<td align="left">比對定位字元。等價於 <code>\x09</code> 和 <code>\cI</code>。</td>
+</tr>
+<tr class="odd">
+<td align="left">\v</td>
+<td align="left">比對垂直定位字元。等價於 <code>\x0b</code> 和 <code>\cK</code>。</td>
+</tr>
+<tr class="even">
+<td align="left">\w</td>
+<td align="left">比對「英文、數字或底線」。等價於 <code>[A-Za-z0-9_]</code>。</td>
+</tr>
+<tr class="odd">
+<td align="left">\W</td>
+<td align="left">比對非「英文、數字或底線」的字元。等價於 <code>[^A-Za-z0-9_]</code>。</td>
+</tr>
+<tr class="even">
+<td align="left">\xnum</td>
+<td align="left">比對 16 進位指定的字元碼。例如，<code>\x42</code> 比對 &quot;B&quot;。</td>
+</tr>
+<tr class="odd">
+<td align="left">\onum</td>
+<td align="left">比對 8 進位指定的字元碼。</td>
+</tr>
+<tr class="even">
+<td align="left">\unum</td>
+<td align="left">比對 unicode，其中 n 是一個用四個 16 進位數位表示的 Unicode 字元。</td>
+</tr>
+<tr class="odd">
+<td align="left">\num</td>
+<td align="left">重複比對 num 次。例如，<code>(.)\2</code> 比對 3 個連續的相同字元。</td>
+</tr>
+<tr class="even">
+<td align="left">pat1|pat2</td>
+<td align="left">比對樣式 pat1 或 pat2，兩者都要的比對方式。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="程式範例----node.js-的正規表達式"><a href="#程式範例----node.js-的正規表達式">程式範例 -- Node.js 的正規表達式</a></h3>
+<p>現在、就讓我們用幾個 Node.js 程式，來示範 JavaScript 的正規表達式之用法。</p>
+<h4 id="範例-1-比對取代與分割"><a href="#範例-1-比對取代與分割">範例 1 : 比對、取代與分割</a></h4>
+<p>在以下範例中，我們示範了如何使用字串物件內建的 replace, split, match, search 等函數， 透過正規表達式進行字串「取代、分割、比對、搜尋」等功能。</p>
+<p>檔案：regexp1.js</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> log = <span class="ot">console</span>.<span class="fu">log</span>;
+
+text = <span class="st">&quot;name=ccc age=43 email=[ccckmit@gmail.com,ccc@nqu.edu.tw] website=http://ccckmit.wikidot.com/ job=teacher&quot;</span>;
+<span class="fu">log</span>(<span class="st">&quot;===text.replace(\d+, &lt;number&gt;)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="ot">text</span>.<span class="fu">replace</span>(<span class="ot">/</span><span class="bn">\d</span><span class="fl">+</span><span class="ot">/</span>, <span class="st">&quot;&lt;number&gt;&quot;</span>));    <span class="co">// 取代數字為 &lt;number&gt;</span>
+<span class="fu">log</span>(<span class="st">&quot;===text.split(\s+)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="ot">text</span>.<span class="fu">split</span>(<span class="ot">/</span><span class="bn">\s</span><span class="fl">+</span><span class="ot">/</span>));                              <span class="co">// 用空白字元分割字串</span>
+<span class="fu">log</span>(<span class="st">&quot;===text.match(\d+)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="ot">text</span>.<span class="fu">match</span>(<span class="ot">/</span><span class="bn">\d</span><span class="fl">+</span><span class="ot">/</span>));                              <span class="co">// 比對取得數字</span>
+<span class="fu">log</span>(<span class="st">&quot;===text.search(\d+)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="ot">text</span>.<span class="fu">search</span>(<span class="ot">/</span><span class="bn">\d</span><span class="fl">+</span><span class="ot">/</span>));                            <span class="co">// 比對取得數字的位置</span>
+<span class="fu">log</span>(<span class="st">&quot;===text.replace(/http:\/\/[a-zA-Z0-9\.\/_]+/, &lt;url&gt;)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>,                <span class="co">// 取代網址為 &lt;url&gt;</span>
+    <span class="ot">text</span>.<span class="fu">replace</span>(<span class="ot">/http:</span><span class="fl">\/\/</span><span class="bn">[a-zA-Z0-9</span><span class="fl">\.\/</span><span class="bn">_]</span><span class="fl">+</span><span class="ot">/</span>, <span class="st">&quot;&lt;url&gt;&quot;</span>));
+<span class="fu">log</span>(<span class="st">&quot;===text.replace(/[a-zA-Z0-9_]+@[a-zA-Z0-9\._]+/, &lt;email&gt;)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>,           <span class="co">// 取代郵件位址為 &lt;email&gt;，只取代一次</span>
+    <span class="ot">text</span>.<span class="fu">replace</span>(<span class="ot">/</span><span class="bn">[a-zA-Z0-9_]</span><span class="fl">+</span><span class="ot">@</span><span class="bn">[a-zA-Z0-9</span><span class="fl">\.</span><span class="bn">_]</span><span class="fl">+</span><span class="ot">/</span>, <span class="st">&quot;&lt;email&gt;&quot;</span>));
+<span class="fu">log</span>(<span class="st">&quot;===text.replace(/[a-zA-Z0-9_]+@[a-zA-Z0-9\._]+/g, &lt;email&gt;)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>,          <span class="co">// 取代所有郵件位址為 &lt;email&gt;。</span>
+    <span class="ot">text</span>.<span class="fu">replace</span>(<span class="ot">/</span><span class="bn">[a-zA-Z0-9_]</span><span class="fl">+</span><span class="ot">@</span><span class="bn">[a-zA-Z0-9</span><span class="fl">\.</span><span class="bn">_]</span><span class="fl">+</span><span class="ot">/g</span>, <span class="st">&quot;&lt;email&gt;&quot;</span>));</code></pre>
+<p>執行結果：</p>
+<pre><code>D:\Dropbox\Public\pmag\201307\code&gt;node regexp1
+===text.replace(d+, &lt;number&gt;)===
+&quot;name=ccc age=&lt;number&gt; email=[ccckmit@gmail.com,ccc@nqu.edu.tw] website=http://c
+cckmit.wikidot.com/ job=teacher&quot;
+
+===text.split(s+)===
+[&quot;name=ccc&quot;,&quot;age=43&quot;,&quot;email=[ccckmit@gmail.com,ccc@nqu.edu.tw]&quot;,&quot;website=http://
+ccckmit.wikidot.com/&quot;,&quot;job=teacher&quot;]
+
+===text.match(d+)===
+[&quot;43&quot;]
+
+===text.search(d+)===
+13
+
+===text.replace(/http://[a-zA-Z0-9./_]+/, &lt;url&gt;)===
+&quot;name=ccc age=43 email=[ccckmit@gmail.com,ccc@nqu.edu.tw] website=&lt;url&gt; job=teac
+her&quot;
+
+===text.replace(/[a-zA-Z0-9_]+@[a-zA-Z0-9._]+/, &lt;email&gt;)===
+&quot;name=ccc age=43 email=[&lt;email&gt;,ccc@nqu.edu.tw] website=http://ccckmit.wikidot.c
+om/ job=teacher&quot;
+
+===text.replace(/[a-zA-Z0-9_]+@[a-zA-Z0-9._]+/g, &lt;email&gt;)===
+&quot;name=ccc age=43 email=[&lt;email&gt;,&lt;email&gt;] website=http://ccckmit.wikidot.com/ job
+=teacher&quot;</code></pre>
+<h4 id="範例-2-使用正規表達式物件比對字串"><a href="#範例-2-使用正規表達式物件比對字串">範例 2 : 使用正規表達式物件比對字串</a></h4>
+<p>當然、我們也可以反過來用正規表達式去比對字串，這種方法可以很方便的用來取得各個比對的內容，因此很適合 用來做欄位取出的動作，以下是一個用正規表達式取出「姓名 name、年齡 age、出生年 year /月 month /日 day」 等欄位的程式。</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> re = <span class="kw">new</span> <span class="fu">RegExp</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">d+&quot;</span>, <span class="st">&quot;gi&quot;</span>);
+<span class="kw">var</span> str = <span class="st">&quot;name:john age:20 birthday:1990/8/31&quot;</span>;
+
+<span class="kw">var</span> m = <span class="kw">null</span>;
+<span class="kw">while</span> (m = <span class="ot">re</span>.<span class="fu">exec</span>(str))
+    <span class="ot">console</span>.<span class="fu">log</span>(<span class="ot">m</span>.<span class="fu">toString</span>());
+    
+<span class="kw">var</span> p = <span class="fu">parse</span>(str);
+<span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&quot;p.name=&quot;</span>+<span class="ot">p</span>.<span class="fu">name</span>+<span class="st">&quot; age=&quot;</span>+<span class="ot">p</span>.<span class="fu">age</span>+<span class="st">&quot; year=&quot;</span>+<span class="ot">p</span>.<span class="fu">year</span>+<span class="st">&quot; month=&quot;</span>+<span class="ot">p</span>.<span class="fu">month</span>+<span class="st">&quot; day=&quot;</span>+<span class="ot">p</span>.<span class="fu">day</span>);
+
+<span class="kw">function</span> <span class="fu">parse</span>(data) {
+    <span class="kw">var</span> e=<span class="kw">new</span> <span class="fu">RegExp</span>(<span class="st">&quot;name:(</span><span class="ch">\\</span><span class="st">w+) age:(</span><span class="ch">\\</span><span class="st">d+) birthday:(</span><span class="ch">\\</span><span class="st">d+)/(</span><span class="ch">\\</span><span class="st">d+)/(</span><span class="ch">\\</span><span class="st">d+)&quot;</span>, <span class="st">&quot;gi&quot;</span>);
+
+    <span class="kw">if</span> (<span class="ot">data</span>.<span class="fu">match</span>(e)) {
+        <span class="kw">return</span>  {<span class="dt">exp</span>: RegExp[<span class="st">&#39;$&amp;&#39;</span>],
+                <span class="dt">name</span>: <span class="ot">RegExp</span>.<span class="fu">$1</span>,
+                <span class="dt">age</span>:<span class="ot">RegExp</span>.<span class="fu">$2</span>,
+                <span class="dt">year</span>:<span class="ot">RegExp</span>.<span class="fu">$3</span>,
+                <span class="dt">month</span>:<span class="ot">RegExp</span>.<span class="fu">$4</span>,
+                <span class="dt">day</span>:<span class="ot">RegExp</span>.<span class="fu">$5</span>};
+    }
+    <span class="kw">else</span> {
+        <span class="kw">return</span> <span class="kw">null</span>;
+    }
+}
+
+<span class="ot">String</span>.<span class="ot">prototype</span>.<span class="fu">trim</span> = <span class="kw">function</span>() { 
+  <span class="kw">return</span> <span class="kw">this</span>.<span class="fu">replace</span>(<span class="ot">/</span><span class="fl">(</span><span class="ot">^</span><span class="bn">\s</span><span class="fl">*)|(</span><span class="bn">\s</span><span class="fl">*</span><span class="ot">$</span><span class="fl">)</span><span class="ot">/g</span>, <span class="st">&quot;&quot;</span>); 
+}
+
+<span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&quot;&#39; abc &#39;.trim()=&#39;&quot;</span>+<span class="st">&#39; abc &#39;</span>.<span class="fu">trim</span>()+<span class="st">&quot;&#39;&quot;</span>);</code></pre>
+<p>另外在程式的最後，我們透過改寫 String 物件的原型 prototype，可以為字串類別插入原本不具備的函數 (trim)， 以便去除字串前後的空白。這種方式充分展現了 JavaScript 這類動態語言的彈性之處。</p>
+<p>以下是該範例的執行結果：</p>
+<pre><code>D:\Dropbox\Public\pmag\201307\code&gt;node regexp2
+20
+1990
+8
+31
+p.name=john age=20 year=1990 month=8 day=31
+&#39; abc &#39;.trim()=&#39;abc&#39;</code></pre>
+<h4 id="範例-3-製作一個簡易的程式語言詞彙掃描器-lexer-或稱-scanner"><a href="#範例-3-製作一個簡易的程式語言詞彙掃描器-lexer-或稱-scanner">範例 3 : 製作一個簡易的程式語言詞彙掃描器 Lexer (或稱 Scanner)</a></h4>
+<p>如果利用正規表達式，很多工作就可以輕易的完成。舉例而言，在編譯器的設計當中，詞彙掃描器 Lexer 是一個最基礎的工作， 掃描完成後才能進行剖析 Parsing 的動作。如果我們使用「正規表達式」來處理這項工作，那麼只要一個 match 函數就可以完成了， 如以下程式所示。</p>
+<p>檔案：scan1.js</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">text = <span class="st">&quot;i=3; /* hello </span><span class="ch">\r\n</span><span class="st"> world! */</span><span class="ch">\r\n</span><span class="st"> add=function(a,b) { return a+b; }&quot;</span>;                     <span class="co">// 程式字串</span>
+re = <span class="ot">/</span><span class="fl">(\/\*</span><span class="bn">[</span><span class="fl">\s\S</span><span class="bn">]</span><span class="fl">*?\*\/)|(\/\/</span><span class="bn">[</span><span class="fl">^\r\n</span><span class="bn">]</span><span class="fl">)|(</span><span class="ot">&quot;.</span><span class="fl">*?</span><span class="ot">&quot;</span><span class="fl">)|(</span><span class="bn">\d</span><span class="fl">+(\.</span><span class="bn">\d</span><span class="fl">*)?)|(</span><span class="bn">[a-zA-Z]\w</span><span class="fl">*)|(</span><span class="bn">\r</span><span class="fl">?</span><span class="bn">\n</span><span class="fl">)|(</span><span class="bn">\s</span><span class="fl">+)|(</span><span class="ot">.</span><span class="fl">)</span><span class="ot">/gm</span>; <span class="co">// g 代表全域，m 代表多行的比對方式。</span>
+<span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&quot;text.match(re)=%j&quot;</span>, <span class="ot">text</span>.<span class="fu">match</span>(re));   <span class="co">// 印出比對後得到的陣列。</span></code></pre>
+<p>執行結果：</p>
+<pre><code>D:\Dropbox\Public\pmag\201307\code&gt;node scan1
+text.match(re)=[&quot;i&quot;,&quot;=&quot;,&quot;3&quot;,&quot;;&quot;,&quot; &quot;,&quot;/* hello \r\n world! */&quot;,&quot;\r\n&quot;,&quot; &quot;,&quot;add&quot;,&quot;
+=&quot;,&quot;function&quot;,&quot;(&quot;,&quot;a&quot;,&quot;,&quot;,&quot;b&quot;,&quot;)&quot;,&quot; &quot;,&quot;{&quot;,&quot; &quot;,&quot;return&quot;,&quot; &quot;,&quot;a&quot;,&quot;+&quot;,&quot;b&quot;,&quot;;&quot;,&quot; &quot;,&quot;
+}&quot;]</code></pre>
+<p>另外、輸入字串當然也可以從檔案讀取，如以下程式所示：</p>
+<p>檔案：scan2.js</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> fs = <span class="fu">require</span>(<span class="st">&#39;fs&#39;</span>); <span class="co">/* 引用檔案物件 */</span>
+<span class="kw">var</span> text = <span class="ot">fs</span>.<span class="fu">readFileSync</span>(<span class="ot">process</span>.<span class="fu">argv</span>[<span class="dv">2</span>], <span class="st">&quot;utf8&quot;</span>); <span class="co">/* 讀取檔案 */</span>
+re = <span class="ot">/</span><span class="fl">(\/\*</span><span class="bn">[</span><span class="fl">\s\S</span><span class="bn">]</span><span class="fl">*?\*\/)|(\/\/</span><span class="bn">[</span><span class="fl">^\r\n</span><span class="bn">]</span><span class="fl">)|(</span><span class="ot">&quot;.</span><span class="fl">*?</span><span class="ot">&quot;</span><span class="fl">)|(</span><span class="bn">\d</span><span class="fl">+(\.</span><span class="bn">\d</span><span class="fl">*)?)|(</span><span class="bn">[a-zA-Z]\w</span><span class="fl">*)|(</span><span class="bn">\r</span><span class="fl">?</span><span class="bn">\n</span><span class="fl">)|(</span><span class="bn">\s</span><span class="fl">+)|(</span><span class="ot">.</span><span class="fl">)</span><span class="ot">/gm</span>; <span class="co">/* g 代表全域，m 代表多行的比對方式。*/</span>
+<span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&quot;text.match(re)=%j&quot;</span>, <span class="ot">text</span>.<span class="fu">match</span>(re));   <span class="co">/* 印出比對後得到的陣列。*/</span></code></pre>
+<p>執行結果</p>
+<pre><code>D:\Dropbox\Public\pmag\201307\code&gt;node scan2 scan2.js
+text.match(re)=[&quot;var&quot;,&quot; &quot;,&quot;fs&quot;,&quot; &quot;,&quot;=&quot;,&quot; &quot;,&quot;require&quot;,&quot;(&quot;,&quot;&#39;&quot;,&quot;fs&quot;,&quot;&#39;&quot;,&quot;)&quot;,&quot;;&quot;,&quot;
+&quot;,&quot;/* 引用檔案物件 */&quot;,&quot;\r\n&quot;,&quot;var&quot;,&quot; &quot;,&quot;text&quot;,&quot; &quot;,&quot;=&quot;,&quot; &quot;,&quot;fs&quot;,&quot;.&quot;,&quot;readFileSyn
+c&quot;,&quot;(&quot;,&quot;process&quot;,&quot;.&quot;,&quot;argv&quot;,&quot;[&quot;,&quot;2&quot;,&quot;]&quot;,&quot;,&quot;,&quot; &quot;,&quot;\&quot;utf8\&quot;&quot;,&quot;)&quot;,&quot;;&quot;,&quot; &quot;,&quot;/* 讀取
+檔案 */&quot;,&quot;\r\n&quot;,&quot;re&quot;,&quot; &quot;,&quot;=&quot;,&quot; &quot;,&quot;/&quot;,&quot;(&quot;,&quot;\\&quot;,&quot;/&quot;,&quot;\\&quot;,&quot;*&quot;,&quot;[&quot;,&quot;\\&quot;,&quot;s&quot;,&quot;\\&quot;,&quot;S&quot;
+,&quot;]&quot;,&quot;*&quot;,&quot;?&quot;,&quot;\\&quot;,&quot;*&quot;,&quot;\\&quot;,&quot;/&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;\\&quot;,&quot;/&quot;,&quot;\\&quot;,&quot;/&quot;,&quot;[&quot;,&quot;^&quot;,&quot;\\&quot;,&quot;r&quot;,&quot;\
+\&quot;,&quot;n&quot;,&quot;]&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;\&quot;.*?\&quot;&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;\\&quot;,&quot;d&quot;,&quot;+&quot;,&quot;(&quot;,&quot;\\&quot;,&quot;.&quot;,&quot;\\&quot;,&quot;d&quot;,
+&quot;*&quot;,&quot;)&quot;,&quot;?&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;[&quot;,&quot;a&quot;,&quot;-&quot;,&quot;zA&quot;,&quot;-&quot;,&quot;Z&quot;,&quot;]&quot;,&quot;\\&quot;,&quot;w&quot;,&quot;*&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;\
+\&quot;,&quot;r&quot;,&quot;?&quot;,&quot;\\&quot;,&quot;n&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;\\&quot;,&quot;s&quot;,&quot;+&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;.&quot;,&quot;)&quot;,&quot;/&quot;,&quot;gm&quot;,&quot;;&quot;,&quot;
+&quot;,&quot;/* g 代表全域，m 代表多行的比對方式。*/&quot;,&quot;\r\n&quot;,&quot;console&quot;,&quot;.&quot;,&quot;log&quot;,&quot;(&quot;,&quot;\&quot;te
+xt.match(re)=%j\&quot;&quot;,&quot;,&quot;,&quot; &quot;,&quot;text&quot;,&quot;.&quot;,&quot;match&quot;,&quot;(&quot;,&quot;re&quot;,&quot;)&quot;,&quot;)&quot;,&quot;;&quot;,&quot;   &quot;,&quot;/* 印
+出比對後得到的陣列。*/&quot;,&quot;\r\n&quot;]</code></pre>
+<p>當然，如果要判斷所掃描的每個詞彙是何種型態、並且紀錄行號的話，那麼就會稍微複雜一些，如以下程式所示：</p>
+<p>檔案：scan3.js</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> log = <span class="ot">console</span>.<span class="fu">log</span>;
+text = <span class="st">&quot;i=3; /* hello </span><span class="ch">\r\n</span><span class="st"> world! */</span><span class="ch">\r\n</span><span class="st"> add=function(a,b) { return a+b; }&quot;</span>;
+
+<span class="co">// 本來應該用 .*? 來比對 /*...*/ 註解的，但 javascript 的 . 並不包含 \n, 因此用 \s\S 代替 . 就可以了。</span>
+<span class="co">// 加上後置問號 *?, +? 代表非貪婪式比對 (non greedy), m 代表多行比對模式 (multiline)</span>
+re = <span class="kw">new</span> <span class="fu">RegExp</span>(<span class="ot">/</span><span class="fl">(\/\*</span><span class="bn">[</span><span class="fl">\s\S</span><span class="bn">]</span><span class="fl">*?\*\/)|(\/\/</span><span class="bn">[</span><span class="fl">^\r\n</span><span class="bn">]</span><span class="fl">)|(</span><span class="ot">&quot;.</span><span class="fl">*?</span><span class="ot">&quot;</span><span class="fl">)|(</span><span class="bn">\d</span><span class="fl">+(\.</span><span class="bn">\d</span><span class="fl">*)?)|(</span><span class="bn">[a-zA-Z]\w</span><span class="fl">*)|(</span><span class="bn">\r</span><span class="fl">?</span><span class="bn">\n</span><span class="fl">)|(</span><span class="bn">\s</span><span class="fl">+)|(</span><span class="ot">.</span><span class="fl">)</span><span class="ot">/gm</span>);
+<span class="kw">var</span> types = [ <span class="st">&quot;&quot;</span>, <span class="st">&quot;blockcomment&quot;</span>, <span class="st">&quot;linecomment&quot;</span>, <span class="st">&quot;string&quot;</span>, <span class="st">&quot;int&quot;</span>, <span class="st">&quot;float&quot;</span>, <span class="st">&quot;id&quot;</span>, <span class="st">&quot;br&quot;</span>, <span class="st">&quot;space&quot;</span>, <span class="st">&quot;op&quot;</span> ];
+<span class="kw">var</span> tokens = [];
+<span class="kw">var</span> m;
+<span class="kw">var</span> lines = <span class="dv">1</span>;
+<span class="kw">while</span>((m = <span class="ot">re</span>.<span class="fu">exec</span>(text)) !== <span class="kw">null</span>) {
+  <span class="kw">var</span> token = m[<span class="dv">0</span>], type;
+  <span class="kw">for</span> (i=<span class="dv">1</span>; i&lt;=<span class="dv">8</span>; i++) { 
+    <span class="kw">if</span> (m[i] !== <span class="kw">undefined</span>)
+      type = types[i];
+  }
+  <span class="ot">tokens</span>.<span class="fu">push</span>({ <span class="st">&quot;token&quot;</span>:token, <span class="st">&quot;type&quot;</span>:type, <span class="st">&quot;lines&quot;</span>:lines });
+  <span class="fu">log</span>(<span class="st">&quot;token=&quot;</span>+token+<span class="st">&quot; type=&quot;</span>+type+<span class="st">&quot; lines=&quot;</span>+lines);
+  lines += <span class="ot">token</span>.<span class="fu">split</span>(<span class="ot">/</span><span class="bn">\n</span><span class="ot">/</span>).<span class="fu">length</span><span class="dv">-1</span>;
+}</code></pre>
+<p>執行結果</p>
+<pre><code>D:\Dropbox\Public\pmag\201307\code&gt;node scan3
+token=i type=id lines=1
+token== type=id lines=1
+token=3 type=int lines=1
+token=; type=int lines=1
+token=  type=space lines=1
+token=/* hello
+ world! */ type=blockcomment lines=1
+token=
+ type=br lines=2
+token=  type=space lines=3
+token=add type=id lines=3
+token== type=id lines=3
+token=function type=id lines=3
+token=( type=id lines=3
+token=a type=id lines=3
+token=, type=id lines=3
+token=b type=id lines=3
+token=) type=id lines=3
+token=  type=space lines=3
+token={ type=space lines=3
+token=  type=space lines=3
+token=return type=id lines=3
+token=  type=space lines=3
+token=a type=id lines=3
+token=+ type=id lines=3
+token=b type=id lines=3
+token=; type=id lines=3
+token=  type=space lines=3
+token=} type=space lines=3
+</code></pre>
+<h3 id="結語"><a href="#結語">結語</a></h3>
+<p>現在、您應該已經瞭解如何在 JavaScript 當中使用正規表達式了，當您有任何字串處理的需求時，請記得正規表達式永遠是你的好朋友， 它可以讓原本要寫上數十行甚至數百行的程式，輕鬆的用一兩行就搞定了，這個工具大大的提升了程式人的生產力，對經常進行字串處理 的程式人而言，學會「正規表達式」絕對可以讓你感覺到「事半功倍」啊！</p>
+<h3 id="參考文獻-4"><a href="#參考文獻-4">參考文獻</a></h3>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正規表示式:維基百科，自由的百科全書</a></li>
+</ul>
+<p>(本文的正規表達式表格由陳鍾誠修改自維基百科，使用時請遵守 <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/">姓名標示、相同方式分享</a> 之授權)</p>
+<h2 id="r-統計軟體5-再探檢定-作者陳鍾誠"><a href="#r-統計軟體5-再探檢定-作者陳鍾誠">R 統計軟體(5) – 再探檢定 (作者：陳鍾誠)</a></h2>
+<p>在上一期當中，我們說明了如何計算單一組樣本「平均值」的「信賴區間」與「檢定」等問題。在這一期當中，我們將進一步探索 如何用 R 軟體進行其他的檢定，像是「變異數」的檢定，兩組樣本的檢定等問題，我們將不會花太多力氣在數學說明上，而是採用 直接操作的範例導向方法，用範例說明這些檢定的實作方法。</p>
+<h3 id="檢定的分類"><a href="#檢定的分類">檢定的分類</a></h3>
+<p>大致上來說，檢定可以分為「單組樣本、兩組樣本或多組樣本」的檢定，在上期當中，我們所檢定的對象是單組樣本的平均值 <img src="../timg/_mu_c9faf6ead2cd2c2187bd943488de1d0a.jpg" /> ， 當然我們也可以檢定兩組樣本的平均值是否相等，也就是 <img src="../timg/_mu_1_mu_4e60474e0f6034e2a309791fdaef3fb4.jpg" /> 是否為真。</p>
+<p>如果想檢定的關係並非「等號」關係，那麼檢定還可以分為「右尾檢定、左尾檢定、雙尾檢定」等三種，以平均值 <img src="../timg/_mu_c9faf6ead2cd2c2187bd943488de1d0a.jpg" /> 的檢定而言， 其檢定假設如下表所示：</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">右尾檢定</th>
+<th align="left">左尾檢定</th>
+<th align="left">雙尾檢定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">H0</td>
+<td align="left"><img src="../timg/_mu_le_m_acb57c5744a84b290a04f02b1545e9f3.jpg" /></td>
+<td align="left"><img src="../timg/_mu_ge_m_d8c59401e54095893dbf55a817ee57c2.jpg" /></td>
+<td align="left"><img src="../timg/_mu_mu_0_83065df9f3eeb82b4e80fb49cd3afb90.jpg" /></td>
+</tr>
+<tr class="even">
+<td align="left">H1</td>
+<td align="left"><img src="../timg/_mu_gt_m_1619b02655152094b07defd60c6610d2.jpg" /></td>
+<td align="left"><img src="../timg/_mu_lt_m_8dd164dce5fe4bed6a2cc495a6c7f298.jpg" /></td>
+<td align="left"><img src="../timg/_mu_neq__9b4f164b4cc6834c79baaddc6ed7e4f7.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<p>另外、檢定的對象如果不是平均數 <img src="../timg/_mu_c9faf6ead2cd2c2187bd943488de1d0a.jpg" /> ，而是變異數 <img src="../timg/_sigma_a2ab7d71a0f07f388ff823293c147d21.jpg" /> ，或者某個比例 p，或者是中位數 M ，那就得改用對應的分布進行檢定，讓我們將檢定的種類與方法整理一下，列表如下：</p>
+<ul>
+<li>單組樣本的檢定
+<ul>
+<li>平均值的檢定？ ( <img src="../timg/H0_mu_mu_8d5c16be7d8a4e25486d47d7407b6aaf.jpg" /> ) -- 學生 T 檢定</li>
+<li>變異數的檢定？ ( <img src="../timg/H0_sigma_915e4f07551f2c235b5f63b82cce2a41.jpg" /> ) -- 卡方 <img src="../timg/_chi_2_9ca61f458c78bb5591d04aaaa14da0e7.jpg" /> 檢定</li>
+<li>比例 p 的檢定？ ( <img src="../timg/H0_p_p_0_6e4083e02d672eab7b1d563d48d10d57.jpg" /> ) -- 常態 Z 檢定</li>
+<li>中位數 M 的檢定？ ( <img src="../timg/H0_M_M_0_6ed558249dd08dcbe262fdbb5c8f7c92.jpg" /> ) -- 無母數方法 Wilcoxon Sign-Rank 檢定</li>
+</ul></li>
+<li>兩組樣本的檢定
+<ul>
+<li>比較兩平均數 <img src="../timg/_mu_1_mu_52ba63e201260313d0535030d1343e49.jpg" /> 的差值 ( <img src="../timg/H0_mu_1__e18314955b8bc13a9992c0246f554b2c.jpg" /> ) 的檢定</li>
+<li>比較兩變異數 <img src="../timg/_sigma_1_112884011abbce038409df081c310649.jpg" /> 的差值 ( <img src="../timg/H0_sigma_1848b72fa8071cd7d92cb4153db4c51c.jpg" /> ) 的檢定</li>
+<li>比較兩機率 <img src="../timg/p1_p2_ae8fd5980cf4a8f43ed00cfdb5277aad.jpg" /> 的差值 ( <img src="../timg/H0_p1_p2_dbdccad11fb3437b83e51dfce632a98f.jpg" /> ) 的檢定</li>
+<li>比較兩組中位數 M 的差值 ( <img src="../timg/H0_M_X_M_a6a7779ec296cfc87d9dc81a6f1fb6f1.jpg" /> ) 的檢定 (無母數方法)</li>
+</ul></li>
+</ul>
+<h3 id="右尾檢定左尾檢定與雙尾檢定"><a href="#右尾檢定左尾檢定與雙尾檢定">右尾檢定、左尾檢定與雙尾檢定</a></h3>
+<pre class="sourceCode R"><code class="sourceCode r">&gt;<span class="st"> </span>x =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">25</span>, <span class="dt">mean=</span><span class="dv">5</span>, <span class="dt">sd=</span><span class="dv">2</span>)
+&gt;<span class="st"> </span>x
+ [<span class="dv">1</span>] <span class="fl">6.6148290</span> <span class="fl">8.4660415</span> <span class="fl">4.7084610</span> <span class="fl">8.0959357</span> <span class="fl">5.0618158</span> <span class="fl">3.6971976</span> <span class="fl">7.7887572</span>
+ [<span class="dv">8</span>] <span class="fl">5.2229378</span> <span class="fl">4.7763453</span> <span class="fl">4.3595627</span> <span class="fl">4.7674163</span> <span class="fl">2.8655986</span> <span class="fl">4.5051726</span> <span class="fl">1.2974370</span>
+[<span class="dv">15</span>] <span class="fl">6.9794643</span> <span class="fl">0.4042951</span> <span class="fl">8.0391053</span> <span class="fl">6.7884780</span> <span class="fl">6.5557084</span> <span class="fl">3.7146943</span> <span class="fl">0.3457576</span>
+[<span class="dv">22</span>] <span class="fl">7.4302876</span> <span class="fl">6.7216046</span> <span class="fl">9.1046976</span> <span class="fl">7.0879767</span>
+&gt;<span class="st"> </span><span class="kw">sd</span>(x)
+[<span class="dv">1</span>] <span class="fl">2.430731</span>
+&gt;<span class="st"> </span><span class="kw">mean</span>(x)
+[<span class="dv">1</span>] <span class="fl">5.415983</span>
+&gt;<span class="st"> </span><span class="kw">t.test</span>(x, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>, <span class="dt">mu=</span><span class="fl">4.8</span>)
+
+        One Sample t-test
+
+data:<span class="st">  </span>x 
+t =<span class="st"> </span><span class="fl">1.2671</span>, df =<span class="st"> </span><span class="dv">24</span>, p-value =<span class="st"> </span><span class="fl">0.1086</span>
+alternative hypothesis:<span class="st"> </span>true mean is greater than <span class="fl">4.8</span> 
+<span class="dv">95</span> percent confidence interval:
+<span class="st"> </span><span class="fl">4.584244</span>      <span class="ot">Inf</span> 
+sample estimates:
+mean of x 
+ <span class="fl">5.415983</span> 
+
+&gt;<span class="st"> </span><span class="kw">t.test</span>(x, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">mu=</span><span class="fl">4.8</span>)
+
+        One Sample t-test
+
+data:<span class="st">  </span>x 
+t =<span class="st"> </span><span class="fl">1.2671</span>, df =<span class="st"> </span><span class="dv">24</span>, p-value =<span class="st"> </span><span class="fl">0.8914</span>
+alternative hypothesis:<span class="st"> </span>true mean is less than <span class="fl">4.8</span> 
+<span class="dv">95</span> percent confidence interval:
+<span class="st">     </span>-<span class="ot">Inf</span> <span class="fl">6.247722</span> 
+sample estimates:
+mean of x 
+ <span class="fl">5.415983</span> 
+
+&gt;<span class="st"> </span><span class="kw">t.test</span>(x, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">mu=</span><span class="fl">4.8</span>)
+
+        One Sample t-test
+
+data:<span class="st">  </span>x 
+t =<span class="st"> </span><span class="fl">1.2671</span>, df =<span class="st"> </span><span class="dv">24</span>, p-value =<span class="st"> </span><span class="fl">0.2173</span>
+alternative hypothesis:<span class="st"> </span>true mean is not equal to <span class="fl">4.8</span> 
+<span class="dv">95</span> percent confidence interval:
+<span class="st"> </span><span class="fl">4.412627</span> <span class="fl">6.419339</span> 
+sample estimates:
+mean of x 
+ <span class="fl">5.415983</span> </code></pre>
+<h3 id="中位數-m-的檢定"><a href="#中位數-m-的檢定">中位數 M 的檢定</a></h3>
+<pre class="sourceCode R"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">wilcox.test</span>(x, <span class="dt">mu=</span><span class="fl">4.8</span>)
+
+        Wilcoxon signed rank test
+
+data:<span class="st">  </span>x 
+V =<span class="st"> </span><span class="dv">207</span>, p-value =<span class="st"> </span><span class="fl">0.2411</span>
+alternative hypothesis:<span class="st"> </span>true location is not equal to <span class="fl">4.8</span> </code></pre>
+<h3 id="變異數-的檢定"><a href="#變異數-的檢定">變異數 <img src="../timg/_sigma_2_10e16c6a764d367ca5077a54bf156f7e.jpg" /> 的檢定</a></h3>
+<pre class="sourceCode R"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">chisq.test</span>(x)
+
+        Chi-squared test for given probabilities
+
+data:<span class="st">  </span>x 
+X-squared =<span class="st"> </span><span class="fl">26.1823</span>, df =<span class="st"> </span><span class="dv">24</span>, p-value =<span class="st"> </span><span class="fl">0.344</span></code></pre>
+<h3 id="比例-p-的檢定"><a href="#比例-p-的檢定">比例 p 的檢定</a></h3>
+<pre class="sourceCode R"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">prop.test</span>(<span class="dv">25</span>, <span class="dv">100</span>, <span class="dt">correct=</span>T, <span class="dt">p=</span><span class="fl">0.25</span>)
+
+        <span class="dv">1</span>-sample proportions test without continuity correction
+
+data:<span class="st">  </span><span class="dv">25</span> out of <span class="dv">100</span>, null probability <span class="fl">0.25</span> 
+X-squared =<span class="st"> </span><span class="dv">0</span>, df =<span class="st"> </span><span class="dv">1</span>, p-value =<span class="st"> </span><span class="dv">1</span>
+alternative hypothesis:<span class="st"> </span>true p is not equal to <span class="fl">0.25</span> 
+<span class="dv">95</span> percent confidence interval:
+<span class="st"> </span><span class="fl">0.1754521</span> <span class="fl">0.3430446</span> 
+sample estimates:
+<span class="st">   </span>p 
+<span class="fl">0.25</span> 
+
+&gt;<span class="st"> </span><span class="kw">prop.test</span>(<span class="dv">25</span>, <span class="dv">100</span>, <span class="dt">correct=</span>T, <span class="dt">p=</span><span class="fl">0.01</span>)
+
+        <span class="dv">1</span>-sample proportions test with continuity correction
+
+data:<span class="st">  </span><span class="dv">25</span> out of <span class="dv">100</span>, null probability <span class="fl">0.01</span> 
+X-squared =<span class="st"> </span><span class="fl">557.8283</span>, df =<span class="st"> </span><span class="dv">1</span>, p-value &lt;<span class="st"> </span><span class="fl">2.2e-16</span>
+alternative hypothesis:<span class="st"> </span>true p is not equal to <span class="fl">0.01</span> 
+<span class="dv">95</span> percent confidence interval:
+<span class="st"> </span><span class="fl">0.1711755</span> <span class="fl">0.3483841</span> 
+sample estimates:
+<span class="st">   </span>p 
+<span class="fl">0.25</span> 
+
+Warning message:
+In <span class="kw">prop.test</span>(<span class="dv">25</span>, <span class="dv">100</span>, <span class="dt">correct =</span> T, <span class="dt">p =</span> <span class="fl">0.01</span>) :
+<span class="st">  </span>Chi-squared approximation may be incorrect
+&gt;<span class="st"> </span><span class="kw">prop.test</span>(<span class="dv">25</span>, <span class="dv">100</span>, <span class="dt">correct=</span>T, <span class="dt">p=</span><span class="fl">0.2</span>)
+
+        <span class="dv">1</span>-sample proportions test with continuity correction
+
+data:<span class="st">  </span><span class="dv">25</span> out of <span class="dv">100</span>, null probability <span class="fl">0.2</span> 
+X-squared =<span class="st"> </span><span class="fl">1.2656</span>, df =<span class="st"> </span><span class="dv">1</span>, p-value =<span class="st"> </span><span class="fl">0.2606</span>
+alternative hypothesis:<span class="st"> </span>true p is not equal to <span class="fl">0.2</span> 
+<span class="dv">95</span> percent confidence interval:
+<span class="st"> </span><span class="fl">0.1711755</span> <span class="fl">0.3483841</span> 
+sample estimates:
+<span class="st">   </span>p 
+<span class="fl">0.25</span> </code></pre>
+<h3 id="兩組樣本的平均值檢定"><a href="#兩組樣本的平均值檢定">兩組樣本的平均值檢定</a></h3>
+<p>(方法一)：合併 T 檢定 (pooled T test) -- 又被稱為：「獨立 T 檢定」或「不相關 T 檢定」</p>
+<ul>
+<li>前提條件：兩組樣本必須互相獨立才能使用合併 T 檢定，沒有理相信 (常態分布) 兩組樣本的母體變異數不相等的情況之下，想比較 <img src="../timg/_mu_1_mu_20cd69035be5c1991384d552c7d1f83d.jpg" /> 時，可用「合併 T 檢定」。</li>
+</ul>
+<pre class="sourceCode R"><code class="sourceCode r">&gt;<span class="st"> </span>x=<span class="kw">rnorm</span>(<span class="dv">25</span>, <span class="dt">mean=</span><span class="fl">3.0</span>, <span class="dt">sd=</span><span class="dv">2</span>)
+&gt;<span class="st"> </span>y=<span class="kw">rnorm</span>(<span class="dv">25</span>, <span class="dt">mean=</span><span class="fl">3.2</span>, <span class="dt">sd=</span><span class="dv">2</span>)
+&gt;<span class="st"> </span>x
+ [<span class="dv">1</span>]  <span class="fl">5.12770813</span> -<span class="fl">0.69201841</span>  <span class="fl">3.11359532</span>  <span class="fl">1.93715093</span>  <span class="fl">7.76880172</span>  <span class="fl">3.54159714</span>
+ [<span class="dv">7</span>]  <span class="fl">1.47159331</span>  <span class="fl">4.27555975</span>  <span class="fl">3.48421232</span>  <span class="fl">2.25191442</span>  <span class="fl">3.46742988</span>  <span class="fl">7.85327689</span>
+[<span class="dv">13</span>]  <span class="fl">3.52493667</span>  <span class="fl">5.41072190</span>  <span class="fl">4.39668469</span>  <span class="fl">0.29868134</span> -<span class="fl">0.19521005</span>  <span class="fl">1.30992501</span>
+[<span class="dv">19</span>]  <span class="fl">2.55471568</span>  <span class="fl">3.89214393</span>  <span class="fl">6.01076126</span> -<span class="fl">0.02217834</span>  <span class="fl">1.03681457</span>  <span class="fl">5.68719430</span>
+[<span class="dv">25</span>]  <span class="fl">4.15852190</span>
+&gt;<span class="st"> </span>y
+ [<span class="dv">1</span>]  <span class="fl">4.0565581</span>  <span class="fl">3.9617962</span>  <span class="fl">6.3513376</span>  <span class="fl">4.9998217</span>  <span class="fl">4.4419258</span>  <span class="fl">6.3198375</span>
+ [<span class="dv">7</span>] -<span class="fl">1.0483622</span>  <span class="fl">5.1809845</span>  <span class="fl">7.5435307</span>  <span class="fl">2.6048084</span>  <span class="fl">5.6764663</span>  <span class="fl">2.6687181</span>
+[<span class="dv">13</span>]  <span class="fl">2.7981462</span> -<span class="fl">0.3564332</span>  <span class="fl">0.8637199</span>  <span class="fl">4.2032371</span>  <span class="fl">4.5879745</span>  <span class="fl">3.1428764</span>
+[<span class="dv">19</span>] -<span class="fl">0.3657162</span>  <span class="fl">4.0400208</span>  <span class="fl">5.9577457</span>  <span class="fl">2.3334531</span>  <span class="fl">3.2662193</span>  <span class="fl">1.6285190</span>
+[<span class="dv">25</span>]  <span class="fl">2.2731483</span>
+&gt;<span class="st"> </span><span class="kw">t.test</span>(x, y, <span class="dt">var.equal=</span>T) ## (方法一)：合併 T 檢定 (pooled T test) -- 又被稱為：「獨立 T 檢定」或「不相關 T 檢定」
+## 前提條件：兩組樣本必須互相獨立才能使用合併 T 檢定，沒有理相信 (常態分布) 兩組樣本的母體變異數不相等的情況之下使用
+
+        Two Sample t-test
+
+data:<span class="st">  </span>x and y 
+t =<span class="st"> </span>-<span class="fl">0.3409</span>, df =<span class="st"> </span><span class="dv">48</span>, p-value =<span class="st"> </span><span class="fl">0.7346</span>
+alternative hypothesis:<span class="st"> </span>true difference in means is not equal to <span class="dv">0</span> 
+<span class="dv">95</span> percent confidence interval:
+<span class="st"> </span>-<span class="fl">1.508021</span>  <span class="fl">1.070757</span> 
+sample estimates:
+mean of x mean of y 
+ <span class="fl">3.266581</span>  <span class="fl">3.485213</span> 
+
+&gt;<span class="st"> </span><span class="kw">t.test</span>(x,y, <span class="dt">pair=</span>T)   ## (方法二)：成對 T 檢定 (Paired T Test)
+## 前提條件：(1) 2個或以上的連續變項皆呈常態分配 (normally distributed) 
+##           (2) 變項與觀察值之間互相獨立 (mutually independently) 
+
+        Paired t-test
+
+data:<span class="st">  </span>x and y 
+t =<span class="st"> </span>-<span class="fl">0.3438</span>, df =<span class="st"> </span><span class="dv">24</span>, p-value =<span class="st"> </span><span class="fl">0.734</span>
+alternative hypothesis:<span class="st"> </span>true difference in means is not equal to <span class="dv">0</span> 
+<span class="dv">95</span> percent confidence interval:
+<span class="st"> </span>-<span class="fl">1.531134</span>  <span class="fl">1.093870</span> 
+sample estimates:
+mean of the differences 
+              -<span class="fl">0.218632</span> </code></pre>
+<h3 id="兩組樣本的變異數檢定"><a href="#兩組樣本的變異數檢定">兩組樣本的變異數檢定</a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">右尾檢定</th>
+<th align="left">左尾檢定</th>
+<th align="left">雙尾檢定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">H0</td>
+<td align="left"><img src="../timg/_sigma_1_34c80b93a3c93ecc272c9e6b66962bf7.jpg" /></td>
+<td align="left"><img src="../timg/_sigma_1_34c80b93a3c93ecc272c9e6b66962bf7.jpg" /></td>
+<td align="left"><img src="../timg/_sigma_1_34c80b93a3c93ecc272c9e6b66962bf7.jpg" /></td>
+</tr>
+<tr class="even">
+<td align="left">H1</td>
+<td align="left"><img src="../timg/_sigma_1_ab8f008e71da9e4612646a98e4579ec2.jpg" /></td>
+<td align="left"><img src="../timg/_sigma_1_b072d9c945441e199ef5dbcf3ef60859.jpg" /></td>
+<td align="left"><img src="../timg/_sigma_1_2a34a897a281a105a537af326c488eec.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<pre class="sourceCode R"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">var.test</span>(x,y)
+
+        F test to compare two variances
+
+data:<span class="st">  </span>x and y 
+F =<span class="st"> </span><span class="fl">1.0973</span>, num df =<span class="st"> </span><span class="dv">24</span>, denom df =<span class="st"> </span><span class="dv">24</span>, p-value =<span class="st"> </span><span class="fl">0.8219</span>
+alternative hypothesis:<span class="st"> </span>true ratio of variances is not equal to <span class="dv">1</span> 
+<span class="dv">95</span> percent confidence interval:
+<span class="st"> </span><span class="fl">0.4835609</span> <span class="fl">2.4901548</span> 
+sample estimates:
+ratio of variances 
+          <span class="fl">1.097334</span> </code></pre>
+<h3 id="兩組樣本的比例檢定"><a href="#兩組樣本的比例檢定">兩組樣本的比例檢定</a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">右尾檢定</th>
+<th align="left">左尾檢定</th>
+<th align="left">雙尾檢定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">H0</td>
+<td align="left"><img src="../timg/p_1_p_2__1c8791660c5bb8e1892ea7d929d6c82c.jpg" /></td>
+<td align="left"><img src="../timg/p_1_p_2__1c8791660c5bb8e1892ea7d929d6c82c.jpg" /></td>
+<td align="left"><img src="../timg/p_1_p_2__1c8791660c5bb8e1892ea7d929d6c82c.jpg" /></td>
+</tr>
+<tr class="even">
+<td align="left">H1</td>
+<td align="left"><img src="../timg/p_1_p_2__90fb0c8949eff9e1d9bada9d0a251a2c.jpg" /></td>
+<td align="left"><img src="../timg/p_1_p_2__34974593894f502ed83df350f56b0e83.jpg" /></td>
+<td align="left"><img src="../timg/p_1_p_2__93de3b3c344d1622a5e93f5027fdcde3.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<pre class="sourceCode R"><code class="sourceCode r">&gt;<span class="st"> </span>x=<span class="kw">c</span>(<span class="dv">100</span>, <span class="dv">200</span>)
+&gt;<span class="st"> </span>y=<span class="kw">c</span>(<span class="dv">300</span>, <span class="dv">400</span>)
+&gt;<span class="st"> </span><span class="kw">prop.test</span>(x,y)
+
+        <span class="dv">2</span>-sample test for equality of proportions with continuity
+        correction
+
+data:<span class="st">  </span>x out of y 
+X-squared =<span class="st"> </span><span class="fl">18.7698</span>, df =<span class="st"> </span><span class="dv">1</span>, p-value =<span class="st"> </span><span class="fl">1.475e-05</span>
+alternative hypothesis:<span class="st"> </span>two.sided 
+<span class="dv">95</span> percent confidence interval:
+<span class="st"> </span>-<span class="fl">0.24201562</span> -<span class="fl">0.09131771</span> 
+sample estimates:
+<span class="st">   </span>prop <span class="dv">1</span>    prop <span class="dv">2</span> 
+<span class="fl">0.3333333</span> <span class="fl">0.5000000</span> </code></pre>
+<h3 id="兩組樣本的中位數檢定"><a href="#兩組樣本的中位數檢定">兩組樣本的中位數檢定</a></h3>
+<p>(方法一)：Wilcoxon Rank-Sum 檢定：兩組獨立觀察值 X, Y 適用</p>
+<ul>
+<li>統計量： <img src="../timg/_frac_W__1514cbaa258af8ea8b5a02612ad3e123.jpg" /></li>
+<li>其中的： <img src="../timg/E_W_m_m__2c5ac6f5bd5d8b007def1b7fd1c87741.jpg" /></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">右尾檢定</th>
+<th align="left">左尾檢定</th>
+<th align="left">雙尾檢定</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">H0</td>
+<td align="left"><img src="../timg/M_X_M_Y_0da28b8e6c63c60db7ae80f065235c2f.jpg" /></td>
+<td align="left"><img src="../timg/M_X_M_Y_0da28b8e6c63c60db7ae80f065235c2f.jpg" /></td>
+<td align="left"><img src="../timg/M_X_M_Y_0da28b8e6c63c60db7ae80f065235c2f.jpg" /></td>
+</tr>
+<tr class="even">
+<td align="left">H1</td>
+<td align="left"><img src="../timg/M_X_M_Y_4ada02222cdb2f189f82a490c651b77f.jpg" /></td>
+<td align="left"><img src="../timg/M_X_M_Y_09d107aa1f45e81a72b64877123bddb5.jpg" /></td>
+<td align="left"><img src="../timg/M_X_neq__7facb5808f1d570858a0b484373b8a87.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<pre class="sourceCode R"><code class="sourceCode r">&gt;<span class="st"> </span>x =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span>, <span class="dt">mean=</span><span class="dv">5</span>, <span class="dt">sd=</span><span class="dv">2</span>)
+&gt;<span class="st"> </span>y =<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">20</span>, <span class="dt">mean=</span><span class="fl">5.5</span>, <span class="dt">sd=</span><span class="dv">2</span>)
+&gt;<span class="st"> </span>x
+ [<span class="dv">1</span>] <span class="fl">3.962665</span> <span class="fl">4.592900</span> <span class="fl">2.708658</span> <span class="fl">4.302144</span> <span class="fl">9.140617</span> <span class="fl">6.579571</span> <span class="fl">4.711547</span> <span class="fl">4.842238</span>
+ [<span class="dv">9</span>] <span class="fl">5.634979</span> <span class="fl">8.826325</span> <span class="fl">7.492737</span> <span class="fl">5.349967</span> <span class="fl">6.028533</span> <span class="fl">5.326150</span> <span class="fl">3.280819</span> <span class="fl">2.589442</span>
+[<span class="dv">17</span>] <span class="fl">6.391175</span> <span class="fl">3.299716</span> <span class="fl">5.681381</span> <span class="fl">3.188571</span>
+&gt;<span class="st"> </span>y
+ [<span class="dv">1</span>] <span class="fl">7.537479</span> <span class="fl">5.810962</span> <span class="fl">7.340678</span> <span class="fl">4.048306</span> <span class="fl">6.179672</span> <span class="fl">5.152021</span> <span class="fl">6.780724</span> <span class="fl">3.354434</span>
+ [<span class="dv">9</span>] <span class="fl">6.484613</span> <span class="fl">8.752706</span> <span class="fl">4.116139</span> <span class="fl">4.939286</span> <span class="fl">4.074703</span> <span class="fl">2.954187</span> <span class="fl">4.489012</span> <span class="fl">5.697258</span>
+[<span class="dv">17</span>] <span class="fl">5.260137</span> <span class="fl">6.299990</span> <span class="fl">8.188696</span> <span class="fl">5.743851</span>
+&gt;<span class="st"> </span><span class="kw">wilcox.test</span>(x, y, <span class="dt">exact=</span>F, <span class="dt">correct=</span>F)
+
+        Wilcoxon rank sum test
+
+data:<span class="st">  </span>x and y 
+W =<span class="st"> </span><span class="dv">162</span>, p-value =<span class="st"> </span><span class="fl">0.304</span>
+alternative hypothesis:<span class="st"> </span>true location shift is not equal to <span class="dv">0</span> </code></pre>
+<p>(方法二)：Wilcoxon Signed-Rank 檢定：兩組成對觀察值 (X, Y) 適用</p>
+<ul>
+<li>樣本：兩組成對觀察值 <img src="../timg/_X_1_Y_1_4864fdb1c6c6fc9972ab56acb7fa7c0f.jpg" /></li>
+<li>方法：將差距絕對值 <img src="../timg/_X_1_Y_1_d4e3f9cf91e860ba1ad4984f6999318a.jpg" /> 由小到大排序，並給予 1..n 的名次。</li>
+<li>檢定統計量：看看 <img src="../timg/M_X_1204e1d9099edc5e8b60cb6d96228807.jpg" /> 是否夠接近 <img src="../timg/M_Y_bad56e5a19bb5f523ec4f1c47d102019.jpg" /> ，如果差很多那麼 W 應該會很大。</li>
+<li>正排名權重： <img src="../timg/W__sum___a9ce5aaee2853dbdd2ad11ec9240e178.jpg" /></li>
+<li>負排名權重： <img src="../timg/_W__sum__a4cddbebf122b6e823c93c47e05868bf.jpg" /></li>
+<li>W = min(W_+, |W_-|)</li>
+</ul>
+<pre class="sourceCode R"><code class="sourceCode r">&gt;<span class="st"> </span><span class="kw">wilcox.test</span>(x,y, <span class="dt">exact=</span>F, <span class="dt">correct=</span>F, <span class="dt">paired=</span>T)
+
+        Wilcoxon signed rank test
+
+data:<span class="st">  </span>x and y 
+V =<span class="st"> </span><span class="dv">83</span>, p-value =<span class="st"> </span><span class="fl">0.4115</span>
+alternative hypothesis:<span class="st"> </span>true location shift is not equal to <span class="dv">0</span> </code></pre>
+<h3 id="結語-1"><a href="#結語-1">結語</a></h3>
+<p>在本文中，我們討論了各種「單組樣本」與「兩組樣本」檢定方法，並用 R 軟體進行示範操作，希望透過這樣的方式讓 讀者感受到「檢定」這一個統計工具的用途。</p>
+<p>但是、我們還漏掉了一個部分，那就是「三組以上的樣本」之檢定方法，用來檢定這些樣本是否來自同一母體，這種 「多組樣本檢定」的問題，通常必須使用「變異數分析」(ANOVA, Analysis Of Variance) 的方法處理，這將是我們 下一期所要討論的主題，我們下期見！</p>
+<h3 id="參考文獻-5"><a href="#參考文獻-5">參考文獻</a></h3>
+<ul>
+<li>陳鍾誠的網站/免費電子書/R 統計軟體 -- <a href="http://ccckmit.wikidot.com/r:main">http://ccckmit.wikidot.com/r:main</a></li>
+<li>陳鍾誠的網站/免費電子書/機率與統計 (使用 R 軟體) -- <a href="http://ccckmit.wikidot.com/st:main">http://ccckmit.wikidot.com/st:main</a></li>
+</ul>
+<h2 id="verilog-2-硬體語言的基礎-作者陳鍾誠"><a href="#verilog-2-硬體語言的基礎-作者陳鍾誠">Verilog (2) – 硬體語言的基礎 (作者：陳鍾誠)</a></h2>
+<p>在本文中、我們將介紹 Verilog 的基本語法，以便讓讀者能很快的進入 Verilog 硬體設計的領域。</p>
+<h3 id="基本型態"><a href="#基本型態">基本型態</a></h3>
+<p>在一般的程式語言當中，資料的最基本型態通常是「位元」(bit)，但是在 Verilog 這種「硬體描述語言」當中， 我們必須有「面向硬體」的思考方式，因此最基本的型態從「位元」轉換為「線路」(wire)。</p>
+<p>一條線路的可能值，除了 0 與 1 之外，還有可能是未定值 X ，以及高阻抗 Z，如下表所示：</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">值</th>
+<th align="center">意義 說</th>
+<th align="left">明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td align="center">低電位 布</td>
+<td align="left">林代數中的假值</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="center">高電位 布</td>
+<td align="left">林代數中的真值</td>
+</tr>
+<tr class="odd">
+<td align="left">Z</td>
+<td align="center">高阻抗 三</td>
+<td align="left">態緩衝器的輸出，高阻抗斷線</td>
+</tr>
+<tr class="even">
+<td align="left">X</td>
+<td align="center">未定值 像</td>
+<td align="left">是線路未初始化之前，以及有 0,1 兩者衝突的線路值，或者是輸入為 Z 的輸出值</td>
+</tr>
+</tbody>
+</table>
+<p>其中的 0 對應到低電位、 1 對應到高電位，這是比較容易理解的部分，但是未定值 X 與高阻抗 Z 各代表甚麼意義呢？</p>
+<p>對於一條沒有阻抗的線路而言，假如我們在某點對該線路輸出 1, 另一點對該線路輸出 0，那麼這條線路到底應該是 高電位還是低電位呢？</p>
+<div class="figure">
+<img src="../img/VerilogWireX.jpg" alt="圖、造成未定值 X 的情況" /><p class="caption">圖、造成未定值 X 的情況</p>
+</div>
+<p>對於這種衝突的情況，Verilog 採用 X 來代表該線路的值。</p>
+<p>而高阻抗，則基本上是代表斷線，您可以想像該線路如果是「非導體」，例如「塑膠、木頭、開關開路、或者是處於高阻抗 情況的半導體」等，就會使用者種 Z 值來代表。</p>
+<p>根據這樣的四種線路狀態，一個原本簡易的 AND 閘，在數位邏輯中只要用 2<em>2 的真值表就能表示了，但在 Verilog 當中則有 4</em>4 種可能的情況，如下所示：</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">AND</th>
+<th align="left">0</th>
+<th align="left">1</th>
+<th align="left">X</th>
+<th align="left">Z</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">X</td>
+<td align="left">X</td>
+</tr>
+<tr class="odd">
+<td align="left">X</td>
+<td align="left">0</td>
+<td align="left">X</td>
+<td align="left">X</td>
+<td align="left">X</td>
+</tr>
+<tr class="even">
+<td align="left">Z</td>
+<td align="left">0</td>
+<td align="left">X</td>
+<td align="left">X</td>
+<td align="left">X</td>
+</tr>
+</tbody>
+</table>
+<p>同樣的，讀者應該可以自行寫出 OR、XOR、NOT 等閘的「真值表」。</p>
+<p>在 Verilog 當中，如果我們要宣告一條線路，只要用下列語法就可以了：</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="dt">wire</span> w1;</code></pre>
+<p>如果我們想一次宣告很多條線路，那麼我們可以用很多個變數描述：</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="dt">wire</span> w, x, y, z;</code></pre>
+<p>但是如果我們想宣告一整個排線 (例如匯流排)，那我們就可以用下列的陣列語法：</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="dt">wire</span> [<span class="dv">31</span>:<span class="dv">0</span>] bus;</code></pre>
+<p>如果想要一次宣告很多組排線，那我們就可以用下列的陣列群語法：</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="dt">wire</span> [<span class="dv">31</span>:<span class="dv">0</span>] bus [<span class="dv">0</span>:<span class="dv">3</span>];</code></pre>
+<p>當然、除了線路之外，Verilog 還有可以穩定儲存位元的型態，稱為 reg (暫存器)，reg 可以用來 儲存位元，而非像線路一樣只是「一種連接方式」而已，以下是一些 reg 的宣告方式：</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="dt">reg</span> w;                 <span class="co">// 宣告一位元的暫存器變數 w</span>
+<span class="dt">reg</span> x, y, z;           <span class="co">// 宣告三個一位元的暫存器變數 x, y, z</span>
+<span class="dt">reg</span> [<span class="dv">31</span>:<span class="dv">0</span>] r1;         <span class="co">// 宣告 32 位元的暫存器 r1</span>
+<span class="dt">reg</span> [<span class="dv">31</span>:<span class="dv">0</span>] R [<span class="dv">0</span>:<span class="dv">15</span>];   <span class="co">// 宣告 16 個 32 位元的暫存器群組 R[0..15]</span></code></pre>
+<p>在 Verilog 中，wire 與 reg 是比較常用的基本型態，另外還有一些較不常用的基本型態， 像是 tri (三態線路)、trireg (三態暫存器)、integer (整數) 等，在此我們先不進行介紹。</p>
+<h3 id="基本邏輯閘"><a href="#基本邏輯閘">基本邏輯閘</a></h3>
+<p>Verilog 既然是硬體描述語言，那當然會有邏輯閘的表示法，Verilog 提供的邏輯閘有 and, nand, or, nor, xor, xnor, not 等元件，因此您可以用下列 Verilog 程式描述一個全加器：</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="kw">module</span> fulladder (<span class="dt">input</span> a, b, c_in, <span class="dt">output</span> sum, c_out);
+<span class="dt">wire</span> s1, c1, c2;
+
+<span class="dt">xor</span> g1(s1, a, b);
+<span class="dt">xor</span> g2(sum, s1, c_in);
+<span class="dt">and</span> g3(c1, a,b);
+<span class="dt">and</span> g4(c2, s1, c_in) ;
+<span class="dt">or</span> g5(c_out, c2, c1) ;
+
+<span class="kw">endmodule</span></code></pre>
+<p>上述程式所對應的電路如下圖所示：</p>
+<div class="figure">
+<img src="../img/FullAdder.jpg" alt="全加器電路圖" /><p class="caption">全加器電路圖</p>
+</div>
+<p>這些邏輯閘並不受限於兩個輸入，也可以是多個輸入的，例如以下範例中的 g 閘，就一次將三個輸入 a, b, c_in 進行 xor 運算，產生輸出 sum 的結果。</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="dt">xor</span> g(sum, a, b, c_in);</code></pre>
+<p>在上一期當中，我們有給出全加器的完整測試程式範例以及執行結果，該範例可以清楚的說明 Verilog 的閘級 (Gate Level) 程式之寫法，因此我們就不再重複說明了。</p>
+<p>在本文當中，我們想要詳細說明的重點是，高階的暫存器轉換 (RTL) 語法。</p>
+<h3 id="高階的-rtl-語法"><a href="#高階的-rtl-語法">高階的 RTL 語法</a></h3>
+<p>所謂 RTL 是 Register Transfer Language 的縮寫，也就是暫存器轉換語言，這種寫法與 C, Java 等高階語言非常相似， 因此讓「程式人」也有機會透過 Verilog 設計自己的硬體。</p>
+<p>舉例而言，在數位邏輯當中，多工器是一個很有用的電路，假如我們想設計一個二選一的多工器，那麼我們可以很直覺得 用以下的 RTL 寫法，去完成這樣的電路設計。</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="kw">module</span> mux(f, a, b, sel);
+<span class="dt">output</span> f;
+<span class="dt">input</span> a, b, sel;
+<span class="dt">reg</span> f; <span class="co">// reg 型態會記住某些值，直到被某個 assign 指定改變為止</span>
+
+<span class="kw">always</span> @(a <span class="dt">or</span> b <span class="dt">or</span> sel) <span class="co">// 當任何變數改變的時候，會執行內部區塊</span>
+  <span class="kw">if</span> (sel) f = a; <span class="co">// Always 內部的區塊採用 imperative 程式語言的寫法。</span>
+  <span class="kw">else</span> f = b;
+<span class="kw">endmodule</span></code></pre>
+<p>對於上述程式，您還可以進一步的將參數部分化簡，將型態寫入到參數中，成為以下的形式：</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="kw">module</span> mux(<span class="dt">output</span> <span class="dt">reg</span> f, <span class="dt">input</span> a, b, sel);
+<span class="kw">always</span> @(a <span class="dt">or</span> b <span class="dt">or</span> sel) <span class="co">// 當任何變數改變的時候，會執行內部區塊</span>
+  <span class="kw">if</span> (sel) f = a; <span class="co">// Always 內部的區塊採用 imperative 程式語言的寫法。</span>
+  <span class="kw">else</span> f = b;
+<span class="kw">endmodule</span></code></pre>
+<p>在 verilog 當中，if, case 等陳述一定要放在 always 或 initial 的理面，always @(cond) 代表在 cond 的 條件之下要執行該區塊，例如上述的 always @(a or b or sel) 則是在 a, b, 或 sel 有改變的時後，就必須 執行裏面的動作。</p>
+<p>有時我們只希望在波型的「正邊緣」或「負邊緣」時，才執行某些動作，這時候就可以用 posedge 或 negedge 這 兩個修飾詞，例如以下的程式：</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="kw">always</span> @(<span class="kw">posedge</span> clock) <span class="kw">begin</span> <span class="co">// 當 clock 時脈在正邊緣時才執行</span>
+  f = a;
+<span class="kw">end</span></code></pre>
+<p>而 initial 則通常是在測試程式 test bench 當中使用的，在一開始初始化的時後，可以透過 initial 設定初值， 例如以下的程式：</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="kw">initial</span> <span class="kw">begin</span> <span class="co">// 當 clock 時脈在正邊緣時才執行</span>
+  clock = <span class="dv">0</span>
+<span class="kw">end</span></code></pre>
+<p>Verilog 程式的許多地方，都可以用 #delay 指定時間延遲，例如 #50 就是延遲 50 單位的時間 (通常一單位時間 是一奈秒 ns)。舉例而言，假如我們想要每個 50 奈秒讓 clock 變化一次，那麼我們就可以用下列寫法達到目的：</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="kw">always</span> <span class="bn">#50</span> <span class="kw">begin</span>
+  clock = ~clock; <span class="co">// 將 clock 反相 (0 變 1 、1 變 0)</span>
+<span class="kw">end</span></code></pre>
+<p>以上的延遲也可以寫在裡面，而不是直接寫在 always 後面，例如改用以下寫法，也能得到相同的結果。</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="kw">always</span> <span class="kw">begin</span>
+  <span class="bn">#50</span>; 
+  clock = ~clock; <span class="co">// 將 clock 反相 (0 變 1 、1 變 0)</span>
+<span class="kw">end</span></code></pre>
+<h3 id="整合的範例"><a href="#整合的範例">整合的範例</a></h3>
+<p>接著、讓我們用一個整合的計數器範例，來示範這些語法的實際用途，以下是我們的程式內容。</p>
+<p>檔案：counter.v</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"> <span class="co">// 定義計數器模組 counter，包含重置 reset, 時脈 clock 與暫存器 count</span>
+<span class="kw">module</span> counter(<span class="dt">input</span> reset, clock, <span class="dt">output</span> <span class="dt">reg</span> [<span class="dv">7</span>:<span class="dv">0</span>] count); 
+  <span class="kw">always</span> @(reset)                   <span class="co">// 當 reset 有任何改變時</span>
+    <span class="kw">if</span> (reset) count = <span class="dv">0</span>;           <span class="co">//   如果 reset 是 1 ，就將 count 重置為 0</span>
+  <span class="kw">always</span> @(<span class="kw">posedge</span> clock) <span class="kw">begin</span>     <span class="co">// 在 clock 時脈的正邊緣時</span>
+    count = count + <span class="dv">1</span>;              <span class="co">//   將 count 加 1</span>
+  <span class="kw">end</span>
+<span class="kw">endmodule</span>
+
+<span class="kw">module</span> main; <span class="co">// 測試主程式開始</span>
+<span class="dt">wire</span> [<span class="dv">7</span>:<span class="dv">0</span>] i; <span class="co">// i:計數器的輸出值</span>
+<span class="dt">reg</span> reset, clock; <span class="co">// reset:重置訊號, clock:時脈</span>
+
+<span class="co">// 宣告一個 counter 模組 c0、計數器的值透過線路 i 輸出，以便觀察。</span>
+counter c0(reset, clock, i); 
+
+<span class="kw">initial</span> <span class="kw">begin</span>
+  <span class="dt">$display</span>(<span class="st">&quot;%4dns: reset=%d clock=%d i=%d&quot;</span>, <span class="dt">$stime</span>, reset, clock, i); <span class="co">// 印出  0ns: reset=x clock=x i=  x</span>
+  <span class="bn">#10</span> reset = <span class="dv">1</span>; clock=<span class="dv">0</span>; <span class="co">// 10ns 之後，將啟動重置訊號，並將 clock 初值設為 0</span>
+  <span class="dt">$display</span>(<span class="st">&quot;%4dns: reset=%d clock=%d i=%d&quot;</span>, <span class="dt">$stime</span>, reset, clock, i); <span class="co">// 印出 10ns: reset=1 clock=0 i=  x</span>
+  <span class="bn">#10</span> reset = <span class="dv">0</span>;  <span class="co">// 又經過 10ns 之後，重置完畢，將 reset 歸零</span>
+  <span class="dt">$display</span>(<span class="st">&quot;%4dns: reset=%d clock=%d i=%d&quot;</span>, <span class="dt">$stime</span>, reset, clock, i); <span class="co">// 印出 20ns: reset=0 clock=0 i=  0</span>
+  <span class="bn">#500</span> <span class="dt">$finish</span>; <span class="co">// 再經過 500ns 之後，結束程式</span>
+<span class="kw">end</span>
+
+<span class="kw">always</span> <span class="bn">#40</span> <span class="kw">begin</span> <span class="co">// 延遲 40ns 之後，開始作下列動作</span>
+  clock=~clock; <span class="co">// 將時脈反轉 (0 變 1 、1 變 0)</span>
+  <span class="bn">#10</span>;          <span class="co">// 再延遲 10ns 之後</span>
+  <span class="dt">$display</span>(<span class="st">&quot;%4dns: reset=%d clock=%d i=%d&quot;</span>, <span class="dt">$stime</span>, reset, clock, i); <span class="co">// 印出 reset, clock 與 i 等變數值</span>
+<span class="kw">end</span>
+
+<span class="kw">endmodule</span></code></pre>
+<p>在上述程式中，<code>$display()</code> 函數可以用來顯示變數的內容，其作用就像 C 語言的 printf() 一樣。不過、 由於 Verilog 設計的是硬體，因此像 <code>$display()</code> 這樣前面有錢字 <code>$</code> 符號的指令，其實是不會被合成為電路的， 只是方便除錯時使用而已。</p>
+<p>以下是我們用 icarus 軟體編譯並執行上述程式的過程與輸出結果：</p>
+<pre><code>D:\Dropbox\Public\pmag\201307\code&gt;iverilog -o counter counter.v
+
+D:\Dropbox\Public\pmag\201307\code&gt;vvp counter
+   0ns: reset=x clock=x i=  x
+  10ns: reset=1 clock=0 i=  x
+  20ns: reset=0 clock=0 i=  0
+  50ns: reset=0 clock=1 i=  1
+ 100ns: reset=0 clock=0 i=  1
+ 150ns: reset=0 clock=1 i=  2
+ 200ns: reset=0 clock=0 i=  2
+ 250ns: reset=0 clock=1 i=  3
+ 300ns: reset=0 clock=0 i=  3
+ 350ns: reset=0 clock=1 i=  4
+ 400ns: reset=0 clock=0 i=  4
+ 450ns: reset=0 clock=1 i=  5
+ 500ns: reset=0 clock=0 i=  5</code></pre>
+<p>您可以看到，在一開始的時候以下的 initial 區塊會被執行，但由於此時 reset, clock, i 都尚未被賦值， 所以第一個 <code>$display()</code> 印出了代表未定值的 x 符號。</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="kw">initial</span> <span class="kw">begin</span>
+  <span class="dt">$display</span>(<span class="st">&quot;%4dns: reset=%d clock=%d i=%d&quot;</span>, <span class="dt">$stime</span>, reset, clock, i); <span class="co">// 印出  0ns: reset=x clock=x i=  x</span>
+  <span class="bn">#10</span> reset = <span class="dv">1</span>; clock=<span class="dv">0</span>; <span class="co">// 10ns 之後，將啟動重置訊號，並將 clock 初值設為 0</span>
+  <span class="dt">$display</span>(<span class="st">&quot;%4dns: reset=%d clock=%d i=%d&quot;</span>, <span class="dt">$stime</span>, reset, clock, i); <span class="co">// 印出 10ns: reset=1 clock=0 i=  x</span>
+  <span class="bn">#10</span> reset = <span class="dv">0</span>;  <span class="co">// 又經過 10ns 之後，重置完畢，將 reset 歸零</span>
+  <span class="dt">$display</span>(<span class="st">&quot;%4dns: reset=%d clock=%d i=%d&quot;</span>, <span class="dt">$stime</span>, reset, clock, i); <span class="co">// 印出 20ns: reset=0 clock=0 i=  0</span>
+  <span class="bn">#500</span> <span class="dt">$finish</span>; <span class="co">// 再經過 500ns 之後，結束程式</span>
+<span class="kw">end</span></code></pre>
+<p>接著 <code>#10 reset = 1; clock=0</code> 指令在延遲 10ns 後，執行 reset=1; clock=0，於是後來的 <code>$display()</code> 就印出了 <code>10ns: reset=1 clock=0 i=  x</code> 的結果。</p>
+<p>但是就在 reset 被設為 1 的時候，由於 reset 的值有所改變，因此下列模組中的 <code>always @(reset)</code> 被觸發了， 於是開始執行 <code>if (reset) count = 0</code> 這個陳述，將 count 暫存器設定為 0。</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="kw">module</span> counter(<span class="dt">input</span> reset, clock, <span class="dt">output</span> <span class="dt">reg</span> [<span class="dv">7</span>:<span class="dv">0</span>] count); 
+  <span class="kw">always</span> @(reset)                   <span class="co">// 當 reset 有任何改變時</span>
+    <span class="kw">if</span> (reset) count = <span class="dv">0</span>;           <span class="co">//   如果 reset 是 1 ，就將 count 重置為 0</span>
+  <span class="kw">always</span> @(<span class="kw">posedge</span> clock) <span class="kw">begin</span>     <span class="co">// 在 clock 時脈的正邊緣時</span>
+    count = count + <span class="dv">1</span>;              <span class="co">//   將 count 加 1</span>
+  <span class="kw">end</span>
+<span class="kw">endmodule</span></code></pre>
+<p>然後 <code>#10 reset = 0</code> 指令又在延遲 10ns 後執行了 reset = 0，之後再用 <code>$display()</code> 時，由於 count 已經 被設定為 0，所以此時印出的結果為 <code>20ns: reset=0 clock=0 i=  0</code>。</p>
+<p>initial 區塊的最後一個陳述，<code>#500 $finish</code>，會在 520ns 的時候才執行，執行時 <code>$finish</code> 會將整個測試程式 結束。</p>
+<p>但在程式結束之前，以下的程式會在延遲 40ns 之後，開始將 clock 反相，然後再等待 10ns 之後用 <code>$display()</code> 印出變數內容，因此整個區塊每 50ns (=40ns+10ns) 會被執行一次。</p>
+<pre class="sourceCode verilog"><code class="sourceCode verilog"><span class="kw">always</span> <span class="bn">#40</span> <span class="kw">begin</span> <span class="co">// 延遲 40ns 之後，開始作下列動作</span>
+  clock=~clock; <span class="co">// 將時脈反轉 (0 變 1 、1 變 0)</span>
+  <span class="bn">#10</span>;          <span class="co">// 再延遲 10ns 之後</span>
+  <span class="dt">$display</span>(<span class="st">&quot;%4dns: reset=%d clock=%d i=%d&quot;</span>, <span class="dt">$stime</span>, reset, clock, i); <span class="co">// 印出 reset, clock 與 i 等變數值</span>
+<span class="kw">end</span></code></pre>
+<p>所以、您才會看到像下面的輸出結果，如果仔細觀察，會發現 clock 每 50ns 變換一次，符合上述的程式邏輯，而且每當 clock 從 0 變成 1 的正邊緣，就會觸發 counter 模組，讓 count 變數加 1 ，並且透過線路 i 的輸出被我們觀察到。</p>
+<pre><code>  50ns: reset=0 clock=1 i=  1
+ 100ns: reset=0 clock=0 i=  1
+ 150ns: reset=0 clock=1 i=  2
+ 200ns: reset=0 clock=0 i=  2
+ 250ns: reset=0 clock=1 i=  3
+ 300ns: reset=0 clock=0 i=  3</code></pre>
+<p>(註：或許您有注意到上期當中我們用 <code>$monitor()</code> 來觀察全加器的輸出，<code>$display()</code> 與 <code>$monitor()</code> 的語法 幾乎一模一樣，但是 <code>$display()</code> 是顯示該時間點的變數內容，而 <code>$monitor()</code> 則會在受觀察的變數有改變時就 列印變數內容，兩者的的功能有明顯的差異)。</p>
+<h3 id="結語-2"><a href="#結語-2">結語</a></h3>
+<p>在本文中，我們初淺的介紹了 Verilog 的基本語法，包含基本型態、閘級語法、以及 RTL 層級的語法等， 並且在最後用一個完整的計數器範例說明 RTL 層級的程式寫法。</p>
+<p>雖然這樣的說明仍然太過粗淺，不過應該可以讓讀者看出 Verilog 語言的大致樣貌，這也是本系列文章所想要 傳達的訊息，希望讀者能夠透過本文打開硬體設計之門。</p>
+<h3 id="參考文獻-6"><a href="#參考文獻-6">參考文獻</a></h3>
+<ul>
+<li><a href="http://ccckmit.wikidot.com/ve:main">陳鍾誠的網站/免費電子書：Verilog 電路設計</a></li>
+</ul>
+<h2 id="開放電腦計畫-2-as0-組譯器使用-javascriptnode.js-實作-作者陳鍾誠"><a href="#開放電腦計畫-2-as0-組譯器使用-javascriptnode.js-實作-作者陳鍾誠">開放電腦計畫 (2) – AS0 組譯器：使用 JavaScript+Node.js 實作 (作者：陳鍾誠)</a></h2>
+<p>上一期當中，我們介紹了開放電腦計畫中的「處理器」 -- 包含 CPU0 的結構、指令集與編碼方式。 在這一期當中，我們將為 CPU0 設計一個組譯器 AS0，以便能更深入理解 CPU0 的結構，並瞭解 組譯器的設計原理。</p>
+<h3 id="組譯範例"><a href="#組譯範例">組譯範例</a></h3>
+<p>讓我們先用範例導向的方式，先看看一個 CPU0 的組合語言程式，如下所示：</p>
+<p>組合語言：sum.as0</p>
+<pre><code>        LD     R1, sum      ; R1 = sum = 0
+        LD     R2, i        ; R2 = i = 1
+        LDI    R3, 10       ; R3 = 10
+FOR:    CMP    R2, R3       ; if (R2 &gt; R3)
+        JGT    EXIT         ;   goto EXIT
+        ADD    R1, R1, R2   ; R1 = R1 + R2 (sum = sum + i)
+        ADDI   R2, R2, 1    ; R2 = R2 + 1  ( i  = i + 1)
+        JMP    FOR          ; goto FOR
+EXIT:   ST     R1, sum      ; sum = R1
+        ST     R2, i        ; i = R2
+        LD     R9, msgptr   ; R9= pointer(msg) = &amp;msg
+        SWI    3            ; SWI 3 : print string &amp;msg
+        MOV    R9, R1       ; R9 = R1 = sum
+        SWI    2            ; SWI 2 : print number sum
+        RET                 ; return to CALLER
+i:      RESW    1           ; int i
+sum:    WORD    0           ; int sum=0
+msg:    BYTE    &quot;sum=&quot;, 0   ; char *msg = &quot;sum=&quot;
+msgptr: WORD    msg         ; char &amp;msgptr = &amp;msg</code></pre>
+<p>上述程式是一個可以計算 1+2+....+10 之結果的程式，最後會透過軟體中斷 (SWI, Software Interrupt) 的方式， 印出訊息到螢幕畫面上，以下是利用我們寫的組譯器 AS0 對上述程式進行組譯的過程：</p>
+<pre><code>D:\oc\code&gt;node as0 sum.as0 sum.ob0
+Assembler:asmFile=sum.as0 objFile=sum.ob0
+===============Assemble=============
+[ &#39;        LD     R1, sum      ; R1 = sum = 0&#39;,
+  &#39;        LD     R2, i        ; R2 = i = 1&#39;,
+  &#39;        LDI    R3, 10       ; R3 = 10&#39;,
+  &#39;FOR:    CMP    R2, R3       ; if (R2 &gt; R3)&#39;,
+  &#39;        JGT    EXIT         ;   goto EXIT&#39;,
+  &#39;        ADD    R1, R1, R2   ; R1 = R1 + R2 (sum = sum + i)&#39;,
+  &#39;        ADDI   R2, R2, 1    ; R2 = R2 + 1  ( i  = i + 1)&#39;,
+  &#39;        JMP    FOR          ; goto FOR&#39;,
+  &#39;EXIT:   ST     R1, sum      ; sum = R1&#39;,
+  &#39;        ST     R2, i        ; i = R2&#39;,
+  &#39;        LD     R9, msgptr   ; R9= pointer(msg) = &amp;msg&#39;,
+  &#39;        SWI    3            ; SWI 3 : 印出 R9 (=&amp;msg) 中的字串&#39;,
+  &#39;        MOV    R9, R1       ; R9 = R1 = sum&#39;,
+  &#39;        SWI    4            ; SWI 2 : 印出 R9 (=R1=sum) 中的整數&#39;,
+  &#39;        RET                 ; return 返回上一層呼叫函數&#39;,
+  &#39;i:      RESW   1            ; int i&#39;,
+  &#39;sum:    WORD   0            ; int sum=0&#39;,
+  &#39;msg:    BYTE   &quot;1+...+10=&quot;, 0   ; char *msg = &quot;sum=&quot;&#39;,
+  &#39;msgptr: WORD   msg          ; char &amp;msgptr = &amp;msg&#39; ]
+=================PASS1================
+0000          LD       R1,sum           L 00
+0004          LD       R2,i             L 00
+0008          LDI      R3,10            L 08
+000C FOR      CMP      R2,R3            A 10
+0010          JGT      EXIT             J 23
+0014          ADD      R1,R1,R2         A 13
+0018          ADDI     R2,R2,1          A 1B
+001C          JMP      FOR              J 26
+0020 EXIT     ST       R1,sum           L 01
+0024          ST       R2,i             L 01
+0028          LD       R9,msgptr        L 00
+002C          SWI      3                J 2A
+0030          MOV      R9,R1            A 12
+0034          SWI      4                J 2A
+0038          RET                       J 2C
+003C i        RESW     1                D F0
+0040 sum      WORD     0                D F2
+0044 msg      BYTE     &quot;1+...+10=&quot;,0    D F3
+004E msgptr   WORD     msg              D F2
+===============SYMBOL TABLE=========
+FOR      000C
+EXIT     0020
+i        003C
+sum      0040
+msg      0044
+msgptr   004E
+=============PASS2==============
+0000          LD       R1,sum           L 00 001F003C
+0004          LD       R2,i             L 00 002F0034
+0008          LDI      R3,10            L 08 0830000A
+000C FOR      CMP      R2,R3            A 10 10230000
+0010          JGT      EXIT             J 23 2300000C
+0014          ADD      R1,R1,R2         A 13 13112000
+0018          ADDI     R2,R2,1          A 1B 1B220001
+001C          JMP      FOR              J 26 26FFFFEC
+0020 EXIT     ST       R1,sum           L 01 011F001C
+0024          ST       R2,i             L 01 012F0014
+0028          LD       R9,msgptr        L 00 009F0022
+002C          SWI      3                J 2A 2A000003
+0030          MOV      R9,R1            A 12 12910000
+0034          SWI      4                J 2A 2A000004
+0038          RET                       J 2C 2C000000
+003C i        RESW     1                D F0 00000000
+0040 sum      WORD     0                D F2 00000000
+0044 msg      BYTE     &quot;1+...+10=&quot;,0    D F3 312B2E2E2E2B31303D00
+004E msgptr   WORD     msg              D F2 00000044
+=================SAVE OBJ FILE================
+
+00 :  001F003C 002F0034 0830000A 10230000
+10 :  2300000C 13112000 1B220001 26FFFFEC
+20 :  011F001C 012F0014 009F0022 2A000003
+30 :  12910000 2A000004 2C000000 00000000
+40 :  00000000 312B2E2E 2E2B3130 3D000000
+50 :  0044</code></pre>
+<p>當您組譯完成之後，就可以利用開放電腦計畫中的虛擬機 VM0 執行 AS0 所輸出的目的檔 sum.ob0， 其執行過程如下：</p>
+<pre><code>D:\oc\code&gt;node vm0 sum.ob0
+1+...+10=55</code></pre>
+<h3 id="as0-組譯器設計"><a href="#as0-組譯器設計">AS0 組譯器設計</a></h3>
+<p>組譯器的設計，通常採用兩階段的編碼方式，第一階段 (PASS1) 先計算出每個指令的位址，並記住所有標記符號的位址。 然後在第二階段 (PASS2) 才真正將指令轉換為機器碼輸出，在以下 AS0 組譯器的設計當中，我們就採用了這種兩階段的 處理方式。</p>
+<p>為了讓組譯器能夠容易修改與移植，我們將一般組譯器都會有的基礎結構 (抽象的組譯器物件) 放在 as.js 這個程式模組當中， 然後將與 CPU0 有關的部分放在 as0.js 這個實作模組當中，以下先列出 as.js 這個抽象物件模組。</p>
+<p>檔案：as.js (抽象組譯器物件)</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> fs = <span class="fu">require</span>(<span class="st">&quot;fs&quot;</span>); <span class="co">// 引用檔案函式庫</span>
+<span class="kw">var</span> c = <span class="fu">require</span>(<span class="st">&quot;./ccc&quot;</span>); <span class="co">// 引用基本函式庫 ccc.js</span>
+<span class="kw">var</span> Memory = <span class="fu">require</span>(<span class="st">&quot;./memory&quot;</span>); <span class="co">// 引用記憶體物件 memory.js</span>
+
+<span class="kw">var</span> as = <span class="kw">function</span>(opTable) { <span class="co">// 抽象組譯器物件</span>
+ <span class="kw">this</span>.<span class="fu">opTable</span> = opTable; <span class="co">// 取得指令表 opTable</span>
+
+ <span class="kw">this</span>.<span class="fu">assemble</span> = <span class="kw">function</span>(asmFile, objFile) { <span class="co">// 組譯器的主要函數</span>
+  <span class="kw">this</span>.<span class="fu">lines</span> = []; <span class="kw">this</span>.<span class="fu">codes</span> = []; <span class="co">// 設定程式碼行 (lines)，指令陣列 (codes)</span>
+  <span class="kw">this</span>.<span class="fu">symTable</span> = {}; <span class="co">// 建立空的符號表 (symTable)</span>
+  <span class="ot">c</span>.<span class="fu">log</span>(<span class="st">&quot;Assembler:asmFile=%s objFile=%s&quot;</span>, asmFile, objFile); <span class="co">// 輸入組合語言、輸出目的檔</span>
+  <span class="ot">c</span>.<span class="fu">log</span>(<span class="st">&quot;===============Assemble=============&quot;</span>);
+  <span class="kw">var</span> text = <span class="ot">fs</span>.<span class="fu">readFileSync</span>(asmFile, <span class="st">&quot;utf8&quot;</span>); <span class="co">// 讀取檔案到 text 字串中</span>
+  <span class="kw">this</span>.<span class="fu">lines</span> = <span class="ot">text</span>.<span class="fu">split</span>(<span class="ot">/</span><span class="bn">[</span><span class="fl">\r\n</span><span class="bn">]</span><span class="fl">+</span><span class="ot">/</span>); <span class="co">// 將組合語言分割成一行一行</span>
+  <span class="ot">c</span>.<span class="fu">log</span>(<span class="kw">this</span>.<span class="fu">lines</span>); <span class="co">// 印出組合語言以便觀察</span>
+  <span class="kw">this</span>.<span class="fu">pass1</span>(); <span class="co">// 第一階段：計算位址</span>
+  <span class="ot">c</span>.<span class="fu">log</span>(<span class="st">&quot;===============SYMBOL TABLE=========&quot;</span>);
+  <span class="kw">for</span> (s <span class="kw">in</span> <span class="kw">this</span>.<span class="fu">symTable</span>) { <span class="co">// 印出符號表以便觀察</span>
+    <span class="ot">c</span>.<span class="fu">log</span>(<span class="st">&quot;%s %s&quot;</span>, <span class="ot">c</span>.<span class="fu">fill</span>(<span class="st">&#39; &#39;</span>,s,<span class="dv">8</span>), <span class="ot">c</span>.<span class="fu">hex</span>(<span class="kw">this</span>.<span class="fu">symTable</span>[s].<span class="fu">address</span>, <span class="dv">4</span>));
+  }
+  <span class="kw">this</span>.<span class="fu">pass2</span>(); <span class="co">// 第二階段：建構目的碼</span>
+  <span class="kw">this</span>.<span class="fu">saveObjFile</span>(objFile); <span class="co">// 輸出目的檔</span>
+ }
+
+ <span class="kw">this</span>.<span class="fu">pass1</span> = <span class="kw">function</span>() { <span class="co">// 第一階段的組譯</span>
+  <span class="kw">var</span> address = <span class="dv">0</span>;  <span class="co">// 程式計數器 PC 的起始位址為 0</span>
+  <span class="ot">c</span>.<span class="fu">log</span>(<span class="st">&quot;=================PASS1================&quot;</span>);
+  <span class="kw">for</span> (<span class="kw">var</span> i <span class="kw">in</span> <span class="kw">this</span>.<span class="fu">lines</span>) { <span class="co">// 對於每一行</span>
+    <span class="kw">try</span> {
+      <span class="kw">var</span> code = <span class="kw">this</span>.<span class="fu">parse</span>(<span class="kw">this</span>.<span class="fu">lines</span>[i]); <span class="co">// 剖析並建立 code 物件</span>
+      <span class="ot">code</span>.<span class="fu">address</span> = address; <span class="co">// 設定該行的位址</span>
+      <span class="kw">if</span> (<span class="ot">code</span>.<span class="ot">label</span>.<span class="fu">length</span> != <span class="dv">0</span>) { <span class="co">// 如果有標記符號</span>
+        <span class="kw">this</span>.<span class="fu">symTable</span>[<span class="ot">code</span>.<span class="fu">label</span>] = code; <span class="co">// 加入符號表中</span>
+      }
+      <span class="kw">this</span>.<span class="ot">codes</span>.<span class="fu">push</span>(code); <span class="co">// 將剖析完成的指令放入陣列中</span>
+      <span class="ot">c</span>.<span class="fu">log</span>(<span class="st">&quot;%s&quot;</span>, code); <span class="co">// 印出指令物件</span>
+      address += <span class="kw">this</span>.<span class="fu">size</span>(code); <span class="co">//  計算下一個指令位址</span>
+    } <span class="kw">catch</span> (err) { <span class="co">// 語法有錯，印出錯誤的行號與內容</span>
+      <span class="ot">c</span>.<span class="fu">error</span>(<span class="ot">c</span>.<span class="fu">format</span>(<span class="st">&quot;line %d : %s&quot;</span>, i, <span class="kw">this</span>.<span class="fu">lines</span>[i]), err);
+    }
+  }
+ }
+
+ <span class="kw">this</span>.<span class="fu">pass2</span> = <span class="kw">function</span>(codes) { <span class="co">// 組譯器的第二階段</span>
+  <span class="ot">c</span>.<span class="fu">log</span>(<span class="st">&quot;=============PASS2==============&quot;</span>);
+  <span class="kw">for</span> (<span class="kw">var</span> i <span class="kw">in</span> <span class="kw">this</span>.<span class="fu">codes</span>) { <span class="co">// 對每一個指令</span>
+    <span class="kw">try</span> {
+      <span class="kw">this</span>.<span class="fu">translate</span>(<span class="kw">this</span>.<span class="fu">codes</span>[i]); <span class="co">// 將組合語言指令翻譯成機器碼</span>
+      <span class="ot">c</span>.<span class="fu">log</span>(<span class="st">&quot;%s&quot;</span>, <span class="kw">this</span>.<span class="fu">codes</span>[i]); <span class="co">// 印出指令物件 (含組合語言與機器碼)</span>
+    } <span class="kw">catch</span> (err) { <span class="co">// 語法有錯，印出錯誤的行號與內容</span>
+      <span class="ot">c</span>.<span class="fu">error</span>(<span class="ot">c</span>.<span class="fu">format</span>(<span class="st">&quot;line %d : %s&quot;</span>, i, <span class="kw">this</span>.<span class="fu">lines</span>[i]), err);
+    }
+  }
+ }
+ 
+ <span class="kw">this</span>.<span class="fu">saveObjFile</span> = <span class="kw">function</span>(objFile) { <span class="co">// 儲存目的檔</span>
+  <span class="ot">c</span>.<span class="fu">log</span>(<span class="st">&quot;=================SAVE OBJ FILE================&quot;</span>);
+  <span class="kw">var</span> obj = <span class="st">&quot;&quot;</span>; <span class="co">// obj 為目的檔的 16 進位字串，初始化為空字串</span>
+  <span class="kw">for</span> (<span class="kw">var</span> i <span class="kw">in</span> <span class="kw">this</span>.<span class="fu">codes</span>) <span class="co">// 對於每個指令</span>
+    obj += <span class="kw">this</span>.<span class="fu">codes</span>[i].<span class="fu">obj</span>; <span class="co">// 都將目的碼加入 obj 字串中。</span>
+  <span class="kw">var</span> m = <span class="kw">new</span> <span class="fu">Memory</span>(<span class="dv">1</span>); <span class="co">// Memory 物件，用來將 16 進位目的碼轉為 2 進位儲存。</span>
+  <span class="ot">m</span>.<span class="fu">loadhex</span>(obj); <span class="co">// 將 16 進位目的碼載入記憶體</span>
+  <span class="ot">m</span>.<span class="fu">dump</span>(); <span class="co">// 輸出記憶體內容</span>
+  <span class="ot">m</span>.<span class="fu">save</span>(objFile); <span class="co">// 將記憶體內容除存到目的檔 objFile 中。</span>
+ }
+
+ <span class="kw">this</span>.<span class="fu">size</span> = <span class="kw">function</span>(code) { <span class="co">// 計算指令所佔空間大小，在 pass1() 當中會呼叫此函數</span>
+    <span class="kw">var</span> len = <span class="dv">0</span>, unitSize = <span class="dv">1</span>; <span class="co">// len: 指令大小 , unitSize:每單位大小 (BYTE=1, WORD=4)</span>
+    <span class="kw">switch</span> (<span class="ot">code</span>.<span class="ot">op</span>.<span class="fu">name</span>) { <span class="co">// 根據運算碼 op</span>
+      <span class="kw">case</span> <span class="st">&quot;RESW&quot;</span> : <span class="kw">return</span> <span class="dv">4</span> * <span class="fu">parseInt</span>(<span class="ot">code</span>.<span class="fu">args</span>[<span class="dv">0</span>]);  <span class="co">// 如果是 RESW, 大小為 4*保留量(參數 0)</span>
+      <span class="kw">case</span> <span class="st">&quot;RESB&quot;</span> : <span class="kw">return</span> <span class="dv">1</span> * <span class="fu">parseInt</span>(<span class="ot">code</span>.<span class="fu">args</span>[<span class="dv">0</span>]);  <span class="co">// 如果是 RESB, 大小為 1*保留量(參數 0)</span>
+      <span class="kw">case</span> <span class="st">&quot;WORD&quot;</span> : unitSize = <span class="dv">4</span>; <span class="co">// 沒有 break，繼續執行到 BYTE 部分的程式 (共用)</span>
+      <span class="kw">case</span> <span class="st">&quot;BYTE&quot;</span> : <span class="co">// 如果是BYTE, 大小是 1*參數個數 </span>
+        <span class="kw">for</span> (i <span class="kw">in</span> <span class="ot">code</span>.<span class="fu">args</span>) { <span class="co">// 對於 BYTE 或 WORD 中的每個元素</span>
+          <span class="kw">if</span> (<span class="ot">code</span>.<span class="fu">args</span>[i].<span class="fu">match</span>(<span class="ot">/</span><span class="fl">^\&quot;</span><span class="ot">.</span><span class="fl">*?\&quot;$</span><span class="ot">/</span>)) <span class="co">// 如果是字串，像 &quot;Hello!&quot;</span>
+            len += (<span class="ot">code</span>.<span class="fu">args</span>[i].<span class="fu">length</span> - <span class="dv">2</span>) * unitSize; <span class="co">// 則大小為 unitSize*字串長度</span>
+          <span class="kw">else</span> <span class="co">// 否則 大小就是 unitSize (BYTE=1, WORD=4)</span>
+            len += unitSize;
+        }
+        <span class="kw">return</span> len;
+      <span class="kw">case</span> <span class="st">&quot;&quot;</span> : <span class="kw">return</span> <span class="dv">0</span>; <span class="co">// 如果只是標記, 大小為 0</span>
+      <span class="kw">default</span> : <span class="kw">return</span> <span class="dv">4</span>; <span class="co">// 其他情形 (指令), 大小為 4</span>
+    }
+ }  
+}
+
+<span class="ot">module</span>.<span class="fu">exports</span> = as; <span class="co">// 匯出「抽象組譯器物件 as 」</span></code></pre>
+<p>請注意，as.js 模組缺少 parse(), translate() 等函數，由於這兩個函數是與 CPU0 設計有關的部分，因此定義在後續的 as0.js 當中</p>
+<p>註：雖然上述程式中的 size() 函數也可能會與 CPU 的設計有關，但是對於 32 bit 的 CPU 而言，可以通用，因此我們 將此函數放在上層的 as.js 當中，如果要定義非 32 位元 CPU、或者重新定義組合語言的語法時，可以覆寫掉這個 size() 函數。</p>
+<p>在上述程式中，我們用到了一個 code 物件，以下是該物件之定義模組 code.js 的原始碼：</p>
+<p>檔案：code.js (指令物件)</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> c = <span class="fu">require</span>(<span class="st">&quot;./ccc&quot;</span>); <span class="co">// 引用基本函式庫 ccc.js</span>
+
+<span class="kw">var</span> code = <span class="kw">function</span>(line, opTable) { <span class="co">// 指令物件 code</span>
+  <span class="kw">this</span>.<span class="fu">parseR</span> = <span class="kw">function</span>(str) { <span class="co">// 剖析暫存器參數 Ra，例如 parse(&#39;R3&#39;) = 3</span>
+    <span class="kw">var</span> rmatch = <span class="ot">/R</span><span class="fl">(</span><span class="bn">\d</span><span class="fl">+)</span><span class="ot">/</span>.<span class="fu">exec</span>(str); <span class="co">// 比對取出 Ra 中的數字</span>
+    <span class="kw">if</span> (rmatch == <span class="kw">null</span>) <span class="co">// 如果比對失敗，則傳回 NaN</span>
+      <span class="kw">return</span> <span class="kw">NaN</span>;
+    <span class="kw">return</span> <span class="fu">parseInt</span>(rmatch[<span class="dv">1</span>]); <span class="co">// 否則傳回暫存器代號 (數字)</span>
+  }
+
+  <span class="kw">this</span>.<span class="fu">toString</span> = <span class="kw">function</span>() { <span class="co">// 輸出格式化後的指令</span>
+    <span class="kw">return</span> <span class="ot">c</span>.<span class="fu">format</span>(<span class="st">&quot;%s %s %s %s %s %s %s&quot;</span>, <span class="ot">c</span>.<span class="fu">hex</span>(<span class="kw">this</span>.<span class="fu">address</span>, <span class="dv">4</span>), 
+      <span class="ot">c</span>.<span class="fu">fill</span>(<span class="st">&#39; &#39;</span>,<span class="kw">this</span>.<span class="fu">label</span>,<span class="dv">8</span>), <span class="ot">c</span>.<span class="fu">fill</span>(<span class="st">&#39; &#39;</span>,<span class="kw">this</span>.<span class="ot">op</span>.<span class="fu">name</span>, <span class="dv">8</span>), 
+      <span class="ot">c</span>.<span class="fu">fill</span>(<span class="st">&#39; &#39;</span>,<span class="kw">this</span>.<span class="fu">args</span>, <span class="dv">16</span>), <span class="kw">this</span>.<span class="ot">op</span>.<span class="fu">type</span>, <span class="ot">c</span>.<span class="fu">hex</span>(<span class="kw">this</span>.<span class="ot">op</span>.<span class="fu">id</span>,<span class="dv">2</span>), <span class="kw">this</span>.<span class="fu">obj</span>);
+  }
+  
+  <span class="kw">var</span> labCmd = <span class="ot">/</span><span class="fl">^((</span><span class="bn">\w</span><span class="fl">+)</span><span class="ot">:</span><span class="fl">)?</span><span class="bn">\s</span><span class="fl">*(</span><span class="bn">[</span><span class="fl">^</span><span class="bn">;]</span><span class="fl">*)</span><span class="ot">/</span>; <span class="co">// 指令的語法</span>
+  <span class="kw">var</span> parts  = <span class="ot">labCmd</span>.<span class="fu">exec</span>(line); <span class="co">// 分割出標記與命令</span>
+  <span class="kw">var</span> tokens = parts[<span class="dv">3</span>].<span class="fu">trim</span>().<span class="fu">split</span>(<span class="ot">/</span><span class="bn">[ ,</span><span class="fl">\t\r</span><span class="bn">]</span><span class="fl">+</span><span class="ot">/</span>); <span class="co">// 將命令分割成基本單元</span>
+  <span class="kw">var</span> opName = tokens[<span class="dv">0</span>]; <span class="co">// 取出指令名稱</span>
+  
+  <span class="kw">this</span>.<span class="fu">label</span> = <span class="ot">c</span>.<span class="fu">nonull</span>(parts[<span class="dv">2</span>]); <span class="co">// 取出標記 (\w+)</span>
+  <span class="kw">this</span>.<span class="fu">args</span>  = <span class="ot">tokens</span>.<span class="fu">slice</span>(<span class="dv">1</span>); <span class="co">// 取出參數部份</span>
+  <span class="kw">this</span>.<span class="fu">op</span>    = opTable[opName]; <span class="co">// 取得指令表中的 OP 物件</span>
+  <span class="kw">this</span>.<span class="fu">obj</span>   = <span class="st">&quot;&quot;</span>; <span class="co">// 清空目的碼 16 進位字串 obj </span>
+}
+
+<span class="ot">module</span>.<span class="fu">exports</span> = code; <span class="co">// 匯出指令物件 code</span></code></pre>
+<p>現在、我們以經完成組譯器抽象架構的設計了，可以開始進入與 CPU0 有關的實作部分，也就是 as0.js 的組譯器實作， 補完 as.js 當中所沒有的 parse(), translate() 等函數了，以下是其原始程式碼。</p>
+<p>檔案：as0.js (具體的 CPU0 組譯器 AS0)</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> c = <span class="fu">require</span>(<span class="st">&quot;./ccc&quot;</span>); <span class="co">// 引用基本函式庫 ccc.js</span>
+<span class="kw">var</span> as = <span class="fu">require</span>(<span class="st">&quot;./as&quot;</span>); <span class="co">// 引用抽象組譯器物件 as.js</span>
+<span class="kw">var</span> code = <span class="fu">require</span>(<span class="st">&quot;./code&quot;</span>); <span class="co">// 引用指令物件 code.js</span>
+<span class="kw">var</span> cpu0 = <span class="fu">require</span>(<span class="st">&quot;./cpu0&quot;</span>); <span class="co">// 引用處理器物件 cpu0.js</span>
+
+<span class="kw">var</span> as0 = <span class="kw">new</span> <span class="fu">as</span>(<span class="ot">cpu0</span>.<span class="fu">opTable</span>); <span class="co">// 建立 as0 組譯器物件</span>
+
+<span class="ot">as0</span>.<span class="fu">parse</span> = <span class="kw">function</span>(line) { <span class="co">// 剖析組合語言指令，建立 code 物件</span>
+    <span class="kw">return</span> <span class="kw">new</span> <span class="fu">code</span>(line, <span class="kw">this</span>.<span class="fu">opTable</span>);
+}
+
+<span class="ot">as0</span>.<span class="fu">translate</span> = <span class="kw">function</span>(code) { <span class="co">// 指令的編碼函數</span>
+  <span class="kw">var</span> ra=<span class="dv">0</span>, rb=<span class="dv">0</span>, rc=<span class="dv">0</span>, cx=<span class="dv">0</span>;
+  <span class="kw">var</span> pc = <span class="ot">code</span>.<span class="fu">address</span> + <span class="dv">4</span>; <span class="co">// 提取後PC為位址+4</span>
+  <span class="kw">var</span> args = <span class="ot">code</span>.<span class="fu">args</span>, parseR = <span class="ot">code</span>.<span class="fu">parseR</span>; <span class="co">// 取得 code 物件的函數</span>
+  <span class="kw">var</span> labelCode = <span class="kw">null</span>; <span class="co">// JMP label 中 label 所對應行的物件，稱為 labelCode</span>
+  <span class="kw">if</span> (<span class="ot">code</span>.<span class="fu">op</span> == <span class="kw">undefined</span>) { <span class="co">// 如果沒有指令碼 (只有標記)，則清空目的碼</span>
+    <span class="ot">code</span>.<span class="fu">obj</span> = <span class="st">&quot;&quot;</span>; 
+    <span class="kw">return</span>;
+  }
+  <span class="kw">switch</span> (<span class="ot">code</span>.<span class="ot">op</span>.<span class="fu">type</span>) { <span class="co">// 根據指令型態</span>
+    <span class="kw">case</span> <span class="st">&#39;J&#39;</span> : <span class="co">// 處理 J 型指令，編出目的碼 OP Ra+cx</span>
+      <span class="kw">switch</span> (<span class="ot">code</span>.<span class="ot">op</span>.<span class="fu">name</span>) {
+        <span class="kw">case</span> <span class="st">&quot;RET&quot;</span>: <span class="kw">case</span> <span class="st">&quot;IRET&quot;</span> : <span class="co">// 如果式返回或中斷返回，則只要輸出 op 碼</span>
+            <span class="kw">break</span>;
+        <span class="kw">case</span> <span class="st">&quot;SWI&quot;</span> : <span class="co">// 如果是軟體中斷指令，則只有 cx 參數有常數值</span>
+            cx = <span class="fu">parseInt</span>(args[<span class="dv">0</span>]);
+            <span class="kw">break</span>;
+        <span class="kw">default</span> : <span class="co">// 其他跳躍指令，例如 JMP label, JLE label 等</span>
+            labelCode = <span class="kw">this</span>.<span class="fu">symTable</span>[args[<span class="dv">0</span>]]; <span class="co">// 取得 label 符號位址</span>
+            cx = <span class="ot">labelCode</span>.<span class="fu">address</span> - pc; <span class="co">// 計算 cx 欄位</span>
+            <span class="kw">break</span>;
+      }
+      <span class="ot">code</span>.<span class="fu">obj</span> = <span class="ot">c</span>.<span class="fu">hex</span>(<span class="ot">code</span>.<span class="ot">op</span>.<span class="fu">id</span>,<span class="dv">2</span>)+<span class="ot">c</span>.<span class="fu">hex</span>(cx, <span class="dv">6</span>); <span class="co">// 編出目的碼 OP Ra+cx</span>
+      <span class="kw">break</span>;
+    <span class="kw">case</span> <span class="st">&#39;L&#39;</span> : <span class="co">// 處理 L 型指令，編出目的碼 OP Ra, Rb, cx</span>
+      ra = <span class="fu">parseR</span>(args[<span class="dv">0</span>]); <span class="co">// 取得 Ra 欄位</span>
+      <span class="kw">switch</span> (<span class="ot">code</span>.<span class="ot">op</span>.<span class="fu">name</span>) {
+        <span class="kw">case</span> <span class="st">&quot;LDI&quot;</span> :  <span class="co">// 處理  LDI 指令</span>
+            cx = <span class="fu">parseInt</span>(args[<span class="dv">1</span>]); <span class="co">// 取得 cx 欄位</span>
+            <span class="kw">break</span>;
+        <span class="kw">default</span> : <span class="co">// 處理 LD, ST, LDB, STB 指令</span>
+            <span class="kw">if</span> (args[<span class="dv">1</span>].<span class="fu">match</span>(<span class="ot">/</span><span class="fl">^</span><span class="bn">[a-zA-Z]</span><span class="ot">/</span>)){ <span class="co">// 如果是 LD LABEL 這類情況</span>
+              labelCode = <span class="kw">this</span>.<span class="fu">symTable</span>[args[<span class="dv">1</span>]]; <span class="co">// 取得標記的 code 物件</span>
+              rb = <span class="dv">15</span>; <span class="co">// R[15] is PC</span>
+              cx = <span class="ot">labelCode</span>.<span class="fu">address</span> - pc; <span class="co">// 計算標記與 PC 之間的差值</span>
+            } <span class="kw">else</span> { <span class="co">// 否則，若是像 LD Ra, Rb+100 這樣的指令</span>
+              rb = <span class="fu">parseR</span>(args[<span class="dv">2</span>]); <span class="co">// 取得 rb 欄位</span>
+              cx = <span class="fu">parseInt</span>(args[<span class="dv">3</span>]); <span class="co">// 取得 cx 欄位 (例如 100)</span>
+            }
+            <span class="kw">break</span>;
+      }
+      <span class="ot">code</span>.<span class="fu">obj</span> = <span class="ot">c</span>.<span class="fu">hex</span>(<span class="ot">code</span>.<span class="ot">op</span>.<span class="fu">id</span>, <span class="dv">2</span>)+<span class="ot">c</span>.<span class="fu">hex</span>(ra, <span class="dv">1</span>)+<span class="ot">c</span>.<span class="fu">hex</span>(rb, <span class="dv">1</span>)+<span class="ot">c</span>.<span class="fu">hex</span>(cx, <span class="dv">4</span>); <span class="co">// 編出目的碼 OP Ra, Rb, cx</span>
+      <span class="kw">break</span>;
+    <span class="kw">case</span> <span class="st">&#39;A&#39;</span> : <span class="co">// 處理 A 型指令，編出目的碼 OP Ra, Rb, Rc, cx</span>
+      ra = <span class="fu">parseR</span>(args[<span class="dv">0</span>]); <span class="co">// 取得 Ra 欄位</span>
+      <span class="kw">switch</span> (<span class="ot">code</span>.<span class="ot">op</span>.<span class="fu">name</span>) {
+        <span class="kw">case</span> <span class="st">&quot;LDR&quot;</span>: <span class="kw">case</span> <span class="st">&quot;LBR&quot;</span>: <span class="kw">case</span> <span class="st">&quot;STR&quot;</span>: <span class="kw">case</span> <span class="st">&quot;SBR&quot;</span>:  <span class="co">// 處理  LDR, LBR, STR, SBR 指令，例如 LDR Ra, Rb+Rc</span>
+            rb = <span class="fu">parseR</span>(args[<span class="dv">1</span>]); <span class="co">// 取得 Rb 欄位</span>
+            rc = <span class="fu">parseR</span>(args[<span class="dv">2</span>]); <span class="co">// 取得 Rc 欄位</span>
+            <span class="kw">break</span>;
+        <span class="kw">case</span> <span class="st">&quot;CMP&quot;</span>: <span class="kw">case</span> <span class="st">&quot;MOV&quot;</span> : <span class="co">// 處理 CMP 與 MOV 指令，CMP Ra, Rb; MOV Ra, Rb</span>
+            rb = <span class="fu">parseR</span>(args[<span class="dv">1</span>]); <span class="co">// 取得 Rb</span>
+            <span class="kw">break</span>;
+        <span class="kw">case</span> <span class="st">&quot;SHL&quot;</span>: <span class="kw">case</span> <span class="st">&quot;SHR&quot;</span>: <span class="kw">case</span> <span class="st">&quot;ADDI&quot;</span>: <span class="co">// 處理 SHL, SHR, ADDI 指令，例如 SHL Ra, Rb, Cx</span>
+            rb = <span class="fu">parseR</span>(args[<span class="dv">1</span>]); <span class="co">// 取得 Rb 欄位</span>
+            cx = <span class="fu">parseInt</span>(args[<span class="dv">2</span>]); <span class="co">// 取得 cx 欄位 (例如 3)</span>
+            <span class="kw">break</span>;
+        <span class="kw">case</span> <span class="st">&quot;PUSH&quot;</span>: <span class="kw">case</span> <span class="st">&quot;POP&quot;</span>: <span class="kw">case</span> <span class="st">&quot;PUSHB&quot;</span>: <span class="kw">case</span> <span class="st">&quot;POPB&quot;</span> :  <span class="co">// 處理 PUSH, POP, PUSHB, POPB</span>
+            <span class="kw">break</span>; <span class="co">// 例如 PUSH Ra, 只要處理 Ra 就好，A 型一進入就已經處理 Ra 了。</span>
+        <span class="kw">default</span> :  <span class="co">// 其他情況，像是 ADD, SUB, MUL, DIV, AND, OR, XOR 等，例如 ADD Ra, Rb, Rc</span>
+            rb = <span class="fu">parseR</span>(args[<span class="dv">1</span>]);  <span class="co">// 取得 Rb 欄位</span>
+            rc = <span class="fu">parseR</span>(args[<span class="dv">2</span>]);  <span class="co">// 取得 Rc 欄位</span>
+            <span class="kw">break</span>;
+      }
+      <span class="ot">code</span>.<span class="fu">obj</span> = <span class="ot">c</span>.<span class="fu">hex</span>(<span class="ot">code</span>.<span class="ot">op</span>.<span class="fu">id</span>, <span class="dv">2</span>)+<span class="ot">c</span>.<span class="fu">hex</span>(ra, <span class="dv">1</span>)+<span class="ot">c</span>.<span class="fu">hex</span>(rb, <span class="dv">1</span>)+<span class="ot">c</span>.<span class="fu">hex</span>(rc,<span class="dv">1</span>)+<span class="ot">c</span>.<span class="fu">hex</span>(cx, <span class="dv">3</span>); <span class="co">// 編出目的碼 OP Ra, Rb, Rc, cx</span>
+      <span class="kw">break</span>;
+    <span class="kw">case</span> <span class="st">&#39;D&#39;</span> : { <span class="co">// 我們將資料宣告  RESW, RESB, WORD, BYTE 也視為一種指令，其形態為 D</span>
+      <span class="kw">var</span> unitSize = <span class="dv">1</span>; <span class="co">// 預設的型態為 BYTE，資料大小 = 1</span>
+      <span class="kw">switch</span> (<span class="ot">code</span>.<span class="ot">op</span>.<span class="fu">name</span>) {                    
+        <span class="kw">case</span> <span class="st">&quot;RESW&quot;</span>:  <span class="kw">case</span> <span class="st">&quot;RESB&quot;</span>: <span class="co">// 如果是 RESW 或 RESB，例如 a:RESB 2</span>
+          <span class="ot">code</span>.<span class="fu">obj</span> = <span class="ot">c</span>.<span class="fu">dup</span>(<span class="st">&#39;0&#39;</span>, <span class="kw">this</span>.<span class="fu">size</span>(code)*<span class="dv">2</span>); <span class="co">// 1 個 byte 的空間要用兩個16進位的 00 去填充</span>
+          <span class="kw">break</span>;                                    <span class="co">// 例如：a RESB 2 會編為 &#39;0000&#39;</span>
+        <span class="kw">case</span> <span class="st">&quot;WORD&quot;</span>: <span class="co">// 如果是 WORD ，佔 4 個 byte</span>
+          unitSize = <span class="dv">4</span>;
+        <span class="kw">case</span> <span class="st">&quot;BYTE&quot;</span>: { <span class="co">// 如果是 BYTE ，佔 1 個 byte</span>
+          <span class="ot">code</span>.<span class="fu">obj</span> = <span class="st">&quot;&quot;</span>; <span class="co">// 一開始目的碼為空的</span>
+          <span class="kw">for</span> (<span class="kw">var</span> i <span class="kw">in</span> args) { <span class="co">// 對於每個參數，都要編為目的碼</span>
+            <span class="kw">if</span> (args[i].<span class="fu">match</span>(<span class="ot">/</span><span class="fl">^\&quot;</span><span class="ot">.</span><span class="fl">*?\&quot;$</span><span class="ot">/</span>)) {  <span class="co">// 該參數為字串，例如： &quot;Hello!&quot; 轉為 68656C6C6F21</span>
+              <span class="kw">var</span> str = args[i].<span class="fu">substring</span>(<span class="dv">1</span>, args[i].<span class="fu">length</span><span class="dv">-1</span>); <span class="co">// 取得 &quot;...&quot; 中間的字串內容</span>
+              <span class="ot">code</span>.<span class="fu">obj</span> += <span class="ot">c</span>.<span class="fu">str2hex</span>(str); <span class="co">// 將字串內容 (例如 Hello!) 轉為 16 進位 (例如 68656C6C6F21)</span>
+            } <span class="kw">else</span> <span class="kw">if</span> (args[i].<span class="fu">match</span>(<span class="ot">/</span><span class="fl">^</span><span class="bn">\d</span><span class="fl">+$</span><span class="ot">/</span>)) {  <span class="co">// 該參數為常數，例如 26</span>
+              <span class="ot">code</span>.<span class="fu">obj</span> += <span class="ot">c</span>.<span class="fu">hex</span>(<span class="fu">parseInt</span>(args[i]), unitSize*<span class="dv">2</span>); <span class="co">// 將常數轉為 16 進位目的碼 (例如 26 轉為 1A)</span>
+            } <span class="kw">else</span> { <span class="co">// 該參數為標記，將標記轉為記憶體位址，例如 msgptr: WORD msg 中的 msg 轉為位址 (例如：00000044)</span>
+              labelCode = <span class="kw">this</span>.<span class="fu">symTable</span>[args[i]]; <span class="co">// 取得符號表內的物件</span>
+              <span class="ot">code</span>.<span class="fu">obj</span> += <span class="ot">c</span>.<span class="fu">hex</span>(<span class="ot">labelCode</span>.<span class="fu">address</span>, unitSize*<span class="dv">2</span>); <span class="co">// 取得位址並轉為 16 進位，塞入目的碼中。</span>
+            }
+          }
+          <span class="kw">break</span>;
+        } <span class="co">// case BYTE:</span>
+      } <span class="co">// switch</span>
+      <span class="kw">break</span>;
+    } <span class="co">// case &#39;D&#39;</span>
+  }
+} 
+
+<span class="co">// 使用範例 node as0 sum.as0 sum.ob0</span>
+<span class="co">// 其中 argv[2] 為組合語言檔, argv[3] 為目的檔</span>
+<span class="ot">as0</span>.<span class="fu">assemble</span>(<span class="ot">process</span>.<span class="fu">argv</span>[<span class="dv">2</span>], <span class="ot">process</span>.<span class="fu">argv</span>[<span class="dv">3</span>]); </code></pre>
+<p>在 as0.js 組譯器中我們還匯入了 cpu0.js 這個模組，雖然此模組已經於上一期當中介紹過了，不過由於上一期有幾個指令型態 設錯了 (LDR, STR, LBR, SBR 應該是 A 格式，上一期當中誤植為 L 格式)，因此我們再度列出 cpu0.js 的更正後內容如下：</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> opTable = <span class="fu">require</span>(<span class="st">&quot;./optable&quot;</span>); <span class="co">// 引用指令表 opTable 物件</span>
+
+<span class="co">// 指令陣列</span>
+<span class="kw">var</span> opList = [ <span class="st">&quot;LD 00 L&quot;</span>, <span class="st">&quot;ST  01 L&quot;</span>, <span class="st">&quot;LDB 02 L&quot;</span>,  <span class="st">&quot;STB 03 L&quot;</span>, <span class="st">&quot;LDR 04 A&quot;</span>, 
+<span class="st">&quot;STR 05 A&quot;</span>, <span class="st">&quot;LBR 06 A&quot;</span>,  <span class="st">&quot;SBR 07 A&quot;</span>,  <span class="st">&quot;LDI 08 L&quot;</span>, <span class="st">&quot;CMP 10 A&quot;</span>, <span class="st">&quot;MOV 12 A&quot;</span>, 
+<span class="st">&quot;ADD 13 A&quot;</span>,  <span class="st">&quot;SUB 14 A&quot;</span>,  <span class="st">&quot;MUL 15 A&quot;</span>, <span class="st">&quot;DIV 16 A&quot;</span>,  <span class="st">&quot;AND 18 A&quot;</span>, <span class="st">&quot;OR  19 A&quot;</span>,  <span class="st">&quot;XOR 1A A&quot;</span>,  
+<span class="st">&quot;ADDI 1B A&quot;</span>, <span class="st">&quot;ROL 1C A&quot;</span>,  <span class="st">&quot;ROR 1D A&quot;</span>, <span class="st">&quot;SHL 1E A&quot;</span>, <span class="st">&quot;SHR 1F A&quot;</span>,  
+<span class="st">&quot;JEQ 20 J&quot;</span>, <span class="st">&quot;JNE 21 J&quot;</span>,  <span class="st">&quot;JLT 22 J&quot;</span>, <span class="st">&quot;JGT 23 J&quot;</span>, <span class="st">&quot;JLE 24 J&quot;</span>,  <span class="st">&quot;JGE 25 J&quot;</span>, <span class="st">&quot;JMP 26 J&quot;</span>, 
+<span class="st">&quot;SWI 2A J&quot;</span>, <span class="st">&quot;JSUB 2B J&quot;</span>,<span class="st">&quot;RET 2C J&quot;</span>, <span class="st">&quot;PUSH 30 J&quot;</span>, <span class="st">&quot;POP 31 J&quot;</span>,  <span class="st">&quot;PUSHB 32 J&quot;</span>, 
+<span class="st">&quot;POPB 33 J&quot;</span>, <span class="st">&quot;RESW F0 D&quot;</span>, <span class="st">&quot;RESB F1 D&quot;</span>, <span class="st">&quot;WORD F2 D&quot;</span>, <span class="st">&quot;BYTE F3 D&quot;</span>];
+
+<span class="kw">var</span> cpu = { <span class="st">&quot;opTable&quot;</span> : <span class="kw">new</span> <span class="fu">opTable</span>(opList) }; <span class="co">// cpu0 處理器物件，內含一個指令表 opTable</span>
+
+<span class="kw">if</span> (<span class="ot">process</span>.<span class="fu">argv</span>[<span class="dv">3</span>] == <span class="st">&quot;-t&quot;</span>) <span class="co">// 如果使用 node cpu0 -t 可以印出指令表</span>
+    <span class="ot">cpu</span>.<span class="ot">opTable</span>.<span class="fu">dump</span>();
+
+<span class="ot">module</span>.<span class="fu">exports</span> = cpu; <span class="co">// 匯出 cpu0 模組。</span></code></pre>
+<h3 id="程式說明"><a href="#程式說明">程式說明</a></h3>
+<p>在上述的 as.js 程式中，第一階段 pass1() 的工作是將每個組合語言指令的位址編好，並紀錄下所有符號的位址， 這個過程顯示在組譯報表的 PASS1 部分，您可以看到上述 as0 組譯器的輸出範例中，每個指令的位址都被計算出來了， 如下所示：</p>
+<pre><code>=================PASS1================
+0000          LD       R1,sum           L 00
+0004          LD       R2,i             L 00
+0008          LDI      R3,10            L 08
+000C FOR      CMP      R2,R3            A 10
+0010          JGT      EXIT             J 23
+0014          ADD      R1,R1,R2         A 13
+0018          ADDI     R2,R2,1          A 1B
+001C          JMP      FOR              J 26
+0020 EXIT     ST       R1,sum           L 01
+0024          ST       R2,i             L 01
+0028          LD       R9,msgptr        L 00
+002C          SWI      3                J 2A
+0030          MOV      R9,R1            A 12
+0034          SWI      4                J 2A
+0038          RET                       J 2C
+003C i        RESW     1                D F0
+0040 sum      WORD     0                D F2
+0044 msg      BYTE     &quot;1+...+10=&quot;,0    D F3
+004E msgptr   WORD     msg              D F2</code></pre>
+<p>而且在 PASS1 完成之後，所有符號的位址都會被記錄在符號表當中，如下所示：</p>
+<pre><code>===============SYMBOL TABLE=========
+FOR      000C
+EXIT     0020
+i        003C
+sum      0040
+msg      0044
+msgptr   004E</code></pre>
+<p>接著在 PASS2 當中，我們就可以利用這些符號表中的位址，編制出每個指令中的符號的「定址方式、相對位址」等等，如下表所示：</p>
+<pre><code>=============PASS2==============
+0000          LD       R1,sum           L 00 001F003C
+0004          LD       R2,i             L 00 002F0034
+0008          LDI      R3,10            L 08 0830000A
+000C FOR      CMP      R2,R3            A 10 10230000
+0010          JGT      EXIT             J 23 2300000C
+0014          ADD      R1,R1,R2         A 13 13112000
+0018          ADDI     R2,R2,1          A 1B 1B220001
+001C          JMP      FOR              J 26 26FFFFEC
+0020 EXIT     ST       R1,sum           L 01 011F001C
+0024          ST       R2,i             L 01 012F0014
+0028          LD       R9,msgptr        L 00 009F0022
+002C          SWI      3                J 2A 2A000003
+0030          MOV      R9,R1            A 12 12910000
+0034          SWI      4                J 2A 2A000004
+0038          RET                       J 2C 2C000000
+003C i        RESW     1                D F0 00000000
+0040 sum      WORD     0                D F2 00000000
+0044 msg      BYTE     &quot;1+...+10=&quot;,0    D F3 312B2E2E2E2B31303D00
+004E msgptr   WORD     msg              D F2 00000044</code></pre>
+<p>由於 CPU0 設計得很簡單，因此對於一般的指令而言(像是 ADD, MOV, RET 等)，編制出機器碼是很容易的，例如 RET 指令不包含任何參數，因此其機器碼就是在指令碼 OP=2C 後面補 0，直到填滿 32bit (8 個 16 進位數字) 為止， 而 ADD R1,R1,R2 的編碼也很容易，就是將指令碼 OP=13 補上暫存器代號 1, 1, 2 之後再補 0，形成 13112000 的編碼。</p>
+<p>最難處理的是有標記的指令，舉例而言，像是 JGT EXIT 的機器碼 2300000C 與 JMP FOR 的機器碼 26FFFFEC 是怎麼來的呢？</p>
+<p>關於這點，我們必須用較長的篇幅解釋一下：</p>
+<p>在上述 AS0 程式的設計當中，我們一律用「相對於程式計數器 PC 的定址法」來進行標記的編碼 (cx = label.address-PC)， 例如在 JGT EXIT 這個指令中，由於標記 EXIT 的位址是 0020 ，而 JGT EXIT 指令的位址為 0010，因此兩者之差距為 0010，但是由於 JGT EXIT 指令執行時其程式計數器 PC 已經進到下一個位址 (0014) 了(在指令擷取階段完成後就會進到下一個位址)， 所以 PC 與 FOR 標記之間的位址差距為 (cx = label.address-PC= 0020-0014 = 000C) (請注意這是用 16 進位的減法)， 因此整個 JGT EXIT 指令就被組譯為 JGT EXIT = JGT R15+cx = 23 F 000C。 (其中 R15 是 CPU0 的程式計數器 PC，所以暫存器 Ra 部分編為 15 的十六進位值 F)。</p>
+<p>但是、有時候相對定址若是負值，也就是標記在指令的前面，像是 JMP FOR 的情況時，最後 cx = label.address-PC 計算出來會是 負值，此時就必須採用 2 補數表示法，例如 JMP FOR 的情況 (cx = label.address-PC = 000C-0020 = -0014) (請注意這是用 16 進位的減法)， 採用 2 補數之後就會變成 FFFFEC，因此 JMP FOR 被編為 26 F FFFEC。</p>
+<h3 id="結語-3"><a href="#結語-3">結語</a></h3>
+<p>現在、我們已經完成了組譯器 AS0 的設計，並解析了整個組譯器的原始碼，希望透過這種方式，可以讓讀者瞭解 整個組譯器的設計過程。在後續的文章之中，我們還會介紹開放電腦計畫中「虛擬機、編譯器」的 JavaScript 原始碼， 以及實作 CPU0 處理器的 Verilog 原始碼。然後再進入作業系統的設計部分，希望透過這種方式，可以讓讀者瞭解 如何「自己動手設計一台電腦」，完成「開放電腦計畫」的主要目標。</p>
+<h2 id="r-統計軟體-講題分享-獨立成份分析-作者taiwan-r-user-group"><a href="#r-統計軟體-講題分享-獨立成份分析-作者taiwan-r-user-group">R 統計軟體: 講題分享-獨立成份分析-(作者：Taiwan R User Group)</a></h2>
+<p>大家好，我們是Taiwan R User Group。除了平常在網路上交流R 相關的資訊之外，我們也於每週一晚上7:30在政治大學公企中心舉辦MLDM (Machine Learning and Data) Mining Monday！提供一個平台讓相關領域的朋友能分享資料分析的心得，或是使用R 的故事。</p>
+<p>在篇文章中，我們將和讀者分享本月份某次 MLDM Monday的 主題：獨立成份分析(Independent Component Analysis)</p>
+<h3 id="簡介"><a href="#簡介">簡介</a></h3>
+<p>獨立成份分析主要是用在分辨混在一起的訊號。舉例來說，如果我們用數個麥克風收音，而音訊來源混雜著各種聲音源，如：主持人的演講、周遭的背景音樂和外面街道上的喧譁。透過獨立成份分析，我們就可以把演講和背景音樂給分開。</p>
+<h3 id="數學定義"><a href="#數學定義">數學定義</a></h3>
+<p>假設有一個可以觀測的訊號，是一個長度<img style="vertical-align:middle" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=m" alt="m" title="m" />的隨機向量(random vector):</p>
+<ul>
+<li><img src="../timg/x_x_1_x__371b00291096ba56059470f30869eb06.jpg" title="fig:" /></li>
+</ul>
+<p>這個隨機向量中混雜了k 個訊號源，以及一個雜訊：</p>
+<ul>
+<li><img src="../timg/x_As_var_21acef90b70d7d7e8a46ac3fcd184280.jpg" title="fig:" /></li>
+</ul>
+<p>其中:</p>
+<ul>
+<li><img src="../timg/s_in_mat_7210577738e7a66acf672d296209466c.jpg" /> 是訊號源</li>
+<li><img src="../timg/A_in_mat_d0763d3e76063a3aba33557e56f77623.jpg" /> 是訊號源混雜的比率</li>
+<li><img src="../timg/_varepsi_f8b1c5a729a09649c275fca88976d8dd.jpg" /> 是雜訊，通常會假設為高斯分佈(Gaussian noise)，且期望值為0。</li>
+</ul>
+<p>如果我們猜的到 A ，那就能夠計算出 <img src="../timg/W_A_1__48f5c1150ac1fb5a23fabcae9085e6fa.jpg" /> ，並利用 <img src="../timg/s_W_1_x_6449e35f13ebf7136d9a07f4ba730b06.jpg" /> 以還原乾淨的訊號源了。</p>
+<p>上述的定義可以擴充為若干個觀測訊號以及若干個訊號源。</p>
+<h3 id="範例"><a href="#範例">範例</a></h3>
+<p>假設看不到的訊號源是長這個樣子：</p>
+<div class="figure">
+<img src="../img/ica-1.png" />
+</div>
+<p>經過某個<img style="vertical-align:middle" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=A" alt="A" title="A" />的混雜後，我們觀測到3個訊號：</p>
+<div class="figure">
+<img src="../img/ica-2.png" />
+</div>
+<p>而獨立成份分析的目的，則是要還原出原本的訊號：</p>
+<div class="figure">
+<img src="../img/ica-3.png" />
+</div>
+<p>這樣大家有沒有比較了解獨立成份分析所要解決的問題呢？</p>
+<p>其他還有許多更細節的數學性質，限於篇幅我們就不仔細介紹了。請大家有興趣可以參考影片<http://www.youtube.com/watch?v=BLmyeXM9zow>，或是詢問講者 <script type="text/javascript">
+<!--
+h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#98;&#x65;&#110;&#106;&#x61;&#x6d;&#x69;&#110;&#48;&#x39;&#48;&#x31;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#98;&#x65;&#110;&#106;&#x61;&#x6d;&#x69;&#110;&#48;&#x39;&#48;&#x31;&#32;&#x61;&#116;&#32;&#x67;&#x6d;&#x61;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript> 囉！</p>
+<h3 id="利用-r-來做獨立成份分析"><a href="#利用-r-來做獨立成份分析">利用 R 來做獨立成份分析</a></h3>
+<p>首先我們先到<http://research.ics.aalto.fi/ica/cocktail/cocktail_en.cgi>網站來製造聲音檔。網站中有許多音訊，而我們可以勾選若干個音訊之後，打包成若干個混合的音訊。</p>
+<p>在影片中，講者勾選了第6、7和9的音訊。在下載混合後的3個音訊檔案後，讀者就跟著我們來把音訊還原。</p>
+<h3 id="載入套件"><a href="#載入套件">載入套件</a></h3>
+<p>我們要先安裝和載入下列這3個套件！</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fastICA)
+<span class="kw">library</span>(tuneR)
+<span class="kw">library</span>(seewave)</code></pre>
+<h3 id="載入聲音"><a href="#載入聲音">載入聲音</a></h3>
+<p>接著我們利用<code>readWave</code>指令匯入聲音，並且將3個聲音檔案整合到<code>origin</code>這個大矩陣中！ 註解掉的<code>listen</code>指令可以播放匯入的聲音。</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(<span class="dt">list =</span> <span class="kw">ls</span>())
+<span class="kw">setwd</span>(<span class="st">&quot;放置下載的聲音檔的目錄&quot;</span>)
+origin =<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow =</span> <span class="dv">50000</span>, <span class="dt">ncol =</span> <span class="dv">3</span>)
+
+for (i in <span class="dv">1</span>:<span class="dv">3</span>) {
+    filename =<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;000001101mix&quot;</span>, <span class="kw">as.character</span>(i), <span class="st">&quot;.wav&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)
+    data =<span class="st"> </span><span class="kw">readWave</span>(filename)
+    <span class="co"># listen(data)</span>
+    origin[, i] =<span class="st"> </span>data@left
+}</code></pre>
+<h3 id="獨立成份分析"><a href="#獨立成份分析">獨立成份分析</a></h3>
+<p>最後我們使用 <code>fastICA</code> 指令將混合的聲音還原為原本的聲音。 讀者可以使用註解掉的 <code>listen</code> 指令來聽聽看還原後的效果喔！</p>
+<pre class="sourceCode r"><code class="sourceCode r">ica_result =<span class="st"> </span><span class="kw">fastICA</span>(origin, <span class="dt">n.comp =</span> <span class="dv">3</span>)
+ica_source =<span class="st"> </span>ica_result$S
+for (i in <span class="dv">1</span>:<span class="dv">3</span>) {
+    temp =<span class="st"> </span>ica_source[, i]
+    temp =<span class="st"> </span><span class="kw">round</span>((temp -<span class="st"> </span><span class="kw">min</span>(temp))/(<span class="kw">max</span>(temp) -<span class="st"> </span><span class="kw">min</span>(temp)) *<span class="st"> </span><span class="kw">max</span>(origin) +<span class="st"> </span>
+<span class="st">        </span><span class="kw">min</span>(origin))
+    temp =<span class="st"> </span><span class="kw">Wave</span>(<span class="dt">left =</span> temp, <span class="dt">samp.rate =</span> <span class="dv">8000</span>, <span class="dt">bit =</span> <span class="dv">8</span>)
+    <span class="co"># listen(temp)</span>
+    <span class="kw">writeWave</span>(temp, <span class="kw">paste</span>(<span class="st">&quot;source&quot;</span>, <span class="kw">as.character</span>(i), <span class="st">&quot;.wav&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>))
+}</code></pre>
+<h3 id="小結"><a href="#小結">小結</a></h3>
+<p>看起來利用 R 做獨立成份分析並不會太困難耶。不過根據講者的介紹，<code>fastICA</code>並沒有辦法從3個觀測訊號還原成超過3個的訊號源。</p>
+<p>所以未來讀者若是有類似訊號的資料，可以先對資料做獨立成份分析後，再繼續分析囉。我自己則是想嘗試利用這個技術來自製卡拉ok伴唱帶，希望能成功啦，哈哈！</p>
+<p>最後再次謝謝講者 Ben 的分享。</p>
+<h3 id="reference"><a href="#reference">Reference</a></h3>
+<ul>
+<li><a href="http://www.youtube.com/watch?v=BLmyeXM9zow">http://www.youtube.com/watch?v=BLmyeXM9zow</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Independent_component_analysis">http://en.wikipedia.org/wiki/Independent_component_analysis</a></li>
+</ul>
+<h1 id="雜誌訊息"><a href="#雜誌訊息">雜誌訊息</a></h1>
+<h2 id="讀者訂閱"><a href="#讀者訂閱">讀者訂閱</a></h2>
+<p>程式人雜誌是一個結合「開放原始碼與公益捐款活動」的雜誌，簡稱「開放公益雜誌」。開放公益雜誌本著「讀書做善事、寫書做公益」的精神，我們非常歡迎程式人認養專欄、或者捐出您的網誌，如果您願意成為本雜誌的專欄作家，請加入 <a href="https://www.facebook.com/groups/programmerMagazine/">程式人雜誌社團</a> 一同共襄盛舉。</p>
+<p>我們透過發行這本雜誌，希望讓大家可以讀到想讀的書，學到想學的技術，同時也讓寫作的朋友的作品能產生良好價值 – 那就是讓讀者根據雜誌的價值捐款給慈善團體。 讀雜誌做公益也不需要有壓力，您不需要每讀一本就急著去捐款，您可以讀了十本再捐，或者使用固定的月捐款方式，當成是雜誌訂閱費，或者是季捐款、一年捐一次等都 OK ! 甚至是單純當個讀者我們也都很歡迎！ 本雜誌每期參考價：NT 50 元，如果您喜歡本雜誌，請將書款捐贈公益團體。例如可捐贈給「羅慧夫顱顏基金會 彰化銀行(009) 帳號：5234-01-41778-800」。(若匯款要加註可用「程式人雜誌」五個字)</p>
+<p>想訂閱本雜誌的讀者，請按 <a href="https://docs.google.com/spreadsheet/viewform?fromEmail=true&amp;formkey=dG1TcER6Q3h1ZkpacFpDeEVFTDBLeVE6MQ">雜誌訂閱</a> 連結並填寫表單，我們會在每一期雜誌出刊時寄送通知與下載網址到您的信箱。</p>
+<h2 id="投稿須知"><a href="#投稿須知">投稿須知</a></h2>
+<p><em>給專欄寫作者：</em> 做公益不需要有壓力。如果您願意撰寫專欄，您可以輕鬆的寫，如果當月的稿件出不來，我們會安排其他稿件上場。</p>
+<p><em>給網誌捐贈者：</em> 如果您沒時間寫專欄或投稿，沒關係，只要將您的網誌以 [創作共用的「姓名標示、非商業性、相同方式分享」授權] 並通知我們，我們會自動從中選取需要的文章進行編輯，放入適當的雜誌當中出刊。</p>
+<p><em>給文章投稿者：</em> 程式人雜誌非常歡迎您加入作者的行列，如果您想撰寫任何文章或投稿，請用 markdown 或 LibreOffice 編輯好您的稿件，並於每個月 25 日前投稿到<a href="https://www.facebook.com/groups/programmerMagazine/">程式人雜誌社團</a> 的檔案區，我們會盡可能將稿件編入隔月1號出版程式人雜誌當中，也歡迎您到社團中與我們一同討論。</p>
+<p>如果您要投稿給程式人雜誌，我們最希望的格式是採用 markdown 的格式撰寫，然後將所有檔按壓縮為 zip 上傳到社團檔案區給我們， 如您想學習 markdown 的撰寫出版方式，可以參考 [程式人雜誌的出版方法] 一文。</p>
+<p>如果您無法採用 markdown 的方式撰寫，也可以直接給我們您的稿件，像是 MS. Word 的 doc 檔或 LibreOffice 的 odt 檔都可以，我們 會將這些稿件改寫為 markdown 之後編入雜誌當中。</p>
+<h2 id="參與編輯"><a href="#參與編輯">參與編輯</a></h2>
+<p>您也可以擔任程式人雜誌的編輯，甚至創造一個全新的公益雜誌，我們誠摯的邀請您加入「開放公益出版」的行列，如果您想擔任編輯或創造新雜誌，也歡迎到 <a href="https://www.facebook.com/groups/programmerMagazine/">程式人雜誌社團</a> 來與我們討論相關事宜。</p>
+<h2 id="公益資訊"><a href="#公益資訊">公益資訊</a></h2>
+<table>
+<col width="22%" />
+<col width="20%" />
+<col width="28%" />
+<col width="28%" />
+<thead>
+<tr class="header">
+<th align="left">公益團體</th>
+<th align="left">聯絡資訊</th>
+<th align="left">服務對象</th>
+<th align="left">捐款帳號</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">財團法人羅慧夫顱顏基金會</td>
+<td align="left"><a href="http://www.nncf.org/">http://www.nncf.org/</a> <BR/> <script type="text/javascript">
+<!--
+h='&#110;&#110;&#x63;&#102;&#46;&#x6f;&#114;&#x67;';a='&#64;';n='&#108;&#x79;&#110;&#110;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#108;&#x79;&#110;&#110;&#32;&#x61;&#116;&#32;&#110;&#110;&#x63;&#102;&#32;&#100;&#x6f;&#116;&#32;&#x6f;&#114;&#x67;</noscript> <BR/> 02-27190408分機 232</td>
+<td align="left">顱顏患者 (如唇顎裂、小耳症或其他罕見顱顏缺陷）</td>
+<td align="left">銀行：009彰化銀行民生分行<BR/> 帳號：5234-01-41778-800</td>
+</tr>
+<tr class="even">
+<td align="left">社團法人台灣省兒童少年成長協會</td>
+<td align="left"><a href="http://www.cyga.org/">http://www.cyga.org/</a> <BR/> <script type="text/javascript">
+<!--
+h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x63;&#x79;&#x67;&#x61;&#x39;&#x39;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x63;&#x79;&#x67;&#x61;&#x39;&#x39;&#32;&#x61;&#116;&#32;&#x67;&#x6d;&#x61;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript> <BR/> 04-23058005</td>
+<td align="left">單親、隔代教養.弱勢及一般家庭之兒童青少年</td>
+<td align="left">銀行：新光銀行 <BR/> 戶名：台灣省兒童少年成長協會 <BR/> 帳號：103-0912-10-000212-0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="footer">
+<a href="https://www.facebook.com/groups/programmerMagazine/">程式人雜誌</a> ，採用 <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/ ">創作共用：姓名標示、相同方式分享</a> 授權，歡迎加入 <a href="https://www.facebook.com/groups/programmerMagazine/">雜誌社團</a>
+</div>
+</body>
+</html>

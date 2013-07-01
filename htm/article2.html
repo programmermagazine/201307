@@ -1,0 +1,619 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="../css/pmag.css" type="text/css" />
+</head>
+<body>
+<div id="header_wrap">
+   <h1><a href="https://www.facebook.com/groups/programmerMagazine">程式人雜誌</a> <sub> --  <a href="https://dl.dropbox.com/u/101584453/pmag/201307/htm/home.html">2013 年 7 月號</a> (開放公益出版品)</sub></h1>
+</div>
+<div id="content">
+<div id="TOC">
+<ul>
+<li><a href="#javascript-7-字串處理與正規表達式-作者陳鍾誠">JavaScript (7) – 字串處理與正規表達式 (作者：陳鍾誠)</a></li>
+</ul>
+</div>
+<h2 id="javascript-7-字串處理與正規表達式-作者陳鍾誠"><a href="#javascript-7-字串處理與正規表達式-作者陳鍾誠">JavaScript (7) – 字串處理與正規表達式 (作者：陳鍾誠)</a></h2>
+<p>由於 JavaScript 是瀏覽器的內建語言，因此常常需要處理網頁中的字串。在本文中，我們將介紹如何用 JavaScript 進行字串處理， 並說明字串處理的強大工具 -- 「正規表達式」 (Regular Expression) 的用法。</p>
+<h3 id="javascript-的字串物件"><a href="#javascript-的字串物件">JavaScript 的字串物件</a></h3>
+<p>JavaScript 的字串物件本身，就包含了許多常用的字串處理函數，像是大小寫轉換、比對、取代、切割字串等等，而這些函數當中， 有些甚至支援了「正規表達式」，像是 match (比對)、replace (取代)、search (搜尋)、split(分割) 等等。</p>
+<p>以下表格列出了 JavaScript 字串物件當中常用的成員與函數之用法。</p>
+<p>String 物件的成員與函數</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">屬性/函數</th>
+<th align="left">說明</th>
+<th align="left">範例</th>
+<th align="left">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">constructor</td>
+<td align="left">傳回建構函數</td>
+<td align="left">&quot;Hello&quot;.constructor</td>
+<td align="left">function String() { [native code] }</td>
+</tr>
+<tr class="even">
+<td align="left">length</td>
+<td align="left">傳回長度</td>
+<td align="left">&quot;Hello&quot;.length</td>
+<td align="left">function String() { [native code] }</td>
+</tr>
+<tr class="odd">
+<td align="left">prototype</td>
+<td align="left">傳回原型</td>
+<td align="left">&quot;Hello&quot;.prototype</td>
+<td align="left">undefined</td>
+</tr>
+<tr class="even">
+<td align="left">charAt()</td>
+<td align="left">傳回第 i 個字元</td>
+<td align="left">&quot;Hello&quot;.charAt(1)</td>
+<td align="left">e</td>
+</tr>
+<tr class="odd">
+<td align="left">charCodeAt()</td>
+<td align="left">傳回第 i 個字元的 Unicode</td>
+<td align="left">&quot;Hello&quot;.charCodeAt(1)</td>
+<td align="left">101</td>
+</tr>
+<tr class="even">
+<td align="left">concat()</td>
+<td align="left">連接兩個以上的字串</td>
+<td align="left">&quot;Hello&quot;.concat(&quot; World&quot;, &quot; !&quot;)</td>
+<td align="left">Hello World !</td>
+</tr>
+<tr class="odd">
+<td align="left">fromCharCode()</td>
+<td align="left">將 Unicode 代碼轉為字元</td>
+<td align="left">&quot;Hello&quot;.fromCharCode(101, 102)</td>
+<td align="left">ef</td>
+</tr>
+<tr class="even">
+<td align="left">indexOf()</td>
+<td align="left">傳回子字串的位置</td>
+<td align="left">&quot;Hello&quot;.indexOf(&quot;el&quot;)</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">lastIndexOf()</td>
+<td align="left">傳回子字串的位置 (倒著掃瞄)</td>
+<td align="left">&quot;Hello&quot;.lastIndexof(&quot;l&quot;)</td>
+<td align="left">3</td>
+</tr>
+<tr class="even">
+<td align="left">match()</td>
+<td align="left">搜尋正規表達式</td>
+<td align="left">&quot;Hello&quot;.match(&quot;[aeiou]&quot;)</td>
+<td align="left">2</td>
+</tr>
+<tr class="odd">
+<td align="left">replace()</td>
+<td align="left">取代正規表達式</td>
+<td align="left">&quot;Hello&quot;.replace(&quot;l&quot;, &quot;L&quot;)</td>
+<td align="left">HeLlo</td>
+</tr>
+<tr class="even">
+<td align="left">search()</td>
+<td align="left">搜尋正規表達式</td>
+<td align="left">&quot;Hello&quot;.search(&quot;[aeiou]&quot;)</td>
+<td align="left">e</td>
+</tr>
+<tr class="odd">
+<td align="left">split()</td>
+<td align="left">分割字串</td>
+<td align="left">&quot;Hello&quot;.split(&quot;e&quot;)</td>
+<td align="left">H,llo</td>
+</tr>
+<tr class="even">
+<td align="left">slice()</td>
+<td align="left">切出字串</td>
+<td align="left">&quot;Hello&quot;.slice(-3)</td>
+<td align="left">llo</td>
+</tr>
+<tr class="odd">
+<td align="left">substr()</td>
+<td align="left">取出 from 長 len 的子字串</td>
+<td align="left">&quot;Hello&quot;.substr(2,2)</td>
+<td align="left">ll</td>
+</tr>
+<tr class="even">
+<td align="left">substring()</td>
+<td align="left">取出 from 到 to 的子字串</td>
+<td align="left">&quot;Hello&quot;.substring(2,4)</td>
+<td align="left">llo</td>
+</tr>
+<tr class="odd">
+<td align="left">toLowerCase()</td>
+<td align="left">轉為小寫</td>
+<td align="left">&quot;Hello&quot;.toLowerCase()</td>
+<td align="left">hello</td>
+</tr>
+<tr class="even">
+<td align="left">toUpperCase()</td>
+<td align="left">轉為大寫</td>
+<td align="left">&quot;Hello&quot;.toUpperCase()</td>
+<td align="left">HELLO</td>
+</tr>
+<tr class="odd">
+<td align="left">valueOf()</td>
+<td align="left">傳回原型值</td>
+<td align="left">&quot;Hello&quot;.valueOf()</td>
+<td align="left">Hello</td>
+</tr>
+</tbody>
+</table>
+<p>程式範例：string.js</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> s = <span class="st">&quot;Hello&quot;</span>;
+log = <span class="ot">console</span>.<span class="fu">log</span>;
+<span class="fu">log</span>(<span class="st">&quot;s = &quot;</span>+s);
+<span class="fu">log</span>(<span class="st">&quot;s.constructor = &quot;</span>+<span class="ot">s</span>.<span class="fu">constructor</span>);
+<span class="fu">log</span>(<span class="st">&quot;s.length = &quot;</span>+<span class="ot">s</span>.<span class="fu">length</span>);
+<span class="fu">log</span>(<span class="st">&quot;s.prototype = &quot;</span>+<span class="ot">s</span>.<span class="fu">prototype</span>);
+<span class="fu">log</span>(<span class="st">&quot;s.charAt(1) = &quot;</span>+<span class="ot">s</span>.<span class="fu">charAt</span>(<span class="dv">1</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.charCodeAt(1) = &quot;</span>+<span class="ot">s</span>.<span class="fu">charCodeAt</span>(<span class="dv">1</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.concat(&#39; World&#39;, &#39; !&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">concat</span>(<span class="st">&#39; World&#39;</span>, <span class="st">&#39; !&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;String.fromCharCode(72,69,76,76,79) = &quot;</span>+<span class="ot">String</span>.<span class="fu">fromCharCode</span>(<span class="dv">72</span>,<span class="dv">69</span>,<span class="dv">76</span>,<span class="dv">76</span>,<span class="dv">79</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.indexOf(&#39;el&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">indexOf</span>(<span class="st">&#39;el&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.lastIndexOf(&#39;l&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">lastIndexOf</span>(<span class="st">&#39;l&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.match(&#39;[aeiou]&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">match</span>(<span class="st">&#39;[aeiou]&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.replace(&#39;l&#39;, &#39;L&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">replace</span>(<span class="st">&#39;l&#39;</span>, <span class="st">&#39;L&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.search(&#39;[aeiou]&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">search</span>(<span class="st">&#39;[aeiou]&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.slice(2,4) = &quot;</span>+<span class="ot">s</span>.<span class="fu">slice</span>(<span class="dv">2</span>,<span class="dv">4</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.slice(2) = &quot;</span>+<span class="ot">s</span>.<span class="fu">slice</span>(<span class="dv">2</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.slice(-3) = &quot;</span>+<span class="ot">s</span>.<span class="fu">slice</span>(-<span class="dv">3</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.split(&#39;e&#39;) = &quot;</span>+<span class="ot">s</span>.<span class="fu">split</span>(<span class="st">&#39;e&#39;</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.substr(2,2) = &quot;</span>+<span class="ot">s</span>.<span class="fu">substr</span>(<span class="dv">2</span>,<span class="dv">2</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.substring(2,4) = &quot;</span>+<span class="ot">s</span>.<span class="fu">substr</span>(<span class="dv">2</span>,<span class="dv">4</span>));
+<span class="fu">log</span>(<span class="st">&quot;s.toLowerCase() = &quot;</span>+<span class="ot">s</span>.<span class="fu">toLowerCase</span>());
+<span class="fu">log</span>(<span class="st">&quot;s.toUpperCase() = &quot;</span>+<span class="ot">s</span>.<span class="fu">toUpperCase</span>());
+<span class="fu">log</span>(<span class="st">&quot;s.valueOf() = &quot;</span>+<span class="ot">s</span>.<span class="fu">valueOf</span>());</code></pre>
+<p>執行結果</p>
+<pre><code>D:\code\node&gt;node string.js
+s = Hello
+s.constructor = function String() { [native code] }
+s.length = 5
+s.prototype = undefined
+s.charAt(1) = e
+s.charCodeAt(1) = 101
+s.concat(&#39; World&#39;, &#39; !&#39;) = Hello World !
+String.fromCharCode(72,69,76,76,79) = HELLO
+s.indexOf(&#39;el&#39;) = 1
+s.lastIndexOf(&#39;l&#39;) = 3
+s.match(&#39;[aeiou]&#39;) = e
+s.replace(&#39;l&#39;, &#39;L&#39;) = HeLlo
+s.search(&#39;[aeiou]&#39;) = 1
+s.slice(2,4) = ll
+s.slice(2) = llo
+s.slice(-3) = llo
+s.split(&#39;e&#39;) = H,llo
+s.substr(2,2) = ll
+s.substring(2,4) = llo
+s.toLowerCase() = hello
+s.toUpperCase() = HELLO
+s.valueOf() = Hello
+</code></pre>
+<h3 id="正規表達式"><a href="#正規表達式">正規表達式</a></h3>
+<p>在以上的範例中，我們使用了簡易的正規表達式，像是 s.match('[aeiou]') 中的 [aeiou] ，代表比對 aeiou 中的何一個字。</p>
+<p>對於沒學過正規表達式的人來說，常常會覺得「正規表達式」就像本天書一樣，但事實上正規表達式並不會太難看懂！以下先讓我們 介紹一下正規表達式的語法，然後再用 Node.js + JavaScript 進行測試。</p>
+<p>Regular Expression 的「Regular」一般被譯為「正則」、「正規」、「常規」。此處的「Regular」即是「規則」、「規律」的意思， Regular Expression 即「描述某種規則的表達式」之意，有時也稱為 Regular Grammar。</p>
+<p>Perl 最早是引入正規表達式的語言，因此早期的 CGI 程式常使用 Perl 撰寫，後來很多語言都陸續引入了正規表達式，像是 Python, Ruby, JavaScript 等，這些語言讓正規表達式成為標準語法的一部分，因此使用起來非常方便。</p>
+<p>也有一些語言以函式庫的形式納入正規表達式，但是沒有內建在語法當中，像是 C#, Java, C 等等，在這類的語言當中，使用 正規表達式會稍微繁瑣一些。</p>
+<p>假如我們要用正規表達式描述整數數字，那麼，可以用 <code>[0123456789]+</code> 這個表達式，其中的中括號 <code>[ 與 ]</code> 會框住一群 字元，用來代表字元群，加號 + 所代表的是重複 1 次或以上，因此，該表達式就可以描述像 3702451 這樣的數字。 然而，在正則表達式中，為了更方便撰寫，於是允許用 [0-9]+ 這樣的式子表達同樣的概念，其中的 0-9 其實就 代表了 0123456789 等字元，這是一種簡便的縮寫法。甚至，可以再度縮短後以 \d+ 代表，其中的 \d 就代表 數字所成的字元集合。</p>
+<p>利用範例學習是理解正規表達式的有效方法，以下表格就顯示了一些具有代表性的正規表達式範例。</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">語法</th>
+<th align="left">正規表達式</th>
+<th align="left">範例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">整數</td>
+<td align="left">[0-9]+</td>
+<td align="left">3704</td>
+</tr>
+<tr class="even">
+<td align="left">有小數點的實數</td>
+<td align="left">[0-9]+.[0-9]+</td>
+<td align="left">7.93</td>
+</tr>
+<tr class="odd">
+<td align="left">英文詞彙</td>
+<td align="left">[A-Za-z]+</td>
+<td align="left">Code</td>
+</tr>
+<tr class="even">
+<td align="left">變數名稱</td>
+<td align="left">[A-Za-z_][A-Za-z0-9_]*</td>
+<td align="left">_counter</td>
+</tr>
+<tr class="odd">
+<td align="left">Email</td>
+<td align="left">[a-zA-Z0-9_]+@[a-zA-Z0-9._]+</td>
+<td align="left">ccc@kmit.edu.tw</td>
+</tr>
+<tr class="even">
+<td align="left">URL</td>
+<td align="left">http://[a-zA-Z0-9./_]+</td>
+<td align="left">http://ccc.kmit.edu.tw/mybook/</td>
+</tr>
+</tbody>
+</table>
+<p>為了協助讀者理解這些範例，我們有必要對範例中的一些正規表達式符號進行說明。</p>
+<p>在實數的範例中，使用 . 代表小數點符號 .，不熟悉正規表達式的讀者一定覺得奇怪，為何要加上斜線符號 \ 呢？ 這是因為在正則表達式當中，有許多符號具有特殊意義，例如點符號 . 是用來表示任意字元的，星號 * 是代表出現 0 次以上， 加號 + 代表一次或以上，在正則表達式當中，有許多這類的特殊字元，因此用斜線 \ 代表特殊符號辨識的跳脫字元 (就像 C 語言當中 printf 函數內的用途一樣)。因此、當我們看到 \ 符號時，必須繼續向後看，才能知道其所代表的意義。</p>
+<p>為了方便讀者查閱並更全面的瞭解正規表達式，我們在下列的表格中更詳細的列出了正規表達式的符號與其用法：</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">字元</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">^</td>
+<td align="left">比對字串開頭 (開始位置)。</td>
+</tr>
+<tr class="even">
+<td align="left">$</td>
+<td align="left">比對字串結尾 (結束位置)。</td>
+</tr>
+<tr class="odd">
+<td align="left">*</td>
+<td align="left">零次或以上</td>
+</tr>
+<tr class="even">
+<td align="left">+</td>
+<td align="left">一次或以上</td>
+</tr>
+<tr class="odd">
+<td align="left">?</td>
+<td align="left">零次或一次 (也可能指「非貪婪模式」，必須視上下文而定)</td>
+</tr>
+<tr class="even">
+<td align="left">{n}</td>
+<td align="left">n 次。</td>
+</tr>
+<tr class="odd">
+<td align="left">{n,}</td>
+<td align="left">n 次或以上</td>
+</tr>
+<tr class="even">
+<td align="left">{n,m}</td>
+<td align="left">n 到 m 次</td>
+</tr>
+<tr class="odd">
+<td align="left">.</td>
+<td align="left">比對除了 &quot;&quot; 以外字元</td>
+</tr>
+<tr class="even">
+<td align="left">(?:pattern)</td>
+<td align="left">比對 pattern 樣式</td>
+</tr>
+<tr class="odd">
+<td align="left">(?=pattern)</td>
+<td align="left">正向肯定預查，例如 &quot;Windows (?=95|98|NT|2000)&quot; 可比對到 &quot;Windows 2000&quot; 中的 &quot;Windows&quot;，但不能比對 Windows XP 中的 Windows。</td>
+</tr>
+<tr class="even">
+<td align="left">(?!pattern)</td>
+<td align="left">正向否定預查，例如 &quot;Windows(?!95|98|NT|2000)&quot; 能比對 &quot;Windows XP&quot;中的 &quot;Windows&quot;，但不能比對 &quot;Windows 2000&quot; 中 的&quot;Windows&quot;。</td>
+</tr>
+<tr class="odd">
+<td align="left">(?&lt;=pattern)</td>
+<td align="left">反向肯定預查，與正向肯定預查類似，只是方向相反。</td>
+</tr>
+<tr class="even">
+<td align="left">(?&lt;!pattern)</td>
+<td align="left">反向否定預查，與正向否定預查類似，只是方向相反。</td>
+</tr>
+<tr class="odd">
+<td align="left">x|y</td>
+<td align="left">比對 x 或 y。</td>
+</tr>
+<tr class="even">
+<td align="left">[xyz]</td>
+<td align="left">包含 xyz 等字元。</td>
+</tr>
+<tr class="odd">
+<td align="left">[^xyz]</td>
+<td align="left">不包含 xyz 等字元。</td>
+</tr>
+<tr class="even">
+<td align="left">[a-z]</td>
+<td align="left">字元範圍 a-z。</td>
+</tr>
+<tr class="odd">
+<td align="left">[^a-z]</td>
+<td align="left">不包含字元範圍 a-z。</td>
+</tr>
+<tr class="even">
+<td align="left">\b</td>
+<td align="left">比對「英文詞彙」的邊界。例如，&quot;John&quot;可以比對 John，但不能比對 Johnson。</td>
+</tr>
+<tr class="odd">
+<td align="left">\B</td>
+<td align="left">比對非「英文詞彙」的邊界。例如，&quot;John&quot;可以比對 Johnson，但不能比對 John。</td>
+</tr>
+<tr class="even">
+<td align="left">\cx</td>
+<td align="left">比對由 x 指明的控制字元。例如，可比對 Control-M。</td>
+</tr>
+<tr class="odd">
+<td align="left">\d</td>
+<td align="left">比對數字符號。等價於 [0-9]。</td>
+</tr>
+<tr class="even">
+<td align="left">\D</td>
+<td align="left">比對非數字符號。等價於 [^0-9]。</td>
+</tr>
+<tr class="odd">
+<td align="left">\f</td>
+<td align="left">比對換頁符號。等價於 <code>\x0c 和 \cL</code>。</td>
+</tr>
+<tr class="even">
+<td align="left">\n</td>
+<td align="left">比對換行符號。等價於 <code>\x0a 和 \cJ</code>。</td>
+</tr>
+<tr class="odd">
+<td align="left">\r</td>
+<td align="left">比對回車符號。等價於 <code>\x0d 和 \cM</code>。</td>
+</tr>
+<tr class="even">
+<td align="left">\s</td>
+<td align="left">比對任何空白字元，包括空格、定位字元、換頁符等等。等價於 <code>[\f\n\r\t\v]</code>。</td>
+</tr>
+<tr class="odd">
+<td align="left">\S</td>
+<td align="left">比對任何非空白字元。等價於 <code>[^\f\n\r\t\v]</code>。</td>
+</tr>
+<tr class="even">
+<td align="left">\t</td>
+<td align="left">比對定位字元。等價於 <code>\x09</code> 和 <code>\cI</code>。</td>
+</tr>
+<tr class="odd">
+<td align="left">\v</td>
+<td align="left">比對垂直定位字元。等價於 <code>\x0b</code> 和 <code>\cK</code>。</td>
+</tr>
+<tr class="even">
+<td align="left">\w</td>
+<td align="left">比對「英文、數字或底線」。等價於 <code>[A-Za-z0-9_]</code>。</td>
+</tr>
+<tr class="odd">
+<td align="left">\W</td>
+<td align="left">比對非「英文、數字或底線」的字元。等價於 <code>[^A-Za-z0-9_]</code>。</td>
+</tr>
+<tr class="even">
+<td align="left">\xnum</td>
+<td align="left">比對 16 進位指定的字元碼。例如，<code>\x42</code> 比對 &quot;B&quot;。</td>
+</tr>
+<tr class="odd">
+<td align="left">\onum</td>
+<td align="left">比對 8 進位指定的字元碼。</td>
+</tr>
+<tr class="even">
+<td align="left">\unum</td>
+<td align="left">比對 unicode，其中 n 是一個用四個 16 進位數位表示的 Unicode 字元。</td>
+</tr>
+<tr class="odd">
+<td align="left">\num</td>
+<td align="left">重複比對 num 次。例如，<code>(.)\2</code> 比對 3 個連續的相同字元。</td>
+</tr>
+<tr class="even">
+<td align="left">pat1|pat2</td>
+<td align="left">比對樣式 pat1 或 pat2，兩者都要的比對方式。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="程式範例----node.js-的正規表達式"><a href="#程式範例----node.js-的正規表達式">程式範例 -- Node.js 的正規表達式</a></h3>
+<p>現在、就讓我們用幾個 Node.js 程式，來示範 JavaScript 的正規表達式之用法。</p>
+<h4 id="範例-1-比對取代與分割"><a href="#範例-1-比對取代與分割">範例 1 : 比對、取代與分割</a></h4>
+<p>在以下範例中，我們示範了如何使用字串物件內建的 replace, split, match, search 等函數， 透過正規表達式進行字串「取代、分割、比對、搜尋」等功能。</p>
+<p>檔案：regexp1.js</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> log = <span class="ot">console</span>.<span class="fu">log</span>;
+
+text = <span class="st">&quot;name=ccc age=43 email=[ccckmit@gmail.com,ccc@nqu.edu.tw] website=http://ccckmit.wikidot.com/ job=teacher&quot;</span>;
+<span class="fu">log</span>(<span class="st">&quot;===text.replace(\d+, &lt;number&gt;)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="ot">text</span>.<span class="fu">replace</span>(<span class="ot">/</span><span class="bn">\d</span><span class="fl">+</span><span class="ot">/</span>, <span class="st">&quot;&lt;number&gt;&quot;</span>));    <span class="co">// 取代數字為 &lt;number&gt;</span>
+<span class="fu">log</span>(<span class="st">&quot;===text.split(\s+)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="ot">text</span>.<span class="fu">split</span>(<span class="ot">/</span><span class="bn">\s</span><span class="fl">+</span><span class="ot">/</span>));                              <span class="co">// 用空白字元分割字串</span>
+<span class="fu">log</span>(<span class="st">&quot;===text.match(\d+)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="ot">text</span>.<span class="fu">match</span>(<span class="ot">/</span><span class="bn">\d</span><span class="fl">+</span><span class="ot">/</span>));                              <span class="co">// 比對取得數字</span>
+<span class="fu">log</span>(<span class="st">&quot;===text.search(\d+)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>, <span class="ot">text</span>.<span class="fu">search</span>(<span class="ot">/</span><span class="bn">\d</span><span class="fl">+</span><span class="ot">/</span>));                            <span class="co">// 比對取得數字的位置</span>
+<span class="fu">log</span>(<span class="st">&quot;===text.replace(/http:\/\/[a-zA-Z0-9\.\/_]+/, &lt;url&gt;)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>,                <span class="co">// 取代網址為 &lt;url&gt;</span>
+    <span class="ot">text</span>.<span class="fu">replace</span>(<span class="ot">/http:</span><span class="fl">\/\/</span><span class="bn">[a-zA-Z0-9</span><span class="fl">\.\/</span><span class="bn">_]</span><span class="fl">+</span><span class="ot">/</span>, <span class="st">&quot;&lt;url&gt;&quot;</span>));
+<span class="fu">log</span>(<span class="st">&quot;===text.replace(/[a-zA-Z0-9_]+@[a-zA-Z0-9\._]+/, &lt;email&gt;)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>,           <span class="co">// 取代郵件位址為 &lt;email&gt;，只取代一次</span>
+    <span class="ot">text</span>.<span class="fu">replace</span>(<span class="ot">/</span><span class="bn">[a-zA-Z0-9_]</span><span class="fl">+</span><span class="ot">@</span><span class="bn">[a-zA-Z0-9</span><span class="fl">\.</span><span class="bn">_]</span><span class="fl">+</span><span class="ot">/</span>, <span class="st">&quot;&lt;email&gt;&quot;</span>));
+<span class="fu">log</span>(<span class="st">&quot;===text.replace(/[a-zA-Z0-9_]+@[a-zA-Z0-9\._]+/g, &lt;email&gt;)===</span><span class="ch">\n</span><span class="st">%j</span><span class="ch">\n</span><span class="st">&quot;</span>,          <span class="co">// 取代所有郵件位址為 &lt;email&gt;。</span>
+    <span class="ot">text</span>.<span class="fu">replace</span>(<span class="ot">/</span><span class="bn">[a-zA-Z0-9_]</span><span class="fl">+</span><span class="ot">@</span><span class="bn">[a-zA-Z0-9</span><span class="fl">\.</span><span class="bn">_]</span><span class="fl">+</span><span class="ot">/g</span>, <span class="st">&quot;&lt;email&gt;&quot;</span>));</code></pre>
+<p>執行結果：</p>
+<pre><code>D:\Dropbox\Public\pmag\201307\code&gt;node regexp1
+===text.replace(d+, &lt;number&gt;)===
+&quot;name=ccc age=&lt;number&gt; email=[ccckmit@gmail.com,ccc@nqu.edu.tw] website=http://c
+cckmit.wikidot.com/ job=teacher&quot;
+
+===text.split(s+)===
+[&quot;name=ccc&quot;,&quot;age=43&quot;,&quot;email=[ccckmit@gmail.com,ccc@nqu.edu.tw]&quot;,&quot;website=http://
+ccckmit.wikidot.com/&quot;,&quot;job=teacher&quot;]
+
+===text.match(d+)===
+[&quot;43&quot;]
+
+===text.search(d+)===
+13
+
+===text.replace(/http://[a-zA-Z0-9./_]+/, &lt;url&gt;)===
+&quot;name=ccc age=43 email=[ccckmit@gmail.com,ccc@nqu.edu.tw] website=&lt;url&gt; job=teac
+her&quot;
+
+===text.replace(/[a-zA-Z0-9_]+@[a-zA-Z0-9._]+/, &lt;email&gt;)===
+&quot;name=ccc age=43 email=[&lt;email&gt;,ccc@nqu.edu.tw] website=http://ccckmit.wikidot.c
+om/ job=teacher&quot;
+
+===text.replace(/[a-zA-Z0-9_]+@[a-zA-Z0-9._]+/g, &lt;email&gt;)===
+&quot;name=ccc age=43 email=[&lt;email&gt;,&lt;email&gt;] website=http://ccckmit.wikidot.com/ job
+=teacher&quot;</code></pre>
+<h4 id="範例-2-使用正規表達式物件比對字串"><a href="#範例-2-使用正規表達式物件比對字串">範例 2 : 使用正規表達式物件比對字串</a></h4>
+<p>當然、我們也可以反過來用正規表達式去比對字串，這種方法可以很方便的用來取得各個比對的內容，因此很適合 用來做欄位取出的動作，以下是一個用正規表達式取出「姓名 name、年齡 age、出生年 year /月 month /日 day」 等欄位的程式。</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> re = <span class="kw">new</span> <span class="fu">RegExp</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">d+&quot;</span>, <span class="st">&quot;gi&quot;</span>);
+<span class="kw">var</span> str = <span class="st">&quot;name:john age:20 birthday:1990/8/31&quot;</span>;
+
+<span class="kw">var</span> m = <span class="kw">null</span>;
+<span class="kw">while</span> (m = <span class="ot">re</span>.<span class="fu">exec</span>(str))
+    <span class="ot">console</span>.<span class="fu">log</span>(<span class="ot">m</span>.<span class="fu">toString</span>());
+    
+<span class="kw">var</span> p = <span class="fu">parse</span>(str);
+<span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&quot;p.name=&quot;</span>+<span class="ot">p</span>.<span class="fu">name</span>+<span class="st">&quot; age=&quot;</span>+<span class="ot">p</span>.<span class="fu">age</span>+<span class="st">&quot; year=&quot;</span>+<span class="ot">p</span>.<span class="fu">year</span>+<span class="st">&quot; month=&quot;</span>+<span class="ot">p</span>.<span class="fu">month</span>+<span class="st">&quot; day=&quot;</span>+<span class="ot">p</span>.<span class="fu">day</span>);
+
+<span class="kw">function</span> <span class="fu">parse</span>(data) {
+    <span class="kw">var</span> e=<span class="kw">new</span> <span class="fu">RegExp</span>(<span class="st">&quot;name:(</span><span class="ch">\\</span><span class="st">w+) age:(</span><span class="ch">\\</span><span class="st">d+) birthday:(</span><span class="ch">\\</span><span class="st">d+)/(</span><span class="ch">\\</span><span class="st">d+)/(</span><span class="ch">\\</span><span class="st">d+)&quot;</span>, <span class="st">&quot;gi&quot;</span>);
+
+    <span class="kw">if</span> (<span class="ot">data</span>.<span class="fu">match</span>(e)) {
+        <span class="kw">return</span>  {<span class="dt">exp</span>: RegExp[<span class="st">&#39;$&amp;&#39;</span>],
+                <span class="dt">name</span>: <span class="ot">RegExp</span>.<span class="fu">$1</span>,
+                <span class="dt">age</span>:<span class="ot">RegExp</span>.<span class="fu">$2</span>,
+                <span class="dt">year</span>:<span class="ot">RegExp</span>.<span class="fu">$3</span>,
+                <span class="dt">month</span>:<span class="ot">RegExp</span>.<span class="fu">$4</span>,
+                <span class="dt">day</span>:<span class="ot">RegExp</span>.<span class="fu">$5</span>};
+    }
+    <span class="kw">else</span> {
+        <span class="kw">return</span> <span class="kw">null</span>;
+    }
+}
+
+<span class="ot">String</span>.<span class="ot">prototype</span>.<span class="fu">trim</span> = <span class="kw">function</span>() { 
+  <span class="kw">return</span> <span class="kw">this</span>.<span class="fu">replace</span>(<span class="ot">/</span><span class="fl">(</span><span class="ot">^</span><span class="bn">\s</span><span class="fl">*)|(</span><span class="bn">\s</span><span class="fl">*</span><span class="ot">$</span><span class="fl">)</span><span class="ot">/g</span>, <span class="st">&quot;&quot;</span>); 
+}
+
+<span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&quot;&#39; abc &#39;.trim()=&#39;&quot;</span>+<span class="st">&#39; abc &#39;</span>.<span class="fu">trim</span>()+<span class="st">&quot;&#39;&quot;</span>);</code></pre>
+<p>另外在程式的最後，我們透過改寫 String 物件的原型 prototype，可以為字串類別插入原本不具備的函數 (trim)， 以便去除字串前後的空白。這種方式充分展現了 JavaScript 這類動態語言的彈性之處。</p>
+<p>以下是該範例的執行結果：</p>
+<pre><code>D:\Dropbox\Public\pmag\201307\code&gt;node regexp2
+20
+1990
+8
+31
+p.name=john age=20 year=1990 month=8 day=31
+&#39; abc &#39;.trim()=&#39;abc&#39;</code></pre>
+<h4 id="範例-3-製作一個簡易的程式語言詞彙掃描器-lexer-或稱-scanner"><a href="#範例-3-製作一個簡易的程式語言詞彙掃描器-lexer-或稱-scanner">範例 3 : 製作一個簡易的程式語言詞彙掃描器 Lexer (或稱 Scanner)</a></h4>
+<p>如果利用正規表達式，很多工作就可以輕易的完成。舉例而言，在編譯器的設計當中，詞彙掃描器 Lexer 是一個最基礎的工作， 掃描完成後才能進行剖析 Parsing 的動作。如果我們使用「正規表達式」來處理這項工作，那麼只要一個 match 函數就可以完成了， 如以下程式所示。</p>
+<p>檔案：scan1.js</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">text = <span class="st">&quot;i=3; /* hello </span><span class="ch">\r\n</span><span class="st"> world! */</span><span class="ch">\r\n</span><span class="st"> add=function(a,b) { return a+b; }&quot;</span>;                     <span class="co">// 程式字串</span>
+re = <span class="ot">/</span><span class="fl">(\/\*</span><span class="bn">[</span><span class="fl">\s\S</span><span class="bn">]</span><span class="fl">*?\*\/)|(\/\/</span><span class="bn">[</span><span class="fl">^\r\n</span><span class="bn">]</span><span class="fl">)|(</span><span class="ot">&quot;.</span><span class="fl">*?</span><span class="ot">&quot;</span><span class="fl">)|(</span><span class="bn">\d</span><span class="fl">+(\.</span><span class="bn">\d</span><span class="fl">*)?)|(</span><span class="bn">[a-zA-Z]\w</span><span class="fl">*)|(</span><span class="bn">\r</span><span class="fl">?</span><span class="bn">\n</span><span class="fl">)|(</span><span class="bn">\s</span><span class="fl">+)|(</span><span class="ot">.</span><span class="fl">)</span><span class="ot">/gm</span>; <span class="co">// g 代表全域，m 代表多行的比對方式。</span>
+<span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&quot;text.match(re)=%j&quot;</span>, <span class="ot">text</span>.<span class="fu">match</span>(re));   <span class="co">// 印出比對後得到的陣列。</span></code></pre>
+<p>執行結果：</p>
+<pre><code>D:\Dropbox\Public\pmag\201307\code&gt;node scan1
+text.match(re)=[&quot;i&quot;,&quot;=&quot;,&quot;3&quot;,&quot;;&quot;,&quot; &quot;,&quot;/* hello \r\n world! */&quot;,&quot;\r\n&quot;,&quot; &quot;,&quot;add&quot;,&quot;
+=&quot;,&quot;function&quot;,&quot;(&quot;,&quot;a&quot;,&quot;,&quot;,&quot;b&quot;,&quot;)&quot;,&quot; &quot;,&quot;{&quot;,&quot; &quot;,&quot;return&quot;,&quot; &quot;,&quot;a&quot;,&quot;+&quot;,&quot;b&quot;,&quot;;&quot;,&quot; &quot;,&quot;
+}&quot;]</code></pre>
+<p>另外、輸入字串當然也可以從檔案讀取，如以下程式所示：</p>
+<p>檔案：scan2.js</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> fs = <span class="fu">require</span>(<span class="st">&#39;fs&#39;</span>); <span class="co">/* 引用檔案物件 */</span>
+<span class="kw">var</span> text = <span class="ot">fs</span>.<span class="fu">readFileSync</span>(<span class="ot">process</span>.<span class="fu">argv</span>[<span class="dv">2</span>], <span class="st">&quot;utf8&quot;</span>); <span class="co">/* 讀取檔案 */</span>
+re = <span class="ot">/</span><span class="fl">(\/\*</span><span class="bn">[</span><span class="fl">\s\S</span><span class="bn">]</span><span class="fl">*?\*\/)|(\/\/</span><span class="bn">[</span><span class="fl">^\r\n</span><span class="bn">]</span><span class="fl">)|(</span><span class="ot">&quot;.</span><span class="fl">*?</span><span class="ot">&quot;</span><span class="fl">)|(</span><span class="bn">\d</span><span class="fl">+(\.</span><span class="bn">\d</span><span class="fl">*)?)|(</span><span class="bn">[a-zA-Z]\w</span><span class="fl">*)|(</span><span class="bn">\r</span><span class="fl">?</span><span class="bn">\n</span><span class="fl">)|(</span><span class="bn">\s</span><span class="fl">+)|(</span><span class="ot">.</span><span class="fl">)</span><span class="ot">/gm</span>; <span class="co">/* g 代表全域，m 代表多行的比對方式。*/</span>
+<span class="ot">console</span>.<span class="fu">log</span>(<span class="st">&quot;text.match(re)=%j&quot;</span>, <span class="ot">text</span>.<span class="fu">match</span>(re));   <span class="co">/* 印出比對後得到的陣列。*/</span></code></pre>
+<p>執行結果</p>
+<pre><code>D:\Dropbox\Public\pmag\201307\code&gt;node scan2 scan2.js
+text.match(re)=[&quot;var&quot;,&quot; &quot;,&quot;fs&quot;,&quot; &quot;,&quot;=&quot;,&quot; &quot;,&quot;require&quot;,&quot;(&quot;,&quot;&#39;&quot;,&quot;fs&quot;,&quot;&#39;&quot;,&quot;)&quot;,&quot;;&quot;,&quot;
+&quot;,&quot;/* 引用檔案物件 */&quot;,&quot;\r\n&quot;,&quot;var&quot;,&quot; &quot;,&quot;text&quot;,&quot; &quot;,&quot;=&quot;,&quot; &quot;,&quot;fs&quot;,&quot;.&quot;,&quot;readFileSyn
+c&quot;,&quot;(&quot;,&quot;process&quot;,&quot;.&quot;,&quot;argv&quot;,&quot;[&quot;,&quot;2&quot;,&quot;]&quot;,&quot;,&quot;,&quot; &quot;,&quot;\&quot;utf8\&quot;&quot;,&quot;)&quot;,&quot;;&quot;,&quot; &quot;,&quot;/* 讀取
+檔案 */&quot;,&quot;\r\n&quot;,&quot;re&quot;,&quot; &quot;,&quot;=&quot;,&quot; &quot;,&quot;/&quot;,&quot;(&quot;,&quot;\\&quot;,&quot;/&quot;,&quot;\\&quot;,&quot;*&quot;,&quot;[&quot;,&quot;\\&quot;,&quot;s&quot;,&quot;\\&quot;,&quot;S&quot;
+,&quot;]&quot;,&quot;*&quot;,&quot;?&quot;,&quot;\\&quot;,&quot;*&quot;,&quot;\\&quot;,&quot;/&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;\\&quot;,&quot;/&quot;,&quot;\\&quot;,&quot;/&quot;,&quot;[&quot;,&quot;^&quot;,&quot;\\&quot;,&quot;r&quot;,&quot;\
+\&quot;,&quot;n&quot;,&quot;]&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;\&quot;.*?\&quot;&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;\\&quot;,&quot;d&quot;,&quot;+&quot;,&quot;(&quot;,&quot;\\&quot;,&quot;.&quot;,&quot;\\&quot;,&quot;d&quot;,
+&quot;*&quot;,&quot;)&quot;,&quot;?&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;[&quot;,&quot;a&quot;,&quot;-&quot;,&quot;zA&quot;,&quot;-&quot;,&quot;Z&quot;,&quot;]&quot;,&quot;\\&quot;,&quot;w&quot;,&quot;*&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;\
+\&quot;,&quot;r&quot;,&quot;?&quot;,&quot;\\&quot;,&quot;n&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;\\&quot;,&quot;s&quot;,&quot;+&quot;,&quot;)&quot;,&quot;|&quot;,&quot;(&quot;,&quot;.&quot;,&quot;)&quot;,&quot;/&quot;,&quot;gm&quot;,&quot;;&quot;,&quot;
+&quot;,&quot;/* g 代表全域，m 代表多行的比對方式。*/&quot;,&quot;\r\n&quot;,&quot;console&quot;,&quot;.&quot;,&quot;log&quot;,&quot;(&quot;,&quot;\&quot;te
+xt.match(re)=%j\&quot;&quot;,&quot;,&quot;,&quot; &quot;,&quot;text&quot;,&quot;.&quot;,&quot;match&quot;,&quot;(&quot;,&quot;re&quot;,&quot;)&quot;,&quot;)&quot;,&quot;;&quot;,&quot;   &quot;,&quot;/* 印
+出比對後得到的陣列。*/&quot;,&quot;\r\n&quot;]</code></pre>
+<p>當然，如果要判斷所掃描的每個詞彙是何種型態、並且紀錄行號的話，那麼就會稍微複雜一些，如以下程式所示：</p>
+<p>檔案：scan3.js</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> log = <span class="ot">console</span>.<span class="fu">log</span>;
+text = <span class="st">&quot;i=3; /* hello </span><span class="ch">\r\n</span><span class="st"> world! */</span><span class="ch">\r\n</span><span class="st"> add=function(a,b) { return a+b; }&quot;</span>;
+
+<span class="co">// 本來應該用 .*? 來比對 /*...*/ 註解的，但 javascript 的 . 並不包含 \n, 因此用 \s\S 代替 . 就可以了。</span>
+<span class="co">// 加上後置問號 *?, +? 代表非貪婪式比對 (non greedy), m 代表多行比對模式 (multiline)</span>
+re = <span class="kw">new</span> <span class="fu">RegExp</span>(<span class="ot">/</span><span class="fl">(\/\*</span><span class="bn">[</span><span class="fl">\s\S</span><span class="bn">]</span><span class="fl">*?\*\/)|(\/\/</span><span class="bn">[</span><span class="fl">^\r\n</span><span class="bn">]</span><span class="fl">)|(</span><span class="ot">&quot;.</span><span class="fl">*?</span><span class="ot">&quot;</span><span class="fl">)|(</span><span class="bn">\d</span><span class="fl">+(\.</span><span class="bn">\d</span><span class="fl">*)?)|(</span><span class="bn">[a-zA-Z]\w</span><span class="fl">*)|(</span><span class="bn">\r</span><span class="fl">?</span><span class="bn">\n</span><span class="fl">)|(</span><span class="bn">\s</span><span class="fl">+)|(</span><span class="ot">.</span><span class="fl">)</span><span class="ot">/gm</span>);
+<span class="kw">var</span> types = [ <span class="st">&quot;&quot;</span>, <span class="st">&quot;blockcomment&quot;</span>, <span class="st">&quot;linecomment&quot;</span>, <span class="st">&quot;string&quot;</span>, <span class="st">&quot;int&quot;</span>, <span class="st">&quot;float&quot;</span>, <span class="st">&quot;id&quot;</span>, <span class="st">&quot;br&quot;</span>, <span class="st">&quot;space&quot;</span>, <span class="st">&quot;op&quot;</span> ];
+<span class="kw">var</span> tokens = [];
+<span class="kw">var</span> m;
+<span class="kw">var</span> lines = <span class="dv">1</span>;
+<span class="kw">while</span>((m = <span class="ot">re</span>.<span class="fu">exec</span>(text)) !== <span class="kw">null</span>) {
+  <span class="kw">var</span> token = m[<span class="dv">0</span>], type;
+  <span class="kw">for</span> (i=<span class="dv">1</span>; i&lt;=<span class="dv">8</span>; i++) { 
+    <span class="kw">if</span> (m[i] !== <span class="kw">undefined</span>)
+      type = types[i];
+  }
+  <span class="ot">tokens</span>.<span class="fu">push</span>({ <span class="st">&quot;token&quot;</span>:token, <span class="st">&quot;type&quot;</span>:type, <span class="st">&quot;lines&quot;</span>:lines });
+  <span class="fu">log</span>(<span class="st">&quot;token=&quot;</span>+token+<span class="st">&quot; type=&quot;</span>+type+<span class="st">&quot; lines=&quot;</span>+lines);
+  lines += <span class="ot">token</span>.<span class="fu">split</span>(<span class="ot">/</span><span class="bn">\n</span><span class="ot">/</span>).<span class="fu">length</span><span class="dv">-1</span>;
+}</code></pre>
+<p>執行結果</p>
+<pre><code>D:\Dropbox\Public\pmag\201307\code&gt;node scan3
+token=i type=id lines=1
+token== type=id lines=1
+token=3 type=int lines=1
+token=; type=int lines=1
+token=  type=space lines=1
+token=/* hello
+ world! */ type=blockcomment lines=1
+token=
+ type=br lines=2
+token=  type=space lines=3
+token=add type=id lines=3
+token== type=id lines=3
+token=function type=id lines=3
+token=( type=id lines=3
+token=a type=id lines=3
+token=, type=id lines=3
+token=b type=id lines=3
+token=) type=id lines=3
+token=  type=space lines=3
+token={ type=space lines=3
+token=  type=space lines=3
+token=return type=id lines=3
+token=  type=space lines=3
+token=a type=id lines=3
+token=+ type=id lines=3
+token=b type=id lines=3
+token=; type=id lines=3
+token=  type=space lines=3
+token=} type=space lines=3
+</code></pre>
+<h3 id="結語"><a href="#結語">結語</a></h3>
+<p>現在、您應該已經瞭解如何在 JavaScript 當中使用正規表達式了，當您有任何字串處理的需求時，請記得正規表達式永遠是你的好朋友， 它可以讓原本要寫上數十行甚至數百行的程式，輕鬆的用一兩行就搞定了，這個工具大大的提升了程式人的生產力，對經常進行字串處理 的程式人而言，學會「正規表達式」絕對可以讓你感覺到「事半功倍」啊！</p>
+<h3 id="參考文獻"><a href="#參考文獻">參考文獻</a></h3>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正規表示式:維基百科，自由的百科全書</a></li>
+</ul>
+<p>(本文的正規表達式表格由陳鍾誠修改自維基百科，使用時請遵守 <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/">姓名標示、相同方式分享</a> 之授權)</p>
+</div>
+<div id="footer">
+<a href="https://www.facebook.com/groups/programmerMagazine/">程式人雜誌</a> ，採用 <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/ ">創作共用：姓名標示、相同方式分享</a> 授權，歡迎加入 <a href="https://www.facebook.com/groups/programmerMagazine/">雜誌社團</a>
+</div>
+</body>
+</html>

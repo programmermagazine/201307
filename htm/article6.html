@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="../css/pmag.css" type="text/css" />
+</head>
+<body>
+<div id="header_wrap">
+   <h1><a href="https://www.facebook.com/groups/programmerMagazine">程式人雜誌</a> <sub> --  <a href="https://dl.dropbox.com/u/101584453/pmag/201307/htm/home.html">2013 年 7 月號</a> (開放公益出版品)</sub></h1>
+</div>
+<div id="content">
+<div id="TOC">
+<ul>
+<li><a href="#r-統計軟體-講題分享-獨立成份分析-作者taiwan-r-user-group">R 統計軟體: 講題分享-獨立成份分析-(作者：Taiwan R User Group)</a></li>
+</ul>
+</div>
+<h2 id="r-統計軟體-講題分享-獨立成份分析-作者taiwan-r-user-group"><a href="#r-統計軟體-講題分享-獨立成份分析-作者taiwan-r-user-group">R 統計軟體: 講題分享-獨立成份分析-(作者：Taiwan R User Group)</a></h2>
+<p>大家好，我們是Taiwan R User Group。除了平常在網路上交流R 相關的資訊之外，我們也於每週一晚上7:30在政治大學公企中心舉辦MLDM (Machine Learning and Data) Mining Monday！提供一個平台讓相關領域的朋友能分享資料分析的心得，或是使用R 的故事。</p>
+<p>在篇文章中，我們將和讀者分享本月份某次 MLDM Monday的 主題：獨立成份分析(Independent Component Analysis)</p>
+<h3 id="簡介"><a href="#簡介">簡介</a></h3>
+<p>獨立成份分析主要是用在分辨混在一起的訊號。舉例來說，如果我們用數個麥克風收音，而音訊來源混雜著各種聲音源，如：主持人的演講、周遭的背景音樂和外面街道上的喧譁。透過獨立成份分析，我們就可以把演講和背景音樂給分開。</p>
+<h3 id="數學定義"><a href="#數學定義">數學定義</a></h3>
+<p>假設有一個可以觀測的訊號，是一個長度<img style="vertical-align:middle" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=m" alt="m" title="m" />的隨機向量(random vector):</p>
+<ul>
+<li><img src="../timg/x_x_1_x__371b00291096ba56059470f30869eb06.jpg" title="fig:" /></li>
+</ul>
+<p>這個隨機向量中混雜了k 個訊號源，以及一個雜訊：</p>
+<ul>
+<li><img src="../timg/x_As_var_21acef90b70d7d7e8a46ac3fcd184280.jpg" title="fig:" /></li>
+</ul>
+<p>其中:</p>
+<ul>
+<li><img src="../timg/s_in_mat_7210577738e7a66acf672d296209466c.jpg" /> 是訊號源</li>
+<li><img src="../timg/A_in_mat_d0763d3e76063a3aba33557e56f77623.jpg" /> 是訊號源混雜的比率</li>
+<li><img src="../timg/_varepsi_f8b1c5a729a09649c275fca88976d8dd.jpg" /> 是雜訊，通常會假設為高斯分佈(Gaussian noise)，且期望值為0。</li>
+</ul>
+<p>如果我們猜的到 A ，那就能夠計算出 <img src="../timg/W_A_1__48f5c1150ac1fb5a23fabcae9085e6fa.jpg" /> ，並利用 <img src="../timg/s_W_1_x_6449e35f13ebf7136d9a07f4ba730b06.jpg" /> 以還原乾淨的訊號源了。</p>
+<p>上述的定義可以擴充為若干個觀測訊號以及若干個訊號源。</p>
+<h3 id="範例"><a href="#範例">範例</a></h3>
+<p>假設看不到的訊號源是長這個樣子：</p>
+<div class="figure">
+<img src="../img/ica-1.png" />
+</div>
+<p>經過某個<img style="vertical-align:middle" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=A" alt="A" title="A" />的混雜後，我們觀測到3個訊號：</p>
+<div class="figure">
+<img src="../img/ica-2.png" />
+</div>
+<p>而獨立成份分析的目的，則是要還原出原本的訊號：</p>
+<div class="figure">
+<img src="../img/ica-3.png" />
+</div>
+<p>這樣大家有沒有比較了解獨立成份分析所要解決的問題呢？</p>
+<p>其他還有許多更細節的數學性質，限於篇幅我們就不仔細介紹了。請大家有興趣可以參考影片<http://www.youtube.com/watch?v=BLmyeXM9zow>，或是詢問講者 <script type="text/javascript">
+<!--
+h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#98;&#x65;&#110;&#106;&#x61;&#x6d;&#x69;&#110;&#48;&#x39;&#48;&#x31;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#98;&#x65;&#110;&#106;&#x61;&#x6d;&#x69;&#110;&#48;&#x39;&#48;&#x31;&#32;&#x61;&#116;&#32;&#x67;&#x6d;&#x61;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript> 囉！</p>
+<h3 id="利用-r-來做獨立成份分析"><a href="#利用-r-來做獨立成份分析">利用 R 來做獨立成份分析</a></h3>
+<p>首先我們先到<http://research.ics.aalto.fi/ica/cocktail/cocktail_en.cgi>網站來製造聲音檔。網站中有許多音訊，而我們可以勾選若干個音訊之後，打包成若干個混合的音訊。</p>
+<p>在影片中，講者勾選了第6、7和9的音訊。在下載混合後的3個音訊檔案後，讀者就跟著我們來把音訊還原。</p>
+<h3 id="載入套件"><a href="#載入套件">載入套件</a></h3>
+<p>我們要先安裝和載入下列這3個套件！</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(fastICA)
+<span class="kw">library</span>(tuneR)
+<span class="kw">library</span>(seewave)</code></pre>
+<h3 id="載入聲音"><a href="#載入聲音">載入聲音</a></h3>
+<p>接著我們利用<code>readWave</code>指令匯入聲音，並且將3個聲音檔案整合到<code>origin</code>這個大矩陣中！ 註解掉的<code>listen</code>指令可以播放匯入的聲音。</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(<span class="dt">list =</span> <span class="kw">ls</span>())
+<span class="kw">setwd</span>(<span class="st">&quot;放置下載的聲音檔的目錄&quot;</span>)
+origin =<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow =</span> <span class="dv">50000</span>, <span class="dt">ncol =</span> <span class="dv">3</span>)
+
+for (i in <span class="dv">1</span>:<span class="dv">3</span>) {
+    filename =<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;000001101mix&quot;</span>, <span class="kw">as.character</span>(i), <span class="st">&quot;.wav&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)
+    data =<span class="st"> </span><span class="kw">readWave</span>(filename)
+    <span class="co"># listen(data)</span>
+    origin[, i] =<span class="st"> </span>data@left
+}</code></pre>
+<h3 id="獨立成份分析"><a href="#獨立成份分析">獨立成份分析</a></h3>
+<p>最後我們使用 <code>fastICA</code> 指令將混合的聲音還原為原本的聲音。 讀者可以使用註解掉的 <code>listen</code> 指令來聽聽看還原後的效果喔！</p>
+<pre class="sourceCode r"><code class="sourceCode r">ica_result =<span class="st"> </span><span class="kw">fastICA</span>(origin, <span class="dt">n.comp =</span> <span class="dv">3</span>)
+ica_source =<span class="st"> </span>ica_result$S
+for (i in <span class="dv">1</span>:<span class="dv">3</span>) {
+    temp =<span class="st"> </span>ica_source[, i]
+    temp =<span class="st"> </span><span class="kw">round</span>((temp -<span class="st"> </span><span class="kw">min</span>(temp))/(<span class="kw">max</span>(temp) -<span class="st"> </span><span class="kw">min</span>(temp)) *<span class="st"> </span><span class="kw">max</span>(origin) +<span class="st"> </span>
+<span class="st">        </span><span class="kw">min</span>(origin))
+    temp =<span class="st"> </span><span class="kw">Wave</span>(<span class="dt">left =</span> temp, <span class="dt">samp.rate =</span> <span class="dv">8000</span>, <span class="dt">bit =</span> <span class="dv">8</span>)
+    <span class="co"># listen(temp)</span>
+    <span class="kw">writeWave</span>(temp, <span class="kw">paste</span>(<span class="st">&quot;source&quot;</span>, <span class="kw">as.character</span>(i), <span class="st">&quot;.wav&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>))
+}</code></pre>
+<h3 id="小結"><a href="#小結">小結</a></h3>
+<p>看起來利用 R 做獨立成份分析並不會太困難耶。不過根據講者的介紹，<code>fastICA</code>並沒有辦法從3個觀測訊號還原成超過3個的訊號源。</p>
+<p>所以未來讀者若是有類似訊號的資料，可以先對資料做獨立成份分析後，再繼續分析囉。我自己則是想嘗試利用這個技術來自製卡拉ok伴唱帶，希望能成功啦，哈哈！</p>
+<p>最後再次謝謝講者 Ben 的分享。</p>
+<h3 id="reference"><a href="#reference">Reference</a></h3>
+<ul>
+<li><a href="http://www.youtube.com/watch?v=BLmyeXM9zow">http://www.youtube.com/watch?v=BLmyeXM9zow</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Independent_component_analysis">http://en.wikipedia.org/wiki/Independent_component_analysis</a></li>
+</ul>
+</div>
+<div id="footer">
+<a href="https://www.facebook.com/groups/programmerMagazine/">程式人雜誌</a> ，採用 <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/ ">創作共用：姓名標示、相同方式分享</a> 授權，歡迎加入 <a href="https://www.facebook.com/groups/programmerMagazine/">雜誌社團</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="../css/pmag.css" type="text/css" />
+</head>
+<body>
+<div id="header_wrap">
+   <h1><a href="https://www.facebook.com/groups/programmerMagazine">程式人雜誌</a> <sub> --  <a href="https://dl.dropbox.com/u/101584453/pmag/201307/htm/home.html">2013 年 7 月號</a> (開放公益出版品)</sub></h1>
+</div>
+<div id="content">
+<div id="TOC">
+<ul>
+<li><a href="#lisp-的發明人-john-mccarthy">LISP 的發明人 – John McCarthy</a></li>
+</ul>
+</div>
+<h2 id="lisp-的發明人-john-mccarthy"><a href="#lisp-的發明人-john-mccarthy">LISP 的發明人 – John McCarthy</a></h2>
+<p>John McCarthy (約翰·麥卡錫)（1927年9月4日－2011年10月24日），生於美國麻薩諸塞州波士頓，計算機科學家。 他因在人工智慧領域的貢獻而在 1971 年獲得圖靈獎。實際上，正是他在 1955 年的達特矛斯會議上 提出了「人工智慧」這個概念。</p>
+<p>John McCarthy 在 1960 年創造出了 LISP（全名LISt Processor，即列表處理語言）這個程式語言， 是一種有強烈數學基礎 (基於 λ演算) 的函數式語言。</p>
+<p>LISP有很多種方言，各個實作中的語言不完全一樣。1980年代 Guy L. Steele 編寫了Common Lisp 試圖 進行標準化，這個標準被大多數直譯器和編譯器所接受。在Unix/Linux系統中，還有一種和 Emacs 一起的 Emacs Lisp（而Emacs正是用Lisp作為擴充功能語言進行功能擴充功能的）非常流行，並建立了自己的標準。</p>
+<p>LISP語言的主要現代版本包括 Common Lisp 和 Scheme。</p>
+<p>雖然 LISP 是個通用型的語言，但是最常被使用在人工智慧領域，以下是一個用 LISP 計算 n! (n 階層) 函數的程式範例：</p>
+<pre class="LISP"><code> (defun factorial (n)
+   (if (&lt;= n 1)
+       1
+       (* n (factorial (- n 1)))))</code></pre>
+<p>即便現在 LISP 的使用者並不像 Java, Python, Ruby 等語言那麼多，但仍然有許多人在使用，像是 <a href="http://lisp.tw/">http://lisp.tw/</a> 這個網站中就介紹了很多 LISP 相關的程式與資訊，</p>
+<p>如果您現在想使用 LISP 的話，像是 <a href="http://www.franz.com/downloads/clp/survey">Allegro Common Lisp</a>、<a href="http://www.lispworks.com/products/lispworks.html#personal">LispWorks</a>、<a href="http://www.gnu.org/software/gcl/">GNU Common Lisp</a> 等，您可以自行選用 適合的開發環境，以便學習或使用 LISP 語言。</p>
+<h3 id="參考文獻"><a href="#參考文獻">參考文獻</a></h3>
+<ul>
+<li>維基百科:<a href="https://zh.wikipedia.org/wiki/%E7%BA%A6%E7%BF%B0%C2%B7%E9%BA%A6%E5%8D%A1%E9%94%A1">約翰·麥卡錫</a></li>
+<li>Wikipedia:<a href="https://en.wikipedia.org/wiki/Lisp_%28programming_language%29">Lisp</a></li>
+<li><a href="http://www.gnu.org/software/gcl/">GCL - an implementation of Common Lisp</a></li>
+<li><a href="http://lisp.tw/">http://lisp.tw/</a></li>
+<li>維基教科書:<a href="http://zh.wikibooks.org/zh-tw/Lisp_%E5%85%A5%E9%96%80">Lisp 入門</a></li>
+<li><a href="http://acl.readthedocs.org/en/latest/">ANSI Common Lisp 中文翻譯版</a></li>
+</ul>
+<p>【本文由陳鍾誠取材並修改自維基百科】</p>
+</div>
+<div id="footer">
+<a href="https://www.facebook.com/groups/programmerMagazine/">程式人雜誌</a> ，採用 <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/ ">創作共用：姓名標示、相同方式分享</a> 授權，歡迎加入 <a href="https://www.facebook.com/groups/programmerMagazine/">雜誌社團</a>
+</div>
+</body>
+</html>

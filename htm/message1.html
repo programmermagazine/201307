@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="../css/pmag.css" type="text/css" />
+</head>
+<body>
+<div id="header_wrap">
+   <h1><a href="https://www.facebook.com/groups/programmerMagazine">程式人雜誌</a> <sub> --  <a href="https://dl.dropbox.com/u/101584453/pmag/201307/htm/home.html">2013 年 7 月號</a> (開放公益出版品)</sub></h1>
+</div>
+<div id="content">
+<div id="TOC">
+<ul>
+<li><a href="#程式短訊prolog-語言與開發工具">程式短訊：PROLOG 語言與開發工具</a></li>
+</ul>
+</div>
+<h2 id="程式短訊prolog-語言與開發工具"><a href="#程式短訊prolog-語言與開發工具">程式短訊：PROLOG 語言與開發工具</a></h2>
+<p>說到了 LISP 就不能不談談 PROLOG，這兩個語言在人工智慧領域一直都具有非常重要的地位。 LISP 是以 λ 演算為基礎的函數式語言，而 PROLOG 則是以邏輯的 Horn Clause 推論為理論 根據的邏輯式語言。</p>
+<p>PROLOG 最初被運用於自然語言等研究領域。現在它已廣泛的應用在人工智慧的研究中， 它經常被用來建造專家系統、自然語言理解、智慧知識庫等方面的程式。</p>
+<p>Prolog 語言最早由 Aix-Marseille 大學的 Alain Colmerauer 與 Phillipe Roussel 等人於 60 年代末開始研究開發，並於 1972 年正式誕生。</p>
+<p>Prolog一直在北美和歐洲被廣泛使用。日本政府曾經為了建造智慧電腦而用 Prolog 來開發 ICOT 第五代電腦系統。在早期的機器智慧研究領域，Prolog曾經是主要的開發工具。</p>
+<p>80年代 Borland 開發的Turbo Prolog，進一步普及了 Prolog 的使用，1995年確定了ISO Prolog標準。</p>
+<p>現在若您想使用 Prolog 的話，有很多種開發環境可供選擇，像是 BProlog，GNU Prolog, Quintus, SICStus, Strawberry、SWI-Prolog、YAP-Prolog 等等。</p>
+<p>以 SWI-Prolog 為例，您可以從以下網站中下載此一開發環境：</p>
+<ul>
+<li><a href="http://www.swi-prolog.org/">http://www.swi-prolog.org/</a></li>
+</ul>
+<p>以下是筆者下載並安裝 SWI-Prolog 的過程，有興趣的讀者可以參考看看：</p>
+<ul>
+<li>SWI Prolog 的下載與安裝過程 -- <a href="http://youtu.be/beIL207y7rI">http://youtu.be/beIL207y7rI</a></li>
+</ul>
+<p>以下是一個 prolog 的簡易程式，用來判斷某些人之間是否有「親-子」關係或「兄弟」關係的。</p>
+<p>檔案：parent.pl</p>
+<pre class="sourceCode prolog"><code class="sourceCode prolog">mother<span class="er">_</span><span class="dt">child</span>(trude<span class="kw">,</span> sally)<span class="kw">.</span>
+ 
+father<span class="er">_</span><span class="dt">child</span>(tom<span class="kw">,</span> sally)<span class="kw">.</span>
+father<span class="er">_</span><span class="dt">child</span>(tom<span class="kw">,</span> erica)<span class="kw">.</span>
+father<span class="er">_</span><span class="dt">child</span>(mike<span class="kw">,</span> tom)<span class="kw">.</span>
+ 
+sibling(<span class="dt">X</span><span class="kw">,</span> <span class="dt">Y</span>)      <span class="kw">:-</span> parent<span class="er">_</span><span class="dt">child</span>(<span class="dt">Z</span><span class="kw">,</span> <span class="dt">X</span>)<span class="kw">,</span> parent<span class="er">_</span><span class="dt">child</span>(<span class="dt">Z</span><span class="kw">,</span> <span class="dt">Y</span>)<span class="kw">.</span>
+ 
+parent<span class="er">_</span><span class="dt">child</span>(<span class="dt">X</span><span class="kw">,</span> <span class="dt">Y</span>) <span class="kw">:-</span> father<span class="er">_</span><span class="dt">child</span>(<span class="dt">X</span><span class="kw">,</span> <span class="dt">Y</span>)<span class="kw">.</span>
+parent<span class="er">_</span><span class="dt">child</span>(<span class="dt">X</span><span class="kw">,</span> <span class="dt">Y</span>) <span class="kw">:-</span> mother<span class="er">_</span><span class="dt">child</span>(<span class="dt">X</span><span class="kw">,</span> <span class="dt">Y</span>)<span class="kw">.</span></code></pre>
+<p>當您寫完上述程式之後，就可以存檔並執行，然後開始詢問某些邏輯問句，Prolog 系統將會回答您，例如：</p>
+<pre class="sourceCode prolog"><code class="sourceCode prolog"><span class="fu">?-</span> sibling(sally<span class="kw">,</span> erica)<span class="kw">.</span>
+<span class="dt">Yes</span></code></pre>
+<p>如果您想要執行上述的 parent.pl 程式，然後開始詢問問題的話，可以先用任何編輯器，編好 parent.pl 的 內容並存檔，此時 parent.pl 這個檔案的圖示會是一隻貓頭鷹，您點選兩下後就會呼叫 SWI-Prolog 來執行它。 接著您就可以輸入問句了，以下是筆者的執行過程錄影。</p>
+<ul>
+<li>在 SWI Prolog 中載入並執行程式 -- <a href="http://youtu.be/xzz2L30T03g">http://youtu.be/xzz2L30T03g</a></li>
+</ul>
+<p>在筆者學習程式的漫長歷史當中，一直認為 PROLOG 是個相當奇特的語言，因為很少程式語言是從「邏輯推論」 這個角度切入的，這讓 PROLOG 成為用來撰寫知識型專家系統的首選語言，因為 PROLOG 天生就是邏輯推論高手阿！</p>
+<p>最近在 <a href="https://www.facebook.com/groups/programmerMagazine/">程式人雜誌社團</a> 中，網友「KuoE0」貼了一篇 <a href="http://kuoe0.ch/2288/prolog-tutorial/">prolog 入門</a> 的文章，有機會我們將在後續的雜誌中 刊登這一系列的文章，請讀者拭目以待！</p>
+<h3 id="參考文獻"><a href="#參考文獻">參考文獻</a></h3>
+<ul>
+<li>維基百科:Prolog -- <a href="https://zh.wikipedia.org/zh-tw/Prolog">https://zh.wikipedia.org/zh-tw/Prolog</a></li>
+<li>Wikipedia:Prolog -- <a href="https://en.wikipedia.org/wiki/Prolog">https://en.wikipedia.org/wiki/Prolog</a></li>
+<li><a href="http://kuoe0.ch/2288/prolog-tutorial/">prolog 入門</a>-- <a href="http://kuoe0.ch/2288/prolog-tutorial/">http://kuoe0.ch/2288/prolog-tutorial/</a></li>
+</ul>
+<p>【本文由陳鍾誠取材並修改自維基百科】</p>
+</div>
+<div id="footer">
+<a href="https://www.facebook.com/groups/programmerMagazine/">程式人雜誌</a> ，採用 <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/ ">創作共用：姓名標示、相同方式分享</a> 授權，歡迎加入 <a href="https://www.facebook.com/groups/programmerMagazine/">雜誌社團</a>
+</div>
+</body>
+</html>

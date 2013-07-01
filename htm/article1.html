@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="../css/pmag.css" type="text/css" />
+</head>
+<body>
+<div id="header_wrap">
+   <h1><a href="https://www.facebook.com/groups/programmerMagazine">程式人雜誌</a> <sub> --  <a href="https://dl.dropbox.com/u/101584453/pmag/201307/htm/home.html">2013 年 7 月號</a> (開放公益出版品)</sub></h1>
+</div>
+<div id="content">
+<div id="TOC">
+<ul>
+<li><a href="#arduino入門教學7-使用七段顯示器製作倒數功能-作者cooper-maa">Arduino入門教學(7) – 使用七段顯示器製作倒數功能 (作者：Cooper Maa)</a></li>
+</ul>
+</div>
+<h2 id="arduino入門教學7-使用七段顯示器製作倒數功能-作者cooper-maa"><a href="#arduino入門教學7-使用七段顯示器製作倒數功能-作者cooper-maa">Arduino入門教學(7) – 使用七段顯示器製作倒數功能 (作者：Cooper Maa)</a></h2>
+<h3 id="實驗目的"><a href="#實驗目的">實驗目的</a></h3>
+<p>控制一顆七段顯示器，在七段顯示器上依序顯示從 9 到 0 的數字，製作數字倒數的效果。</p>
+<h3 id="七段顯示器簡介"><a href="#七段顯示器簡介">七段顯示器簡介</a></h3>
+<p>七段顯示器是用來顯示數字的常用電子元件，在很多地方都可以看到它的身影，例如電子時鐘、溫度顯示器和各種儀表。它外型如下圖，背面一共有10 支接腳：</p>
+<div class="figure">
+<img src="../img/7seg1.png" alt="七段顯示器元件" /><p class="caption">七段顯示器元件</p>
+</div>
+<ul>
+<li>圖片來源: 露天拍賣 -- <a href="http://goods.ruten.com.tw/item/show?21011217374852">http://goods.ruten.com.tw/item/show?21011217374852</a></li>
+</ul>
+<p>七段顯示器分成共陽極和共陰極兩種，不管是哪一種，內部構造都是由 8 個 LED 發光二極體所組成，其中七個是筆劃，另外一個是小數點，如下圖所示，依順時針方向分別為 a, b, c, d, e, f, g 以及小數點 dp (decimal point):</p>
+<div class="figure">
+<img src="../img/7segBar.png" />
+</div>
+<p>要產生數字，方法是點亮指定的 LED。例如要產生數字 0，便點亮 a, b, c, d, e, f 等節段；要產生數字 1，便點亮 b, c 等節段；要產生數字 2，便點亮 a, b, d, e, g 等節段，依此類推。以共陰極而言，0 到 9 這十個阿拉伯數字與各節段的對應表如下：</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">顯示數字</th>
+<th align="left">dp</th>
+<th align="left">a</th>
+<th align="left">b</th>
+<th align="left">c</th>
+<th align="left">d</th>
+<th align="left">e</th>
+<th align="left">f</th>
+<th align="left">g</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+<tr class="odd">
+<td align="left">2</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">4</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">5</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">6</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">7</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+<tr class="odd">
+<td align="left">8</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">9</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<p>如果使用的是共陽極的七段顯示器，上面表格中所有的 1 都要換成 0， 所有的 0 都要換成 1。8 個 LED 連接到背面的接腳，我們為背面 10 接腳作個編號比較好記憶，a, b, c, d, e, f, g, dp 與 10 支接腳的關係圖如下:</p>
+<div class="figure">
+<img src="../img/7segBar2.png" alt="圖片來源：.NET Micro Framework – More blinking LEDs" /><p class="caption">圖片來源：.NET Micro Framework – More blinking LEDs</p>
+</div>
+<p>上圖是共陰極型的七段顯示器，3, 8 接腳要接到 GND，如果是共陽極則 3, 8 接腳要接到 +5V。</p>
+<h3 id="材料"><a href="#材料">材料</a></h3>
+<ul>
+<li>麵包板 x 1</li>
+<li>Arduino 主板 x 1</li>
+<li>七段顯示器(共陽極或共陰極皆可) x 1</li>
+<li>220 ohm 電阻 x 8</li>
+<li>單心線 x N</li>
+<li>接線</li>
+</ul>
+<p>將七段顯示器 3, 8 腳接到 GND (本例使用共陰極，若為共陽極請將 3, 8 腳接到 +5V) 查表將 Arduino 2, 3, 4, 5, 6, 7, 8 接到七段顯示器對應的腳位，並在每支接腳上串接一顆 220 ohm 電阻</p>
+<div class="figure">
+<img src="../img/7segBoard.png" />
+</div>
+<p>下表為 Arduino 與七段顯示器的腳位對應表：</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Arduino 腳位</th>
+<th align="center">七段示顯器腳位 (筆劃)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2</td>
+<td align="center">7 (A)</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="center">6 (B)</td>
+</tr>
+<tr class="odd">
+<td align="left">4</td>
+<td align="center">4 (C)</td>
+</tr>
+<tr class="even">
+<td align="left">5</td>
+<td align="center">2 (D)</td>
+</tr>
+<tr class="odd">
+<td align="left">6</td>
+<td align="center">1 (E)</td>
+</tr>
+<tr class="even">
+<td align="left">7</td>
+<td align="center">9 (F)</td>
+</tr>
+<tr class="odd">
+<td align="left">8</td>
+<td align="center">10 (G)</td>
+</tr>
+<tr class="even">
+<td align="left">9</td>
+<td align="center">5 (DP)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="電路圖"><a href="#電路圖">電路圖</a></h3>
+<div class="figure">
+<img src="../img/7segCircuit.png" />
+</div>
+<h3 id="程式碼"><a href="#程式碼">程式碼</a></h3>
+<p>版本一: 程式比較長，但比較容易懂(_7Segment.pde)</p>
+<pre class="sourceCode CPP"><code class="sourceCode cpp">
+<span class="co">// 七段顯示器製作倒數功能 (v1)</span>
+
+<span class="dt">void</span> setup() {               
+  pinMode(<span class="dv">2</span>, OUTPUT);  
+  pinMode(<span class="dv">3</span>, OUTPUT);
+  pinMode(<span class="dv">4</span>, OUTPUT);
+  pinMode(<span class="dv">5</span>, OUTPUT);
+  pinMode(<span class="dv">6</span>, OUTPUT);
+  pinMode(<span class="dv">7</span>, OUTPUT);
+  pinMode(<span class="dv">8</span>, OUTPUT);
+  pinMode(<span class="dv">9</span>, OUTPUT);
+  digitalWrite(<span class="dv">9</span>, <span class="dv">0</span>);  <span class="co">// 關閉小數點</span>
+}
+
+<span class="dt">void</span> loop() {
+  <span class="co">// 顯示數字 &#39;9&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;8&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;7&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">0</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;6&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;5&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;4&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;3&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;2&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">1</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;1&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">0</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">0</span>);
+  delay(<span class="dv">1000</span>);
+  <span class="co">// 顯示數字 &#39;0&#39;</span>
+  digitalWrite(<span class="dv">2</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">3</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">4</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">5</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">6</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">7</span>, <span class="dv">1</span>);
+  digitalWrite(<span class="dv">8</span>, <span class="dv">0</span>);  
+  <span class="co">// 暫停 4 秒鐘</span>
+  delay(<span class="dv">4000</span>);
+}</code></pre>
+<p>版本二：簡化程式的寫法(_7SegmentV2.pde)</p>
+<pre class="sourceCode CPP"><code class="sourceCode cpp">
+<span class="co">// 七段顯示器製作倒數功能 (v2)</span>
+
+<span class="co">// define the LED digit patters, from 0 - 9</span>
+<span class="co">// 1 = LED on, 0 = LED off, in this order:</span>
+<span class="co">//                    Arduino pin: 2,3,4,5,6,7,8 (Mapping a,b,c,d,e,f,g of Seven-Segment LED)</span>
+byte seven_seg_digits[<span class="dv">10</span>][<span class="dv">7</span>] = { { <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span> },  <span class="co">// = 0</span>
+                                 { <span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span> },  <span class="co">// = 1</span>
+                                 { <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span> },  <span class="co">// = 2</span>
+                                 { <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span> },  <span class="co">// = 3</span>
+                                 { <span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span> },  <span class="co">// = 4</span>
+                                 { <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span> },  <span class="co">// = 5</span>
+                                 { <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span> },  <span class="co">// = 6</span>
+                                 { <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span> },  <span class="co">// = 7</span>
+                                 { <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span> },  <span class="co">// = 8</span>
+                                 { <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span> }   <span class="co">// = 9</span>
+                             };
+
+<span class="dt">void</span> setup() {               
+  pinMode(<span class="dv">2</span>, OUTPUT);  
+  pinMode(<span class="dv">3</span>, OUTPUT);
+  pinMode(<span class="dv">4</span>, OUTPUT);
+  pinMode(<span class="dv">5</span>, OUTPUT);
+  pinMode(<span class="dv">6</span>, OUTPUT);
+  pinMode(<span class="dv">7</span>, OUTPUT);
+  pinMode(<span class="dv">8</span>, OUTPUT);
+  pinMode(<span class="dv">9</span>, OUTPUT);
+  digitalWrite(<span class="dv">9</span>, <span class="dv">0</span>);  <span class="co">// 關閉小數點</span>
+}
+
+<span class="co">// 在七段顯示器上顯示指定的一個數字 </span>
+<span class="dt">void</span> sevenSegWrite(byte digit) {
+  byte pin = <span class="dv">2</span>;
+  <span class="kw">for</span> (byte seg = <span class="dv">0</span>; seg &lt; <span class="dv">7</span>; ++seg) {
+    digitalWrite(pin, seven_seg_digits[digit][seg]);
+    ++pin;
+  }
+}
+
+<span class="dt">void</span> loop() {
+  <span class="kw">for</span> (byte digit = <span class="dv">10</span>; digit &gt; <span class="dv">0</span>; --digit) {
+    delay(<span class="dv">1000</span>);
+    sevenSegWrite(digit - <span class="dv">1</span>); 
+  }
+  
+ <span class="co">// 暫停 4 秒鐘</span>
+ delay(<span class="dv">4000</span>);
+}</code></pre>
+<h3 id="範例照片影片"><a href="#範例照片影片">範例照片／影片</a></h3>
+<ul>
+<li>Arduino 筆記 - Lab7 使用七段顯示器製作倒數功能
+<ul>
+<li><a href="http://www.youtube.com/watch?v=cL9IjwIt9-g">http://www.youtube.com/watch?v=cL9IjwIt9-g</a></li>
+</ul></li>
+</ul>
+<h3 id="動動腦"><a href="#動動腦">動動腦</a></h3>
+<p>接上一顆可變電阻，利用可變電阻來控制七段顯示器上的數字。提醒：使用 analogRead() 讀進來的可變電阻數值介於 0 到 1023，可以利用 <a href="http://arduino.cc/en/Reference/Map">map()</a> 函式將 0 到 1023 的數值對應為 0 到 9 之間的數值，然後再將數字顯示在七段顯示器上。</p>
+<h3 id="延伸閱讀"><a href="#延伸閱讀">延伸閱讀</a></h3>
+<ul>
+<li><a href="http://www.theelectronicshobbyist.com/blog/2010/02/controlling-a-seven-segment-display-using-arduino-part-1-of-4/">Controlling a Seven-Segment Display Using Arduino</a></li>
+<li><a href="http://geekswithblogs.net/kobush/archive/2010/08/21/netmf_more_blinking_leds.aspx">.NET Micro Framework – More blinking LEDs</a></li>
+</ul>
+</div>
+<div id="footer">
+<a href="https://www.facebook.com/groups/programmerMagazine/">程式人雜誌</a> ，採用 <a href="http://creativecommons.org/licenses/by-sa/3.0/tw/ ">創作共用：姓名標示、相同方式分享</a> 授權，歡迎加入 <a href="https://www.facebook.com/groups/programmerMagazine/">雜誌社團</a>
+</div>
+</body>
+</html>

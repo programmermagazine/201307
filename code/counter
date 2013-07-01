@@ -1,0 +1,65 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.5 " "(v0_9_5)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_003EEF48 .scope module, "main" "main" 2 10;
+ .timescale 0 0;
+v003EE900_0 .var "clock", 0 0;
+v003EE958_0 .net "i", 7 0, v003E99F8_0; 1 drivers
+v003EE9B0_0 .var "reset", 0 0;
+S_003E9918 .scope module, "c0" "counter" 2 15, 2 2, S_003EEF48;
+ .timescale 0 0;
+v003E99A0_0 .net "clock", 0 0, v003EE900_0; 1 drivers
+v003E99F8_0 .var "count", 7 0;
+v003EE8A8_0 .net "reset", 0 0, v003EE9B0_0; 1 drivers
+E_003E9470 .event posedge, v003E99A0_0;
+E_003E9430 .event edge, v003EE8A8_0;
+    .scope S_003E9918;
+T_0 ;
+    %wait E_003E9430;
+    %load/v 8, v003EE8A8_0, 1;
+    %jmp/0xz  T_0.0, 8;
+    %set/v v003E99F8_0, 0, 8;
+T_0.0 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_003E9918;
+T_1 ;
+    %wait E_003E9470;
+    %load/v 8, v003E99F8_0, 8;
+    %mov 16, 0, 24;
+    %addi 8, 1, 32;
+    %set/v v003E99F8_0, 8, 8;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_003EEF48;
+T_2 ;
+    %vpi_call 2 18 "$display", "%4dns: reset=%d clock=%d i=%d", $stime, v003EE9B0_0, v003EE900_0, v003EE958_0;
+    %delay 10, 0;
+    %set/v v003EE9B0_0, 1, 1;
+    %set/v v003EE900_0, 0, 1;
+    %vpi_call 2 20 "$display", "%4dns: reset=%d clock=%d i=%d", $stime, v003EE9B0_0, v003EE900_0, v003EE958_0;
+    %delay 10, 0;
+    %set/v v003EE9B0_0, 0, 1;
+    %vpi_call 2 22 "$display", "%4dns: reset=%d clock=%d i=%d", $stime, v003EE9B0_0, v003EE900_0, v003EE958_0;
+    %delay 500, 0;
+    %vpi_call 2 23 "$finish";
+    %end;
+    .thread T_2;
+    .scope S_003EEF48;
+T_3 ;
+    %delay 40, 0;
+    %load/v 8, v003EE900_0, 1;
+    %inv 8, 1;
+    %set/v v003EE900_0, 8, 1;
+    %delay 10, 0;
+    %vpi_call 2 29 "$display", "%4dns: reset=%d clock=%d i=%d", $stime, v003EE9B0_0, v003EE900_0, v003EE958_0;
+    %jmp T_3;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "counter.v";
