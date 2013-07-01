@@ -1,4 +1,4 @@
-## R 統計軟體: 講題分享-獨立成份分析-(作者：Taiwan R User Group)
+## R 統計軟體: 講題分享-獨立成份分析-(Taiwan R User Group)
 
 大家好，我們是Taiwan R User Group。除了平常在網路上交流R 相關的資訊之外，我們也於每週一晚上7:30在政治大學公企中心舉辦MLDM (Machine Learning and Data) Mining Monday！提供一個平台讓相關領域的朋友能分享資料分析的心得，或是使用R 的故事。
 
@@ -44,11 +44,11 @@
 
 這樣大家有沒有比較了解獨立成份分析所要解決的問題呢？
 
-其他還有許多更細節的數學性質，限於篇幅我們就不仔細介紹了。請大家有興趣可以參考影片<http://www.youtube.com/watch?v=BLmyeXM9zow>，或是詢問講者 <benjamin0901@gmail.com> 囉！
+其他還有許多更細節的數學性質，限於篇幅我們就不仔細介紹了。請大家有興趣可以參考影片 <http://www.youtube.com/watch?v=BLmyeXM9zow> ，或是詢問講者 <benjamin0901@gmail.com> 囉！
 
 ### 利用 R 來做獨立成份分析
 
-首先我們先到<http://research.ics.aalto.fi/ica/cocktail/cocktail_en.cgi>網站來製造聲音檔。網站中有許多音訊，而我們可以勾選若干個音訊之後，打包成若干個混合的音訊。
+首先我們先到 <http://research.ics.aalto.fi/ica/cocktail/cocktail_en.cgi>  網站來製造聲音檔。網站中有許多音訊，而我們可以勾選若干個音訊之後，打包成若干個混合的音訊。
 
 在影片中，講者勾選了第6、7和9的音訊。在下載混合後的3個音訊檔案後，讀者就跟著我們來把音訊還原。
 

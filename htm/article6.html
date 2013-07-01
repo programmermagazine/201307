@@ -34,10 +34,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <div id="content">
 <div id="TOC">
 <ul>
-<li><a href="#r-統計軟體-講題分享-獨立成份分析-作者taiwan-r-user-group">R 統計軟體: 講題分享-獨立成份分析-(作者：Taiwan R User Group)</a></li>
+<li><a href="#r-統計軟體-講題分享-獨立成份分析-taiwan-r-user-group">R 統計軟體: 講題分享-獨立成份分析-(Taiwan R User Group)</a></li>
 </ul>
 </div>
-<h2 id="r-統計軟體-講題分享-獨立成份分析-作者taiwan-r-user-group"><a href="#r-統計軟體-講題分享-獨立成份分析-作者taiwan-r-user-group">R 統計軟體: 講題分享-獨立成份分析-(作者：Taiwan R User Group)</a></h2>
+<h2 id="r-統計軟體-講題分享-獨立成份分析-taiwan-r-user-group"><a href="#r-統計軟體-講題分享-獨立成份分析-taiwan-r-user-group">R 統計軟體: 講題分享-獨立成份分析-(Taiwan R User Group)</a></h2>
 <p>大家好，我們是Taiwan R User Group。除了平常在網路上交流R 相關的資訊之外，我們也於每週一晚上7:30在政治大學公企中心舉辦MLDM (Machine Learning and Data) Mining Monday！提供一個平台讓相關領域的朋友能分享資料分析的心得，或是使用R 的故事。</p>
 <p>在篇文章中，我們將和讀者分享本月份某次 MLDM Monday的 主題：獨立成份分析(Independent Component Analysis)</p>
 <h3 id="簡介"><a href="#簡介">簡介</a></h3>
@@ -73,14 +73,14 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <img src="../img/ica-3.png" />
 </div>
 <p>這樣大家有沒有比較了解獨立成份分析所要解決的問題呢？</p>
-<p>其他還有許多更細節的數學性質，限於篇幅我們就不仔細介紹了。請大家有興趣可以參考影片<http://www.youtube.com/watch?v=BLmyeXM9zow>，或是詢問講者 <script type="text/javascript">
+<p>其他還有許多更細節的數學性質，限於篇幅我們就不仔細介紹了。請大家有興趣可以參考影片 <a href="http://www.youtube.com/watch?v=BLmyeXM9zow">http://www.youtube.com/watch?v=BLmyeXM9zow</a> ，或是詢問講者 <script type="text/javascript">
 <!--
 h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#98;&#x65;&#110;&#106;&#x61;&#x6d;&#x69;&#110;&#48;&#x39;&#48;&#x31;';e=n+a+h;
 document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#98;&#x65;&#110;&#106;&#x61;&#x6d;&#x69;&#110;&#48;&#x39;&#48;&#x31;&#32;&#x61;&#116;&#32;&#x67;&#x6d;&#x61;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;</noscript> 囉！</p>
 <h3 id="利用-r-來做獨立成份分析"><a href="#利用-r-來做獨立成份分析">利用 R 來做獨立成份分析</a></h3>
-<p>首先我們先到<http://research.ics.aalto.fi/ica/cocktail/cocktail_en.cgi>網站來製造聲音檔。網站中有許多音訊，而我們可以勾選若干個音訊之後，打包成若干個混合的音訊。</p>
+<p>首先我們先到 <a href="http://research.ics.aalto.fi/ica/cocktail/cocktail_en.cgi">http://research.ics.aalto.fi/ica/cocktail/cocktail_en.cgi</a> 網站來製造聲音檔。網站中有許多音訊，而我們可以勾選若干個音訊之後，打包成若干個混合的音訊。</p>
 <p>在影片中，講者勾選了第6、7和9的音訊。在下載混合後的3個音訊檔案後，讀者就跟著我們來把音訊還原。</p>
 <h3 id="載入套件"><a href="#載入套件">載入套件</a></h3>
 <p>我們要先安裝和載入下列這3個套件！</p>
